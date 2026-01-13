@@ -1,11 +1,11 @@
 const CACHE_NAME = 'matcha-trip-v1';
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/firebase-config.js',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+  './',
+  './index.html',
+  './manifest.json',
+  './firebase-config.js',
+  './icons/icon-192.png',
+  './icons/icon-512.png'
 ];
 
 // 安裝時：快取靜態資源

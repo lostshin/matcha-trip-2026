@@ -2005,9 +2005,9 @@
       </div>
       <div class="section-content">
         <div class="info-card" style="background: linear-gradient(135deg, var(--warm-light) 0%, white 100%);">
-          <div class="info-card-content" style="text-align: center; font-size: 1rem; font-weight: 600;">
-            ⏱️ 距出發還有：<strong>11 天</strong><br>
-            <span style="font-size: 0.85rem; font-weight: 400;">今日 2026/1/13 → 出發 2026/1/24</span>
+          <div class="info-card-content" style="text-align: center; font-size: 1rem; font-weight: 600;" id="countdown-display">
+            ⏱️ 距出發還有：<strong>-- 天</strong><br>
+            <span style="font-size: 0.85rem; font-weight: 400;">載入中...</span>
           </div>
         </div>
 
@@ -2204,6 +2204,11 @@
     <p>抹茶山生日旅遊 2026</p>
   </footer>
 
+  <!-- Firebase SDK (必須在使用前載入) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+
   <script>
     // Toggle section expand/collapse
     function toggleSection(header) {
@@ -2231,9 +2236,39 @@
       checkbox.checked = !checkbox.checked;
     }
 
+    // 倒數天數計算
+    function updateCountdown() {
+      const departureDate = new Date('2026-01-24T00:00:00');
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const diffTime = departureDate - today;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      const countdownEl = document.getElementById('countdown-display');
+      if (countdownEl) {
+        const todayStr = today.toLocaleDateString('zh-TW', { year: 'numeric', month: 'numeric', day: 'numeric' }).replace(/\//g, '/');
+        if (diffDays > 0) {
+          countdownEl.innerHTML = `⏱️ 距出發還有：<strong>${diffDays} 天</strong><br><span style="font-size: 0.85rem; font-weight: 400;">今日 ${todayStr} → 出發 2026/1/24</span>`;
+        } else if (diffDays === 0) {
+          countdownEl.innerHTML = `🎉 <strong>今天出發！</strong><br><span style="font-size: 0.85rem; font-weight: 400;">2026/1/24 抹茶山我們來了！</span>`;
+        } else {
+          countdownEl.innerHTML = `✨ 旅程進行中或已結束<br><span style="font-size: 0.85rem; font-weight: 400;">希望你們玩得開心！</span>`;
+        }
+      }
+    }
+    // 頁面載入時更新倒數
+    document.addEventListener('DOMContentLoaded', updateCountdown);
+
     // === 分帳計算器（Firebase 版本）===
     let expenses = [];
     let isOnline = navigator.onLine;
+
+    // XSS 防護：跳脫 HTML 特殊字元
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
 
     // Firebase 即時監聽
     const expensesRef = db.ref('matcha-trip-2026/expenses');
@@ -2334,11 +2369,11 @@
       container.innerHTML = expenses.map(e => `
         <div class="expense-item">
           <div class="expense-item-info">
-            <div class="expense-item-name">${e.name}</div>
-            <div class="expense-item-detail">${e.payer} 付 / ${e.splitWith.length}人分</div>
+            <div class="expense-item-name">${escapeHtml(e.name)}</div>
+            <div class="expense-item-detail">${escapeHtml(e.payer)} 付 / ${e.splitWith.length}人分</div>
           </div>
           <span class="expense-item-amount">${e.amount.toLocaleString()} 元</span>
-          <button class="expense-item-delete" onclick="deleteExpense('${e.firebaseKey}')">✕</button>
+          <button class="expense-item-delete" onclick="deleteExpense('${escapeHtml(e.firebaseKey)}')">✕</button>
         </div>
       `).join('');
     }
@@ -2398,17 +2433,11 @@
     console.log('[Firebase] Expense calculator initialized');
   </script>
 
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <script src="firebase-config.js"></script>
-
   <!-- Service Worker 註冊 -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('./sw.js')
           .then(registration => {
             console.log('[PWA] Service Worker registered:', registration.scope);
           })
