@@ -1482,262 +1482,266 @@
       </div>
     </div>
 
-    <!-- 美食推薦 -->
-    <div class="section" id="section-food">
+    <!-- 旅遊推薦指南 -->
+    <div class="section" id="section-guide">
       <div class="section-header" onclick="toggleSection(this)">
-        <span class="section-icon">🍽️</span>
-        <span class="section-title">美食推薦</span>
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">宜蘭旅遊推薦</span>
         <span class="section-toggle">▼</span>
       </div>
       <div class="section-content">
-        <div class="info-card" style="background: linear-gradient(135deg, var(--matcha-pale) 0%, white 100%);">
-          <div class="info-card-header">
-            <span class="info-card-title">📝 已訂位餐廳</span>
-          </div>
-          <div class="info-card-content">
-            <div style="margin-bottom: 0.5rem;">
-              <strong>Day1 里海咖啡</strong> 1/24（六）18:30 5人
-              <a href="https://www.google.com/maps/search/?api=1&query=里海咖啡+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a>
+        <div class="day-tabs">
+          <button class="day-tab active" onclick="showGuideTab(1)">
+            <div class="day-tab-label">Travel</div>
+            <div class="day-tab-date">🍽️ 美食</div>
+          </button>
+          <button class="day-tab" onclick="showGuideTab(2)">
+            <div class="day-tab-label">Travel</div>
+            <div class="day-tab-date">📸 景點</div>
+          </button>
+          <button class="day-tab" onclick="showGuideTab(3)">
+            <div class="day-tab-label">Travel</div>
+            <div class="day-tab-date">🎁 伴手禮</div>
+          </button>
+        </div>
+
+        <!-- Tab 1: 美食 -->
+        <div class="day-content active" id="guide-tab-1">
+          <div class="info-card" style="background: linear-gradient(135deg, var(--matcha-pale) 0%, white 100%);">
+            <div class="info-card-header">
+              <span class="info-card-title">📝 已訂位餐廳</span>
             </div>
-            <div>
-              <strong>Day2 芭樂狗</strong> 🎂 1/25（日）18:00 5人
-              <a href="https://www.google.com/maps/search/?api=1&query=芭樂狗+宜蘭市復興路" target="_blank" class="nav-btn nav-btn-small">📍 導航</a>
+            <div class="info-card-content">
+              <div style="margin-bottom: 0.5rem;">
+                <strong>Day1 里海咖啡</strong> 1/24（六）18:30 5人
+                <a href="https://www.google.com/maps/search/?api=1&query=里海咖啡+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a>
+              </div>
+              <div>
+                <strong>Day2 芭樂狗</strong> 🎂 1/25（日）18:00 5人
+                <a href="https://www.google.com/maps/search/?api=1&query=芭樂狗+宜蘭市復興路" target="_blank" class="nav-btn nav-btn-small">📍 導航</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection-title">🍽️ Day1-2 主要餐廳</div>
+          <div class="place-item">
+            <span class="place-rank">1</span>
+            <div class="place-info">
+              <div class="place-name">黑海時光粥</div>
+              <div class="place-tag">粥品 ・ Day1 午餐</div>
+            </div>
+            <span class="place-rating">⭐ 4.8</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=黑海時光粥+礁溪" target="_blank" title="導航">📍</a>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">2</span>
+            <div class="place-info">
+              <div class="place-name">里海咖啡</div>
+              <div class="place-tag">鮮魚定食 ・ Day1 晚餐 ・ <strong>已訂位</strong></div>
+            </div>
+            <span class="place-rating">⭐ 4.6</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=里海咖啡+礁溪" target="_blank" title="導航">📍</a>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">3</span>
+            <div class="place-info">
+              <div class="place-name">芭樂狗 Mr. Balagov</div>
+              <div class="place-tag">東歐烏克蘭料理 ・ Day2 慶生 🎂 ・ <strong>已訂位</strong></div>
+            </div>
+            <span class="place-rating">⭐ 4.5</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=芭樂狗+宜蘭市復興路" target="_blank" title="導航">📍</a>
+            </div>
+          </div>
+
+          <div class="subsection-title">🍺 小酌/點心</div>
+          <div class="place-item">
+            <span class="place-rank">1</span>
+            <div class="place-info">
+              <div class="place-name">跨力 Co-Link</div>
+              <div class="place-tag">居酒屋 ・ Day2 晚間小酌 🍻</div>
+            </div>
+            <span class="place-rating">⭐ 4.7</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=跨力+Co-Link+礁溪" target="_blank" title="導航">📍</a>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">2</span>
+            <div class="place-info">
+              <div class="place-name">柯氏蔥油餅</div>
+              <div class="place-tag">排隊名店 ・ 點心</div>
+            </div>
+            <span class="place-rating">⭐ 4.2</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=柯氏蔥油餅+礁溪" target="_blank" title="導航">📍</a>
+            </div>
+          </div>
+
+          <div class="subsection-title">🦐 Day3 返程午餐</div>
+          <div class="place-item">
+            <span class="place-rank">1</span>
+            <div class="place-info">
+              <div class="place-name">烏石港海鮮</div>
+              <div class="place-tag">海鮮 ・ Day3 午餐</div>
+            </div>
+            <span class="place-rating">⭐ 4.0</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=烏石港+海鮮餐廳" target="_blank" title="導航">📍</a>
             </div>
           </div>
         </div>
 
-        <div class="subsection-title">🍽️ Day1-2 主要餐廳</div>
-        <div class="place-item">
-          <span class="place-rank">1</span>
-          <div class="place-info">
-            <div class="place-name">黑海時光粥</div>
-            <div class="place-tag">粥品 ・ Day1 午餐</div>
+        <!-- Tab 2: 景點 -->
+        <div class="day-content" id="guide-tab-2">
+          <div class="subsection-title">✨ 額外推薦（可彈性加入）</div>
+
+          <div class="place-item">
+            <span class="place-rank spot">1</span>
+            <div class="place-info">
+              <div class="place-name">五峰旗瀑布</div>
+              <div class="place-tag">自然景觀 ・ 免費 ・ 1-2hr</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=五峰旗瀑布+礁溪" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-          <span class="place-rating">⭐ 4.8</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=黑海時光粥+礁溪" target="_blank" title="導航">📍</a>
+          <div class="place-item">
+            <span class="place-rank spot">2</span>
+            <div class="place-info">
+              <div class="place-name">湯圍溝溫泉公園</div>
+              <div class="place-tag">免費泡腳 ・ 30-60min ・ Day1 傍晚</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=湯圍溝溫泉公園" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">2</span>
-          <div class="place-info">
-            <div class="place-name">里海咖啡</div>
-            <div class="place-tag">鮮魚定食 ・ Day1 晚餐 ・ <strong>已訂位</strong></div>
+          <div class="place-item">
+            <span class="place-rank spot">3</span>
+            <div class="place-info">
+              <div class="place-name">幾米公園</div>
+              <div class="place-tag">裝置藝術 ・ 免費 ・ 30min</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=幾米公園+宜蘭" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-          <span class="place-rating">⭐ 4.6</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=里海咖啡+礁溪" target="_blank" title="導航">📍</a>
+          <div class="place-item">
+            <span class="place-rank spot">4</span>
+            <div class="place-info">
+              <div class="place-name">礁溪溫泉公園</div>
+              <div class="place-tag">日式足湯 ・ 免費 ・ 休閒</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=礁溪溫泉公園" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">3</span>
-          <div class="place-info">
-            <div class="place-name">芭樂狗 Mr. Balagov</div>
-            <div class="place-tag">東歐烏克蘭料理 ・ Day2 慶生 🎂 ・ <strong>已訂位</strong></div>
+          <div class="place-item">
+            <span class="place-rank spot">5</span>
+            <div class="place-info">
+              <div class="place-name">宜蘭酒廠</div>
+              <div class="place-tag">觀光工廠 ・ 免費 ・ Day3 返程</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=宜蘭酒廠" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-          <span class="place-rating">⭐ 4.5</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=芭樂狗+宜蘭市復興路" target="_blank" title="導航">📍</a>
+
+          <div class="subsection-title">🌧️ 雨天備案</div>
+
+          <div class="place-item">
+            <span class="place-rank spot">A</span>
+            <div class="place-info">
+              <div class="place-name">猴洞坑瀑布</div>
+              <div class="place-tag">輕鬆步道 ・ 30-40min</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=猴洞坑瀑布" target="_blank" title="導航">📍</a>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank spot">B</span>
+            <div class="place-info">
+              <div class="place-name">草湳湖步道</div>
+              <div class="place-tag">湖畔散步 ・ 約1hr</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=草湳湖+礁溪" target="_blank" title="導航">📍</a>
+            </div>
           </div>
         </div>
 
-        <div class="subsection-title">🍺 小酌/點心</div>
-        <div class="place-item">
-          <span class="place-rank">1</span>
-          <div class="place-info">
-            <div class="place-name">跨力 Co-Link</div>
-            <div class="place-tag">居酒屋 ・ Day2 晚間小酌 🍻</div>
-          </div>
-          <span class="place-rating">⭐ 4.7</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=跨力+Co-Link+礁溪" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">2</span>
-          <div class="place-info">
-            <div class="place-name">柯氏蔥油餅</div>
-            <div class="place-tag">排隊名店 ・ 點心</div>
-          </div>
-          <span class="place-rating">⭐ 4.2</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=柯氏蔥油餅+礁溪" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
+        <!-- Tab 3: 伴手禮 -->
+        <div class="day-content" id="guide-tab-3">
+          <div class="subsection-title">🏆 必買 Top 3</div>
 
-        <div class="subsection-title">🦐 Day3 返程午餐</div>
-        <div class="place-item">
-          <span class="place-rank">1</span>
-          <div class="place-info">
-            <div class="place-name">烏石港海鮮</div>
-            <div class="place-tag">海鮮 ・ Day3 午餐</div>
+          <div class="place-item">
+            <span class="place-rank gift">1</span>
+            <div class="place-info">
+              <div class="place-name">鴨賞（鴨喜露）</div>
+              <div class="place-tag">$150-250 ・ 冷藏7-14天</div>
+            </div>
+            <span class="place-rating">經典</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=鴨喜露+礁溪" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-          <span class="place-rating">⭐ 4.0</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=烏石港+海鮮餐廳" target="_blank" title="導航">📍</a>
+          <div class="place-item">
+            <span class="place-rank gift">2</span>
+            <div class="place-info">
+              <div class="place-name">金棗糕（橘之鄉）</div>
+              <div class="place-tag">$100-300 ・ 1月產季！</div>
+            </div>
+            <span class="place-rating">當季</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=橘之鄉蜜餞形象館" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+          <div class="place-item">
+            <span class="place-rank gift">3</span>
+            <div class="place-info">
+              <div class="place-name">牛舌餅（宜蘭餅）</div>
+              <div class="place-tag">$80-200 ・ 超薄脆</div>
+            </div>
+            <span class="place-rating">送禮</span>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=宜蘭餅發明館" target="_blank" title="導航">📍</a>
+            </div>
+          </div>
 
-    <!-- 景點推薦 -->
-    <div class="section" id="section-spots">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span class="section-icon">📸</span>
-        <span class="section-title">景點推薦</span>
-        <span class="section-toggle">▼</span>
-      </div>
-      <div class="section-content">
-        <div class="subsection-title">✨ 額外推薦（可彈性加入）</div>
+          <div class="subsection-title">🛒 購買地點</div>
 
-        <div class="place-item">
-          <span class="place-rank spot">1</span>
-          <div class="place-info">
-            <div class="place-name">五峰旗瀑布</div>
-            <div class="place-tag">自然景觀 ・ 免費 ・ 1-2hr</div>
+          <div class="place-item">
+            <span class="place-rank gift">📍</span>
+            <div class="place-info">
+              <div class="place-name">柯氏蔥油餅</div>
+              <div class="place-tag">冷凍蔥油餅 $100-150/包</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=柯氏蔥油餅+礁溪" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=五峰旗瀑布+礁溪" target="_blank" title="導航">📍</a>
+          <div class="place-item">
+            <span class="place-rank gift">📍</span>
+            <div class="place-info">
+              <div class="place-name">春記百貨</div>
+              <div class="place-tag">毛線/手工藝材料 🧶</div>
+            </div>
+            <div class="place-nav">
+              <a href="https://www.google.com/maps/search/?api=1&query=春記百貨+宜蘭市康樂街" target="_blank" title="導航">📍</a>
+            </div>
           </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank spot">2</span>
-          <div class="place-info">
-            <div class="place-name">湯圍溝溫泉公園</div>
-            <div class="place-tag">免費泡腳 ・ 30-60min ・ Day1 傍晚</div>
-          </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=湯圍溝溫泉公園" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank spot">3</span>
-          <div class="place-info">
-            <div class="place-name">幾米公園</div>
-            <div class="place-tag">裝置藝術 ・ 免費 ・ 30min</div>
-          </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=幾米公園+宜蘭" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank spot">4</span>
-          <div class="place-info">
-            <div class="place-name">礁溪溫泉公園</div>
-            <div class="place-tag">日式足湯 ・ 免費 ・ 休閒</div>
-          </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=礁溪溫泉公園" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank spot">5</span>
-          <div class="place-info">
-            <div class="place-name">宜蘭酒廠</div>
-            <div class="place-tag">觀光工廠 ・ 免費 ・ Day3 返程</div>
-          </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=宜蘭酒廠" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
 
-        <div class="subsection-title">🌧️ 雨天備案</div>
-
-        <div class="place-item">
-          <span class="place-rank spot">A</span>
-          <div class="place-info">
-            <div class="place-name">猴洞坑瀑布</div>
-            <div class="place-tag">輕鬆步道 ・ 30-40min</div>
-          </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=猴洞坑瀑布" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank spot">B</span>
-          <div class="place-info">
-            <div class="place-name">草湳湖步道</div>
-            <div class="place-tag">湖畔散步 ・ 約1hr</div>
-          </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=草湳湖+礁溪" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 伴手禮推薦 -->
-    <div class="section" id="section-souvenir">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span class="section-icon">🎁</span>
-        <span class="section-title">伴手禮推薦</span>
-        <span class="section-toggle">▼</span>
-      </div>
-      <div class="section-content">
-        <div class="subsection-title">🏆 必買 Top 3</div>
-
-        <div class="place-item">
-          <span class="place-rank gift">1</span>
-          <div class="place-info">
-            <div class="place-name">鴨賞（鴨喜露）</div>
-            <div class="place-tag">$150-250 ・ 冷藏7-14天</div>
-          </div>
-          <span class="place-rating">經典</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=鴨喜露+礁溪" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank gift">2</span>
-          <div class="place-info">
-            <div class="place-name">金棗糕（橘之鄉）</div>
-            <div class="place-tag">$100-300 ・ 1月產季！</div>
-          </div>
-          <span class="place-rating">當季</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=橘之鄉蜜餞形象館" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank gift">3</span>
-          <div class="place-info">
-            <div class="place-name">牛舌餅（宜蘭餅）</div>
-            <div class="place-tag">$80-200 ・ 超薄脆</div>
-          </div>
-          <span class="place-rating">送禮</span>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=宜蘭餅發明館" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-
-        <div class="subsection-title">🛒 購買地點</div>
-
-        <div class="place-item">
-          <span class="place-rank gift">📍</span>
-          <div class="place-info">
-            <div class="place-name">柯氏蔥油餅</div>
-            <div class="place-tag">冷凍蔥油餅 $100-150/包</div>
-          </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=柯氏蔥油餅+礁溪" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank gift">📍</span>
-          <div class="place-info">
-            <div class="place-name">春記百貨</div>
-            <div class="place-tag">毛線/手工藝材料 🧶</div>
-          </div>
-          <div class="place-nav">
-            <a href="https://www.google.com/maps/search/?api=1&query=春記百貨+宜蘭市康樂街" target="_blank" title="導航">📍</a>
-          </div>
-        </div>
-
-        <div class="warning-box" style="margin-top: 0.75rem;">
-          <div class="warning-box-title">💡 攜帶提醒</div>
-          <div class="warning-box-content">
-            鴨賞需<strong>冷藏</strong>，建議準備保冷袋！<br>
-            冷凍蔥油餅回家後立即放冷凍庫
+          <div class="warning-box" style="margin-top: 0.75rem;">
+            <div class="warning-box-title">💡 攜帶提醒</div>
+            <div class="warning-box-content">
+              鴨賞需<strong>冷藏</strong>，建議準備保冷袋！<br>
+              冷凍蔥油餅回家後立即放冷凍庫
+            </div>
           </div>
         </div>
       </div>
@@ -1889,421 +1893,426 @@
     </div>
 
     <!-- 登山速查 -->
-    <div class="section" id="section-hiking">
+    <!-- 抹茶山登山攻略 -->
+    <div class="section" id="section-hike-guide">
       <div class="section-header" onclick="toggleSection(this)">
-        <span class="section-icon">🥾</span>
-        <span class="section-title">登山日速查</span>
+        <span class="section-icon">⛰️</span>
+        <span class="section-title">抹茶山登山攻略</span>
         <span class="section-toggle">▼</span>
       </div>
       <div class="section-content">
-        <div class="info-card">
-          <div class="info-card-content" style="text-align: center;">
-            📍 五峰旗 → 聖母朝聖地 → 通天橋 → 山頂<br>
-            <strong>10.8km</strong> ・ 爬升 <strong>900m</strong> ・ <strong>6-7 小時</strong>
+        <div class="day-tabs">
+          <button class="day-tab active" onclick="showHikeTab(1)">
+            <div class="day-tab-label">Hiking</div>
+            <div class="day-tab-date">🥾 路線</div>
+          </button>
+          <button class="day-tab" onclick="showHikeTab(2)">
+            <div class="day-tab-label">Hiking</div>
+            <div class="day-tab-date">🛡️ 安全</div>
+          </button>
+          <button class="day-tab" onclick="showHikeTab(3)">
+            <div class="day-tab-label">Hiking</div>
+            <div class="day-tab-date">🌿 生態</div>
+          </button>
+        </div>
+
+        <!-- Tab 1: 路線 -->
+        <div class="day-content active" id="hike-tab-1">
+          <div class="info-card">
+            <div class="info-card-content" style="text-align: center;">
+              📍 五峰旗 → 聖母朝聖地 → 通天橋 → 山頂<br>
+              <strong>10.8km</strong> ・ 爬升 <strong>900m</strong> ・ <strong>6-7 小時</strong>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=五峰旗停車場" target="_blank" class="nav-btn" style="display: block; text-align: center;">📍 導航至登山口</a>
           </div>
-          <a href="https://www.google.com/maps/search/?api=1&query=五峰旗停車場" target="_blank" class="nav-btn" style="display: block; text-align: center;">📍 導航至登山口</a>
-        </div>
 
-        <table class="checkpoint-table">
-          <thead>
-            <tr>
-              <th>時間</th>
-              <th>地點</th>
-              <th>撤退時間</th>
-              <th>💧</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>06:30</td>
-              <td>五峰旗停車場</td>
-              <td>--</td>
-              <td>❌</td>
-            </tr>
-            <tr>
-              <td>07:00</td>
-              <td>聖母朝聖地</td>
-              <td>--</td>
-              <td>💧</td>
-            </tr>
-            <tr>
-              <td>08:30</td>
-              <td>通天橋</td>
-              <td class="retreat-warning">09:30 未到→評估</td>
-              <td>💧</td>
-            </tr>
-            <tr>
-              <td>10:30</td>
-              <td>山頂 ⛰️</td>
-              <td class="retreat-warning">13:00 未到→下撤</td>
-              <td>⚠️</td>
-            </tr>
-            <tr>
-              <td>14:00</td>
-              <td>返回停車場</td>
-              <td class="retreat-warning">16:30 必須離開</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+          <table class="checkpoint-table">
+            <thead>
+              <tr>
+                <th>時間</th>
+                <th>地點</th>
+                <th>撤退時間</th>
+                <th>💧</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>06:30</td>
+                <td>五峰旗停車場</td>
+                <td>--</td>
+                <td>❌</td>
+              </tr>
+              <tr>
+                <td>07:00</td>
+                <td>聖母朝聖地</td>
+                <td>--</td>
+                <td>💧</td>
+              </tr>
+              <tr>
+                <td>08:30</td>
+                <td>通天橋</td>
+                <td><span class="retreat-warning">09:30 未到→評估</span></td>
+                <td>💧</td>
+              </tr>
+              <tr>
+                <td>10:30</td>
+                <td>山頂 ⛰️</td>
+                <td><span class="retreat-warning">13:00 未到→下撤</span></td>
+                <td>⚠️</td>
+              </tr>
+              <tr>
+                <td>14:00</td>
+                <td>返回停車場</td>
+                <td><span class="retreat-warning">16:30 必須離開</span></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
 
-        <h4 style="margin: 1rem 0 0.75rem; color: var(--matcha-dark);">✅ 必備裝備</h4>
-        <div class="checklist">
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>登山鞋</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>登山杖</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>雨衣雨褲</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>頭燈</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>水 2L+</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>行動糧</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>保暖中層</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>防滑鞋套</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>行動電源</span>
-          </label>
-          <label class="checklist-item" onclick="toggleCheck(this, event)">
-            <input type="checkbox">
-            <span class="checklist-box">✓</span>
-            <span>離線地圖</span>
-          </label>
-        </div>
-
-        <div class="warning-box">
-          <div class="warning-box-title">⚠️ 路況提醒</div>
-          <div class="warning-box-content">
-            後段 1.6km 常年濕滑，<strong>防滑鞋套必備</strong>！<br>
-            📵 通天橋後無訊號，請先下載離線地圖
+          <h4 style="margin: 1rem 0 0.75rem; color: var(--matcha-dark);">✅ 必備裝備</h4>
+          <div class="checklist">
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>登山鞋</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>登山杖</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>雨衣雨褲</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>頭燈</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>水 2L+</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>行動糧</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>保暖中層</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>防滑鞋套</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>行動電源</span>
+            </label>
+            <label class="checklist-item" onclick="toggleCheck(this, event)">
+              <input type="checkbox">
+              <span class="checklist-box">✓</span>
+              <span>離線地圖</span>
+            </label>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- 登山安全技巧 -->
-    <div class="section" id="section-safety-tips">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span class="section-icon">🛡️</span>
-        <span class="section-title">登山安全技巧</span>
-        <span class="section-toggle">▼</span>
-      </div>
-      <div class="section-content">
-        <div class="info-card" style="background: linear-gradient(135deg, var(--matcha-pale) 0%, white 100%);">
-          <div class="info-card-content" style="text-align: center; font-size: 0.9rem;">
-            📚 整理自《登山新手預防受傷完整指南》與《登山下坡安全技巧建議》
-          </div>
-        </div>
-
-        <div class="subsection-title">🦵 下坡膝蓋保護（超重要！）</div>
-        <div class="info-card">
-          <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
-            <strong>為什麼下坡更傷膝蓋？</strong><br>
-            下坡時股四頭肌進行「離心收縮」，承受的衝擊力是上坡的 <strong>3-4 倍</strong>。抹茶山後段 1.6km 陡下坡是膝蓋最大考驗！<br><br>
-
-            <strong>✅ 正確下坡姿勢：</strong><br>
-            • 膝蓋保持<strong>微彎 15-20°</strong>，絕不完全打直<br>
-            • 縮小步幅，寧可多走幾步<br>
-            • 重心稍微壓低，臀部微蹲<br>
-            • 身體保持正面朝向下坡方向<br><br>
-
-            <strong>❌ 常見錯誤：</strong><br>
-            • 鎖死膝蓋（衝擊力直接穿透關節）<br>
-            • 步伐過大（落差越大衝擊越大）<br>
-            • 重心後仰（容易滑倒且無法控制）
+          <div class="warning-box">
+            <div class="warning-box-title">⚠️ 路況提醒</div>
+            <div class="warning-box-content">
+              後段 1.6km 常年濕滑，<strong>防滑鞋套必備</strong>！<br>
+              📵 通天橋後無訊號，請先下載離線地圖
+            </div>
           </div>
         </div>
 
-        <div class="subsection-title">🥾 登山杖使用技巧</div>
-        <div class="info-card">
-          <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
-            正確使用登山杖可<strong>降低 25% 膝蓋壓力</strong>！<br><br>
+        <!-- Tab 2: 安全 -->
+        <div class="day-content" id="hike-tab-2">
+          <div class="info-card" style="background: linear-gradient(135deg, var(--matcha-pale) 0%, white 100%);">
+            <div class="info-card-content" style="text-align: center; font-size: 0.9rem;">
+              📚 整理自《登山新手預防受傷完整指南》與《登山下坡安全技巧建議》
+            </div>
+          </div>
 
-            <strong>📏 長度調整：</strong><br>
-            • 平地：手肘呈 90°<br>
-            • <strong>下坡加長 5-10 cm</strong>（很多人忽略這點！）<br>
-            • 上坡縮短 5-10 cm<br><br>
+          <div class="subsection-title">🦵 下坡膝蓋保護（超重要！）</div>
+          <div class="info-card">
+            <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
+              <strong>為什麼下坡更傷膝蓋？</strong><br>
+              下坡時股四頭肌進行「離心收縮」，承受的衝擊力是上坡的 <strong>3-4 倍</strong>。抹茶山後段 1.6km 陡下坡是膝蓋最大考驗！<br><br>
 
-            <strong>🤚 腕帶穿法：</strong><br>
-            手由<strong>下往上</strong>穿過腕帶圈 → 手掌下壓握住<br>
-            重點是讓腕帶承重，而非緊握握把<br><br>
+              <strong>✅ 正確下坡姿勢：</strong><br>
+              • 膝蓋保持<strong>微彎 15-20°</strong>，絕不完全打直<br>
+              • 縮小步幅，寧可多走幾步<br>
+              • 重心稍微壓低，臀部微蹲<br>
+              • 身體保持正面朝向下坡方向<br><br>
 
-            <strong>⚡ 下坡技巧：</strong><br>
-            登山杖先落地 → 確認穩固 → 再踏出腳步<br>
-            陡坡時可雙杖同時前撐，製造穩定三角
+              <strong>❌ 常見錯誤：</strong><br>
+              • 鎖死膝蓋（衝擊力直接穿透關節）<br>
+              • 步伐過大（落差越大衝擊越大）<br>
+              • 重心後仰（容易滑倒且無法控制）
+            </div>
+          </div>
+
+          <div class="subsection-title">🥾 登山杖使用技巧</div>
+          <div class="info-card">
+            <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
+              正確使用登山杖可<strong>降低 25% 膝蓋壓力</strong>！<br><br>
+
+              <strong>📏 長度調整：</strong><br>
+              • 平地：手肘呈 90°<br>
+              • <strong>下坡加長 5-10 cm</strong>（很多人忽略這點！）<br>
+              • 上坡縮短 5-10 cm<br><br>
+
+              <strong>🤚 腕帶穿法：</strong><br>
+              手由<strong>下往上</strong>穿過腕帶圈 → 手掌下壓握住<br>
+              重點是讓腕帶承重，而非緊握握把<br><br>
+
+              <strong>⚡ 下坡技巧：</strong><br>
+              登山杖先落地 → 確認穩固 → 再踏出腳步<br>
+              陡坡時可雙杖同時前撐，製造穩定三角
+            </div>
+          </div>
+
+          <div class="subsection-title">👟 防止腳趾撞傷</div>
+          <div class="info-card">
+            <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
+              下坡時腳會往前滑，若未固定好，腳趾反覆撞擊鞋頭會造成<strong>黑指甲</strong>！<br><br>
+
+              <strong>🎯 腳跟鎖定結（Heel Lock）：</strong><br>
+              1. 正常穿鞋帶到最上方兩孔<br>
+              2. 鞋帶直接穿入同側上方孔（形成小圈）<br>
+              3. 左右交叉穿過對側的小圈<br>
+              4. 向外拉緊並打結<br><br>
+
+              <strong>💡 其他預防：</strong><br>
+              • 登山前修剪腳趾甲（與指緣齊平）<br>
+              • 鞋子前端保留一指幅空間<br>
+              • 穿厚登山襪減少摩擦
+            </div>
+          </div>
+
+          <div class="subsection-title">🌧️ 濕滑地面行走</div>
+          <div class="info-card">
+            <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
+              抹茶山後段常年潮濕，<strong>濕滑是最大風險</strong>！<br><br>
+
+              <strong>🚶 全腳掌平踩：</strong><br>
+              放棄腳跟先著地，改用<strong>全腳掌垂直落下</strong><br>
+              最大化接觸面積 = 最大抓地力<br><br>
+
+              <strong>🌳 樹根策略：</strong><br>
+              • 濕樹根比濕岩石更滑！<br>
+              • <strong>踩樹根之間的空隙</strong>，不踩樹根上<br>
+              • 若必須踩，腳掌與樹根走向垂直<br><br>
+
+              <strong>⚠️ 防滑鞋套必備！</strong><br>
+              後段 1.6km 建議穿戴，大幅提升安全性
+            </div>
+          </div>
+
+          <div class="subsection-title">🩹 常見傷害與預防</div>
+          <div class="info-card">
+            <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
+              <strong>🔴 延遲性肌肉痠痛（鐵腿）：</strong><br>
+              • 好發於下坡後 24-72 小時<br>
+              • 預防：行前 2-3 個月練習離心訓練（如逆向登階）<br>
+              • 處理：當日冰敷 15 分鐘，隔日輕度活動<br><br>
+
+              <strong>🔴 膝蓋疼痛：</strong><br>
+              • 若膝蓋前方痛 → 可使用<strong>髕骨帶</strong>輔助<br>
+              • 鬆緊度：能放入兩根手指<br>
+              • 疼痛時縮短步幅、增加休息<br><br>
+
+              <strong>🔴 腳踝扭傷：</strong><br>
+              • 預防：穿高筒登山鞋、專注看路<br>
+              • 處理：RICE 原則（休息、冰敷、加壓、抬高）<br><br>
+
+              <strong>🔴 抽筋：</strong><br>
+              • 通常因電解質流失<br>
+              • 預防：每 60-90 分鐘補充電解質<br>
+              • 處理：輕輕拉伸、補充鹽分
+            </div>
+          </div>
+
+          <div class="subsection-title">💧 補水與補給</div>
+          <div class="info-card">
+            <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
+              <strong>⏰ 補水原則：</strong><br>
+              • 每 15-20 分鐘喝 150-250ml（不要等渴才喝）<br>
+              • 尿液顏色是最佳指標：<strong>透明淡黃色</strong> = 正常<br><br>
+
+              <strong>⚡ 電解質補充：</strong><br>
+              • 運動超過 60 分鐘需補充<br>
+              • 純水會稀釋電解質，可能導致<strong>低血鈉症</strong><br>
+              • 搭配運動飲料或鹹味零食<br><br>
+
+              <strong>🍫 行動糧頻率：</strong><br>
+              每 60-90 分鐘補充 200-300 大卡<br>
+              <strong>不要等餓才吃！</strong>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <div class="warning-box-title">⚠️ 迷路時最重要原則</div>
+            <div class="warning-box-content">
+              <strong>絕對不要下切溪谷！</strong>這是導致傷亡的主因。<br>
+              遵循 <strong>STOP 原則</strong>：停下來 → 思考 → 觀察 → 計畫<br>
+              留在原地等待救援，善用離線地圖定位
+            </div>
           </div>
         </div>
 
-        <div class="subsection-title">👟 防止腳趾撞傷</div>
-        <div class="info-card">
-          <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
-            下坡時腳會往前滑，若未固定好，腳趾反覆撞擊鞋頭會造成<strong>黑指甲</strong>！<br><br>
+        <!-- Tab 3: 生態 -->
+        <div class="day-content" id="hike-tab-3">
+          <div class="info-card">
+            <div class="info-card-content" style="font-size: 0.9rem; line-height: 1.6;">
+              抹茶山的翠綠景觀來自<strong>包籜矢竹</strong>形成的草原地毯，這種台灣特有種竹類在東北季風吹拂下終年常綠。這條海拔跨度 550 公尺的步道，從溪谷闊葉林一路攀升至風衝矮林，沿途可觀察到樟科、殼斗科喬木、豐富的蕨類與苔蘚。
+            </div>
+          </div>
 
-            <strong>🎯 腳跟鎖定結（Heel Lock）：</strong><br>
-            1. 正常穿鞋帶到最上方兩孔<br>
-            2. 鞋帶直接穿入同側上方孔（形成小圈）<br>
-            3. 左右交叉穿過對側的小圈<br>
-            4. 向外拉緊並打結<br><br>
+          <div class="subsection-title">🌳 低海拔喬木（400-600m）</div>
+          <div class="place-item">
+            <span class="place-rank">1</span>
+            <div class="place-info">
+              <div class="place-name">九芎</div>
+              <div class="place-tag">落葉喬木・樹皮光滑「猴不爬」・<strong>一月落葉易見</strong></div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">2</span>
+            <div class="place-info">
+              <div class="place-name">大葉楠</div>
+              <div class="place-tag">葉大型革質・葉背灰白</div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">3</span>
+            <div class="place-info">
+              <div class="place-name">山龍眼</div>
+              <div class="place-tag">葉長橢圓形・鋸齒緣</div>
+            </div>
+          </div>
 
-            <strong>💡 其他預防：</strong><br>
-            • 登山前修剪腳趾甲（與指緣齊平）<br>
-            • 鞋子前端保留一指幅空間<br>
-            • 穿厚登山襪減少摩擦
+          <div class="subsection-title">🍃 中海拔指標植物（600-850m）</div>
+          <div class="place-item">
+            <span class="place-rank">1</span>
+            <div class="place-info">
+              <div class="place-name">墨點櫻桃</div>
+              <div class="place-tag">葉背有黑色腺點・揉碎有杏仁味</div>
+            </div>
           </div>
-        </div>
+          <div class="place-item">
+            <span class="place-rank">2</span>
+            <div class="place-info">
+              <div class="place-name">長葉木薑子</div>
+              <div class="place-tag">葉披針形・葉背灰白</div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">3</span>
+            <div class="place-info">
+              <div class="place-name">三斗石櫟</div>
+              <div class="place-tag">殼斗三淺裂・葉革質</div>
+            </div>
+          </div>
 
-        <div class="subsection-title">🌧️ 濕滑地面行走</div>
-        <div class="info-card">
-          <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
-            抹茶山後段常年潮濕，<strong>濕滑是最大風險</strong>！<br><br>
+          <div class="subsection-title">🔴 山頂風衝矮林（850m+）</div>
+          <div class="place-item">
+            <span class="place-rank">⭐</span>
+            <div class="place-info">
+              <div class="place-name">紅楠（豬腳楠）</div>
+              <div class="place-tag"><strong>鮮紅色嫩芽與芽苞</strong> ← 一月最醒目！</div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">1</span>
+            <div class="place-info">
+              <div class="place-name">金平氏冬青</div>
+              <div class="place-tag">常綠小喬木・<strong>冬季鮮紅色果實</strong></div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">2</span>
+            <div class="place-info">
+              <div class="place-name">毽子櫟</div>
+              <div class="place-tag">葉緣反捲・殼斗具環狀鱗片</div>
+            </div>
+          </div>
 
-            <strong>🚶 全腳掌平踩：</strong><br>
-            放棄腳跟先著地，改用<strong>全腳掌垂直落下</strong><br>
-            最大化接觸面積 = 最大抓地力<br><br>
+          <div class="subsection-title">🌿 蕨類（著生與地生）</div>
+          <div class="place-item">
+            <span class="place-rank">1</span>
+            <div class="place-info">
+              <div class="place-name">伏石蕨</div>
+              <div class="place-tag"><strong>二型葉</strong>：圓形肉質小葉 + 線形細長葉</div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">2</span>
+            <div class="place-info">
+              <div class="place-name">巢蕨（山蘇）</div>
+              <div class="place-tag">叢生如鳥巢・孢子囊群線形</div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">3</span>
+            <div class="place-info">
+              <div class="place-name">過溝菜蕨（過貓）</div>
+              <div class="place-tag">嫩葉可食・常見於溪谷</div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">4</span>
+            <div class="place-info">
+              <div class="place-name">筆筒樹</div>
+              <div class="place-tag">樹蕨・葉痕如蛇紋排列</div>
+            </div>
+          </div>
 
-            <strong>🌳 樹根策略：</strong><br>
-            • 濕樹根比濕岩石更滑！<br>
-            • <strong>踩樹根之間的空隙</strong>，不踩樹根上<br>
-            • 若必須踩，腳掌與樹根走向垂直<br><br>
+          <div class="subsection-title">🌱 果實與物候（一月觀察重點）</div>
+          <div class="place-item">
+            <span class="place-rank">🔴</span>
+            <div class="place-info">
+              <div class="place-name">月桃</div>
+              <div class="place-tag"><strong>鮮紅色蒴果</strong>・揉葉有香氣</div>
+            </div>
+          </div>
+          <div class="place-item">
+            <span class="place-rank">🔴</span>
+            <div class="place-info">
+              <div class="place-name">金平氏冬青</div>
+              <div class="place-tag"><strong>紅色果實</strong>點綴枝頭</div>
+            </div>
+          </div>
 
-            <strong>⚠️ 防滑鞋套必備！</strong><br>
-            後段 1.6km 建議穿戴，大幅提升安全性
+          <div class="subsection-title">💚 抹茶綠的秘密</div>
+          <div class="info-card">
+            <div class="info-card-header">
+              <span class="info-card-title">包籜矢竹</span>
+              <span class="info-card-badge">台灣特有種</span>
+            </div>
+            <div class="info-card-content" style="font-size: 0.85rem;">
+              • <strong>常綠</strong>密集生長：利用地下走莖快速蔓延<br>
+              • <strong>風衝矮化</strong>：山頂受強風抑制，形成一致高度<br>
+              • <strong>充沛水分</strong>：東北季風迎風面，終年潮濕<br>
+              • <strong>向陽照射</strong>：陽光下呈現明亮翠綠色
+            </div>
           </div>
-        </div>
 
-        <div class="subsection-title">🩹 常見傷害與預防</div>
-        <div class="info-card">
-          <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
-            <strong>🔴 延遲性肌肉痠痛（鐵腿）：</strong><br>
-            • 好發於下坡後 24-72 小時<br>
-            • 預防：行前 2-3 個月練習離心訓練（如逆向登階）<br>
-            • 處理：當日冰敷 15 分鐘，隔日輕度活動<br><br>
-
-            <strong>🔴 膝蓋疼痛：</strong><br>
-            • 若膝蓋前方痛 → 可使用<strong>髕骨帶</strong>輔助<br>
-            • 鬆緊度：能放入兩根手指<br>
-            • 疼痛時縮短步幅、增加休息<br><br>
-
-            <strong>🔴 腳踝扭傷：</strong><br>
-            • 預防：穿高筒登山鞋、專注看路<br>
-            • 處理：RICE 原則（休息、冰敷、加壓、抬高）<br><br>
-
-            <strong>🔴 抽筋：</strong><br>
-            • 通常因電解質流失<br>
-            • 預防：每 60-90 分鐘補充電解質<br>
-            • 處理：輕輕拉伸、補充鹽分
-          </div>
-        </div>
-
-        <div class="subsection-title">💧 補水與補給</div>
-        <div class="info-card">
-          <div class="info-card-content" style="font-size: 0.85rem; line-height: 1.7;">
-            <strong>⏰ 補水原則：</strong><br>
-            • 每 15-20 分鐘喝 150-250ml（不要等渴才喝）<br>
-            • 尿液顏色是最佳指標：<strong>透明淡黃色</strong> = 正常<br><br>
-
-            <strong>⚡ 電解質補充：</strong><br>
-            • 運動超過 60 分鐘需補充<br>
-            • 純水會稀釋電解質，可能導致<strong>低血鈉症</strong><br>
-            • 搭配運動飲料或鹹味零食<br><br>
-
-            <strong>🍫 行動糧頻率：</strong><br>
-            每 60-90 分鐘補充 200-300 大卡<br>
-            <strong>不要等餓才吃！</strong>
-          </div>
-        </div>
-
-        <div class="warning-box">
-          <div class="warning-box-title">⚠️ 迷路時最重要原則</div>
-          <div class="warning-box-content">
-            <strong>絕對不要下切溪谷！</strong>這是導致傷亡的主因。<br>
-            遵循 <strong>STOP 原則</strong>：停下來 → 思考 → 觀察 → 計畫<br>
-            留在原地等待救援，善用離線地圖定位
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 植物生態觀察指南 -->
-    <div class="section" id="section-plants">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span class="section-icon">🌿</span>
-        <span class="section-title">植物生態觀察指南</span>
-        <span class="section-toggle">▼</span>
-      </div>
-      <div class="section-content">
-        <div class="info-card">
-          <div class="info-card-content" style="font-size: 0.9rem; line-height: 1.6;">
-            抹茶山的翠綠景觀來自<strong>包籜矢竹</strong>形成的草原地毯，這種台灣特有種竹類在東北季風吹拂下終年常綠。這條海拔跨度 550 公尺的步道，從溪谷闊葉林一路攀升至風衝矮林，沿途可觀察到樟科、殼斗科喬木、豐富的蕨類與苔蘚。
-          </div>
-        </div>
-
-        <div class="subsection-title">🌳 低海拔喬木（400-600m）</div>
-        <div class="place-item">
-          <span class="place-rank">1</span>
-          <div class="place-info">
-            <div class="place-name">九芎</div>
-            <div class="place-tag">落葉喬木・樹皮光滑「猴不爬」・<strong>一月落葉易見</strong></div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">2</span>
-          <div class="place-info">
-            <div class="place-name">大葉楠</div>
-            <div class="place-tag">葉大型革質・葉背灰白</div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">3</span>
-          <div class="place-info">
-            <div class="place-name">山龍眼</div>
-            <div class="place-tag">葉長橢圓形・鋸齒緣</div>
-          </div>
-        </div>
-
-        <div class="subsection-title">🍃 中海拔指標植物（600-850m）</div>
-        <div class="place-item">
-          <span class="place-rank">1</span>
-          <div class="place-info">
-            <div class="place-name">墨點櫻桃</div>
-            <div class="place-tag">葉背有黑色腺點・揉碎有杏仁味</div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">2</span>
-          <div class="place-info">
-            <div class="place-name">長葉木薑子</div>
-            <div class="place-tag">葉披針形・葉背灰白</div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">3</span>
-          <div class="place-info">
-            <div class="place-name">三斗石櫟</div>
-            <div class="place-tag">殼斗三淺裂・葉革質</div>
-          </div>
-        </div>
-
-        <div class="subsection-title">🔴 山頂風衝矮林（850m+）</div>
-        <div class="place-item">
-          <span class="place-rank">⭐</span>
-          <div class="place-info">
-            <div class="place-name">紅楠（豬腳楠）</div>
-            <div class="place-tag"><strong>鮮紅色嫩芽與芽苞</strong> ← 一月最醒目！</div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">1</span>
-          <div class="place-info">
-            <div class="place-name">金平氏冬青</div>
-            <div class="place-tag">常綠小喬木・<strong>冬季鮮紅色果實</strong></div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">2</span>
-          <div class="place-info">
-            <div class="place-name">毽子櫟</div>
-            <div class="place-tag">葉緣反捲・殼斗具環狀鱗片</div>
-          </div>
-        </div>
-
-        <div class="subsection-title">🌿 蕨類（著生與地生）</div>
-        <div class="place-item">
-          <span class="place-rank">1</span>
-          <div class="place-info">
-            <div class="place-name">伏石蕨</div>
-            <div class="place-tag"><strong>二型葉</strong>：圓形肉質小葉 + 線形細長葉</div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">2</span>
-          <div class="place-info">
-            <div class="place-name">巢蕨（山蘇）</div>
-            <div class="place-tag">叢生如鳥巢・孢子囊群線形</div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">3</span>
-          <div class="place-info">
-            <div class="place-name">過溝菜蕨（過貓）</div>
-            <div class="place-tag">嫩葉可食・常見於溪谷</div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">4</span>
-          <div class="place-info">
-            <div class="place-name">筆筒樹</div>
-            <div class="place-tag">樹蕨・葉痕如蛇紋排列</div>
-          </div>
-        </div>
-
-        <div class="subsection-title">🌱 果實與物候（一月觀察重點）</div>
-        <div class="place-item">
-          <span class="place-rank">🔴</span>
-          <div class="place-info">
-            <div class="place-name">月桃</div>
-            <div class="place-tag"><strong>鮮紅色蒴果</strong>・揉葉有香氣</div>
-          </div>
-        </div>
-        <div class="place-item">
-          <span class="place-rank">🔴</span>
-          <div class="place-info">
-            <div class="place-name">金平氏冬青</div>
-            <div class="place-tag"><strong>紅色果實</strong>點綴枝頭</div>
-          </div>
-        </div>
-
-        <div class="subsection-title">💚 抹茶綠的秘密</div>
-        <div class="info-card">
-          <div class="info-card-header">
-            <span class="info-card-title">包籜矢竹</span>
-            <span class="info-card-badge">台灣特有種</span>
-          </div>
-          <div class="info-card-content" style="font-size: 0.85rem;">
-            • <strong>常綠</strong>密集生長：利用地下走莖快速蔓延<br>
-            • <strong>風衝矮化</strong>：山頂受強風抑制，形成一致高度<br>
-            • <strong>充沛水分</strong>：東北季風迎風面，終年潮濕<br>
-            • <strong>向陽照射</strong>：陽光下呈現明亮翠綠色
-          </div>
-        </div>
-
-        <div class="subsection-title">📸 帶著這個指南上山</div>
-        <div class="info-card">
-          <div class="info-card-content" style="font-size: 0.9rem;">
-            ✅ 建議攜帶 <strong>10倍放大鏡</strong>觀察苔蘚與地衣<br>
-            ✅ <strong>手機或相機搭配微距</strong>記錄蕨類孢子囊群<br>
-            ✅ <strong>防水筆記本</strong>隨時記錄發現<br>
-            🌡️ 山頂體感 0-5°C，帶著這份指南享受生態教室！
+          <div class="subsection-title">📸 帶著這個指南上山</div>
+          <div class="info-card">
+            <div class="info-card-content" style="font-size: 0.9rem;">
+              ✅ 建議攜帶 <strong>10倍放大鏡</strong>觀察苔蘚與地衣<br>
+              ✅ <strong>手機或相機搭配微距</strong>記錄蕨類孢子囊群<br>
+              ✅ <strong>防水筆記本</strong>隨時記錄發現<br>
+              🌡️ 山頂體感 0-5°C，帶著這份指南享受生態教室！
+            </div>
           </div>
         </div>
       </div>
@@ -2529,15 +2538,15 @@
         <span class="menu-item-icon">🏨</span>
         <span class="menu-item-label">住宿資訊</span>
       </a>
-      <a class="menu-item" onclick="scrollToSection(event, 'section-food')">
+      <a class="menu-item" onclick="navigateToTab('section-guide', 1)">
         <span class="menu-item-icon">🍽️</span>
         <span class="menu-item-label">美食推薦</span>
       </a>
-      <a class="menu-item" onclick="scrollToSection(event, 'section-spots')">
+      <a class="menu-item" onclick="navigateToTab('section-guide', 2)">
         <span class="menu-item-icon">🎯</span>
         <span class="menu-item-label">景點推薦</span>
       </a>
-      <a class="menu-item" onclick="scrollToSection(event, 'section-souvenir')">
+      <a class="menu-item" onclick="navigateToTab('section-guide', 3)">
         <span class="menu-item-icon">🎁</span>
         <span class="menu-item-label">伴手禮</span>
       </a>
@@ -2549,11 +2558,15 @@
         <span class="menu-item-icon">🧮</span>
         <span class="menu-item-label">分帳計算</span>
       </a>
-      <a class="menu-item" onclick="scrollToSection(event, 'section-hiking')">
+      <a class="menu-item" onclick="navigateToTab('section-hike-guide', 1)">
         <span class="menu-item-icon">🥾</span>
         <span class="menu-item-label">登山速查</span>
       </a>
-      <a class="menu-item" onclick="scrollToSection(event, 'section-plants')">
+      <a class="menu-item" onclick="navigateToTab('section-hike-guide', 2)">
+        <span class="menu-item-icon">🛡️</span>
+        <span class="menu-item-label">登山安全</span>
+      </a>
+      <a class="menu-item" onclick="navigateToTab('section-hike-guide', 3)">
         <span class="menu-item-icon">🌿</span>
         <span class="menu-item-label">植物指南</span>
       </a>
@@ -2642,6 +2655,60 @@
       document.querySelectorAll('.day-content').forEach((content, index) => {
         content.classList.toggle('active', index === day - 1);
       });
+    }
+
+    // Travel Guide tabs
+    function showGuideTab(tabIndex) {
+      const section = document.getElementById('section-guide');
+      if (!section) return;
+      section.querySelectorAll('.day-tab').forEach((tab, index) => {
+        tab.classList.toggle('active', index === tabIndex - 1);
+      });
+      section.querySelectorAll('.day-content').forEach((content, index) => {
+        content.classList.toggle('active', index === tabIndex - 1);
+      });
+    }
+
+    // Hiking Guide tabs
+    function showHikeTab(tabIndex) {
+      const section = document.getElementById('section-hike-guide');
+      if (!section) return;
+      section.querySelectorAll('.day-tab').forEach((tab, index) => {
+        tab.classList.toggle('active', index === tabIndex - 1);
+      });
+      section.querySelectorAll('.day-content').forEach((content, index) => {
+        content.classList.toggle('active', index === tabIndex - 1);
+      });
+    }
+
+    // Navigate to specific tab
+    function navigateToTab(sectionId, tabIndex) {
+      // Close menu if open
+      const container = document.querySelector('.menu-grid-container');
+      if (container.classList.contains('show')) {
+        toggleMenu();
+      }
+
+      const section = document.getElementById(sectionId);
+      if (section) {
+        // Expand section if collapsed
+        const header = section.querySelector('.section-header');
+        const content = section.querySelector('.section-content');
+        if (content && content.classList.contains('hidden')) {
+          header.classList.remove('collapsed');
+          content.classList.remove('hidden');
+        }
+
+        // Scroll to section
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Switch Tab
+        if (sectionId === 'section-guide') {
+          showGuideTab(tabIndex);
+        } else if (sectionId === 'section-hike-guide') {
+          showHikeTab(tabIndex);
+        }
+      }
     }
 
     // Checklist toggle
