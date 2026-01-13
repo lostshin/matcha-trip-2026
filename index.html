@@ -115,7 +115,7 @@
 
     .scroll-hint {
       position: absolute;
-      bottom: 100px;
+      bottom: 145px;
       left: 50%;
       transform: translateX(-50%);
       color: white;
@@ -976,6 +976,98 @@
       cursor: pointer;
       font-family: inherit;
     }
+
+    /* === Floating Quick Nav === */
+    .quick-nav-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--matcha) 0%, var(--matcha-dark) 100%);
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(74, 144, 164, 0.4);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quick-nav-fab:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(74, 144, 164, 0.5);
+    }
+
+    .quick-nav-fab.active {
+      transform: rotate(45deg);
+      background: var(--matcha-dark);
+    }
+
+    .quick-nav-menu {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      padding: 0.5rem;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px) scale(0.95);
+      transition: all 0.3s ease;
+      max-height: 60vh;
+      overflow-y: auto;
+      min-width: 180px;
+    }
+
+    .quick-nav-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .quick-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .quick-nav-item:hover {
+      background: var(--matcha-pale);
+      color: var(--matcha-dark);
+    }
+
+    .quick-nav-item-icon {
+      font-size: 1rem;
+    }
+
+    .quick-nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .quick-nav-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
   </style>
 </head>
 <body>
@@ -1000,7 +1092,7 @@
   <main class="main">
 
     <!-- 行程總覽 -->
-    <div class="section">
+    <div class="section" id="section-itinerary">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">📅</span>
         <span class="section-title">三天行程總覽</span>
@@ -1264,7 +1356,7 @@
     </div>
 
     <!-- 住宿資訊 -->
-    <div class="section">
+    <div class="section" id="section-hotel">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">🏨</span>
         <span class="section-title">住宿資訊</span>
@@ -1313,7 +1405,7 @@
     </div>
 
     <!-- 美食推薦 -->
-    <div class="section">
+    <div class="section" id="section-food">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">🍽️</span>
         <span class="section-title">美食推薦</span>
@@ -1411,7 +1503,7 @@
     </div>
 
     <!-- 景點推薦 -->
-    <div class="section">
+    <div class="section" id="section-spots">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">📸</span>
         <span class="section-title">景點推薦</span>
@@ -1497,7 +1589,7 @@
     </div>
 
     <!-- 伴手禮推薦 -->
-    <div class="section">
+    <div class="section" id="section-souvenir">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">🎁</span>
         <span class="section-title">伴手禮推薦</span>
@@ -1574,7 +1666,7 @@
     </div>
 
     <!-- 預算摘要 -->
-    <div class="section">
+    <div class="section" id="section-budget">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">💰</span>
         <span class="section-title">預算摘要</span>
@@ -1663,7 +1755,7 @@
     </div>
 
     <!-- 分帳計算器 -->
-    <div class="section">
+    <div class="section" id="section-calculator">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">🧮</span>
         <span class="section-title">分帳計算器</span>
@@ -1719,7 +1811,7 @@
     </div>
 
     <!-- 登山速查 -->
-    <div class="section">
+    <div class="section" id="section-hiking">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">🥾</span>
         <span class="section-title">登山日速查</span>
@@ -1779,52 +1871,52 @@
 
         <h4 style="margin: 1rem 0 0.75rem; color: var(--matcha-dark);">✅ 必備裝備</h4>
         <div class="checklist">
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>登山鞋</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>登山杖</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>雨衣雨褲</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>頭燈</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>水 2L+</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>行動糧</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>保暖中層</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>防滑鞋套</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>行動電源</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>離線地圖</span>
@@ -1842,7 +1934,7 @@
     </div>
 
     <!-- 植物生態觀察指南 -->
-    <div class="section">
+    <div class="section" id="section-plants">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">🌿</span>
         <span class="section-title">植物生態觀察指南</span>
@@ -1997,7 +2089,7 @@
     </div>
 
     <!-- 行前檢核清單 -->
-    <div class="section">
+    <div class="section" id="section-checklist">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">✅</span>
         <span class="section-title">行前檢核清單</span>
@@ -2042,42 +2134,42 @@
 
         <div class="subsection-title">📋 待完成</div>
         <div class="checklist">
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>GPX 離線地圖</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>天氣確認（3天前）</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>通知留守人行程</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>登山保險</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>裝備檢查</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>春記百貨確認</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>油價查詢</span>
           </label>
-          <label class="checklist-item" onclick="toggleCheck(this)">
+          <label class="checklist-item" onclick="toggleCheck(this, event)">
             <input type="checkbox">
             <span class="checklist-box">✓</span>
             <span>分帳方案確認</span>
@@ -2112,7 +2204,7 @@
     </div>
 
     <!-- 緊急聯絡 -->
-    <div class="section">
+    <div class="section" id="section-emergency">
       <div class="section-header" onclick="toggleSection(this)">
         <span class="section-icon">🆘</span>
         <span class="section-title">緊急聯絡</span>
@@ -2198,6 +2290,47 @@
 
   </main>
 
+  <!-- Quick Navigation -->
+  <div class="quick-nav-overlay" onclick="toggleQuickNav()"></div>
+  <nav class="quick-nav-menu">
+    <a class="quick-nav-item" href="#section-itinerary" onclick="scrollToSection(event, 'section-itinerary')">
+      <span class="quick-nav-item-icon">📅</span> 行程總覽
+    </a>
+    <a class="quick-nav-item" href="#section-hotel" onclick="scrollToSection(event, 'section-hotel')">
+      <span class="quick-nav-item-icon">🏨</span> 住宿資訊
+    </a>
+    <a class="quick-nav-item" href="#section-food" onclick="scrollToSection(event, 'section-food')">
+      <span class="quick-nav-item-icon">🍽️</span> 美食推薦
+    </a>
+    <a class="quick-nav-item" href="#section-spots" onclick="scrollToSection(event, 'section-spots')">
+      <span class="quick-nav-item-icon">🎯</span> 景點推薦
+    </a>
+    <a class="quick-nav-item" href="#section-souvenir" onclick="scrollToSection(event, 'section-souvenir')">
+      <span class="quick-nav-item-icon">🎁</span> 伴手禮
+    </a>
+    <a class="quick-nav-item" href="#section-budget" onclick="scrollToSection(event, 'section-budget')">
+      <span class="quick-nav-item-icon">💰</span> 預算摘要
+    </a>
+    <a class="quick-nav-item" href="#section-calculator" onclick="scrollToSection(event, 'section-calculator')">
+      <span class="quick-nav-item-icon">🧮</span> 分帳計算
+    </a>
+    <a class="quick-nav-item" href="#section-hiking" onclick="scrollToSection(event, 'section-hiking')">
+      <span class="quick-nav-item-icon">🥾</span> 登山速查
+    </a>
+    <a class="quick-nav-item" href="#section-plants" onclick="scrollToSection(event, 'section-plants')">
+      <span class="quick-nav-item-icon">🌿</span> 植物指南
+    </a>
+    <a class="quick-nav-item" href="#section-checklist" onclick="scrollToSection(event, 'section-checklist')">
+      <span class="quick-nav-item-icon">✅</span> 行前檢核
+    </a>
+    <a class="quick-nav-item" href="#section-emergency" onclick="scrollToSection(event, 'section-emergency')">
+      <span class="quick-nav-item-icon">🆘</span> 緊急聯絡
+    </a>
+  </nav>
+  <button class="quick-nav-fab" onclick="toggleQuickNav()" title="快速導覽">
+    ☰
+  </button>
+
   <!-- Footer -->
   <footer class="footer">
     <p class="footer-wish">🌿 願旅途平安，生日快樂！</p>
@@ -2210,6 +2343,34 @@
   <script src="firebase-config.js"></script>
 
   <script>
+    // Quick Navigation
+    function toggleQuickNav() {
+      const fab = document.querySelector('.quick-nav-fab');
+      const menu = document.querySelector('.quick-nav-menu');
+      const overlay = document.querySelector('.quick-nav-overlay');
+
+      fab.classList.toggle('active');
+      menu.classList.toggle('show');
+      overlay.classList.toggle('show');
+    }
+
+    function scrollToSection(event, sectionId) {
+      event.preventDefault();
+      toggleQuickNav();
+
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Expand section if collapsed
+        const header = section.querySelector('.section-header');
+        const content = section.querySelector('.section-content');
+        if (content && content.classList.contains('hidden')) {
+          header.classList.remove('collapsed');
+          content.classList.remove('hidden');
+        }
+      }
+    }
+
     // Toggle section expand/collapse
     function toggleSection(header) {
       header.classList.toggle('collapsed');
@@ -2230,7 +2391,8 @@
     }
 
     // Checklist toggle
-    function toggleCheck(item) {
+    function toggleCheck(item, event) {
+      if (event) event.preventDefault();
       item.classList.toggle('checked');
       const checkbox = item.querySelector('input');
       checkbox.checked = !checkbox.checked;
