@@ -977,96 +977,174 @@
       font-family: inherit;
     }
 
-    /* === Floating Quick Nav === */
-    .quick-nav-fab {
+
+    /* === Matcha Dock (Bottom Navigation) === */
+    .matcha-dock {
       position: fixed;
       bottom: 24px;
-      right: 24px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--matcha) 0%, var(--matcha-dark) 100%);
-      color: white;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(74, 144, 164, 0.4);
-      z-index: 1000;
-      transition: all 0.3s ease;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 6px 6px;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px rgba(74, 144, 164, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      z-index: 1000;
+      gap: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .matcha-dock-item {
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    .quick-nav-fab:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(74, 144, 164, 0.5);
-    }
-
-    .quick-nav-fab.active {
-      transform: rotate(45deg);
-      background: var(--matcha-dark);
-    }
-
-    .quick-nav-menu {
-      position: fixed;
-      bottom: 90px;
-      right: 24px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-      padding: 0.5rem;
-      z-index: 999;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px) scale(0.95);
-      transition: all 0.3s ease;
-      max-height: 60vh;
-      overflow-y: auto;
-      min-width: 180px;
-    }
-
-    .quick-nav-menu.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1);
-    }
-
-    .quick-nav-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 0.75rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      color: var(--text);
+      width: 60px;
+      height: 50px;
+      border-radius: 20px;
       cursor: pointer;
+      color: var(--text-light);
       transition: all 0.2s ease;
+      font-size: 0.7rem;
+      gap: 2px;
       text-decoration: none;
     }
 
-    .quick-nav-item:hover {
+    .matcha-dock-item:hover,
+    .matcha-dock-item.active {
       background: var(--matcha-pale);
       color: var(--matcha-dark);
     }
 
-    .quick-nav-item-icon {
-      font-size: 1rem;
+    .matcha-dock-icon {
+      font-size: 1.2rem;
     }
 
-    .quick-nav-overlay {
+    /* === Grid Menu (Bottom Sheet) === */
+    .menu-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.4);
       z-index: 998;
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
+      backdrop-filter: blur(2px);
     }
 
-    .quick-nav-overlay.show {
+    .menu-overlay.show {
       opacity: 1;
       visibility: visible;
+    }
+
+    .menu-grid-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #faf9f6; /* Cream white */
+      border-radius: 24px 24px 0 0;
+      padding: 1.5rem 1.5rem 6rem; /* Extra padding at bottom for Dock */
+      z-index: 999;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .menu-grid-container.show {
+      transform: translateY(0);
+    }
+
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .menu-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--matcha-dark);
+    }
+
+    .menu-close {
+      background: var(--cream-dark);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      cursor: pointer;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
+      padding: 1rem 0.5rem;
+      background: white;
+      border-radius: 16px;
+      border: 2px solid var(--cream-dark);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .menu-item:active {
+      transform: scale(0.96);
+    }
+
+    .menu-item-icon {
+      font-size: 1.8rem;
+    }
+
+    .menu-item-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Specific colors for menu items to make them look like stickers */
+    .menu-item:nth-child(1) { border-color: #ffd8d8; background: #fff5f5; }
+    .menu-item:nth-child(2) { border-color: #d8f0ff; background: #f0faff; }
+    .menu-item:nth-child(3) { border-color: #fffacd; background: #fffff0; }
+    .menu-item:hover {
+      border-color: var(--matcha);
+      box-shadow: 0 4px 12px rgba(138, 172, 138, 0.2);
+    }
+
+    @media (max-width: 360px) {
+      .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+      }
+      .menu-item {
+        padding: 0.75rem 0.25rem;
+      }
+      .menu-item-icon {
+        font-size: 1.5rem;
+      }
+      .menu-item-label {
+        font-size: 0.75rem;
+      }
     }
   </style>
 </head>
@@ -2290,46 +2368,77 @@
 
   </main>
 
-  <!-- Quick Navigation -->
-  <div class="quick-nav-overlay" onclick="toggleQuickNav()"></div>
-  <nav class="quick-nav-menu">
-    <a class="quick-nav-item" href="#section-itinerary" onclick="scrollToSection(event, 'section-itinerary')">
-      <span class="quick-nav-item-icon">📅</span> 行程總覽
+
+  <!-- Matcha Dock & Grid Menu -->
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+
+  <div class="menu-grid-container">
+    <div class="menu-header">
+      <span class="menu-title">🍵 快速導覽</span>
+      <button class="menu-close" onclick="toggleMenu()">✕</button>
+    </div>
+    <div class="menu-grid">
+      <a class="menu-item" onclick="scrollToSection(event, 'section-itinerary')">
+        <span class="menu-item-icon">📅</span>
+        <span class="menu-item-label">行程總覽</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-hotel')">
+        <span class="menu-item-icon">🏨</span>
+        <span class="menu-item-label">住宿資訊</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-food')">
+        <span class="menu-item-icon">🍽️</span>
+        <span class="menu-item-label">美食推薦</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-spots')">
+        <span class="menu-item-icon">🎯</span>
+        <span class="menu-item-label">景點推薦</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-souvenir')">
+        <span class="menu-item-icon">🎁</span>
+        <span class="menu-item-label">伴手禮</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-budget')">
+        <span class="menu-item-icon">💰</span>
+        <span class="menu-item-label">預算摘要</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-calculator')">
+        <span class="menu-item-icon">🧮</span>
+        <span class="menu-item-label">分帳計算</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-hiking')">
+        <span class="menu-item-icon">🥾</span>
+        <span class="menu-item-label">登山速查</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-plants')">
+        <span class="menu-item-icon">🌿</span>
+        <span class="menu-item-label">植物指南</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-checklist')">
+        <span class="menu-item-icon">✅</span>
+        <span class="menu-item-label">行前檢核</span>
+      </a>
+      <a class="menu-item" onclick="scrollToSection(event, 'section-emergency')">
+        <span class="menu-item-icon">🆘</span>
+        <span class="menu-item-label">緊急聯絡</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="matcha-dock">
+    <a href="#" class="matcha-dock-item" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+      <span class="matcha-dock-icon">🏠</span>
+      <span>首頁</span>
     </a>
-    <a class="quick-nav-item" href="#section-hotel" onclick="scrollToSection(event, 'section-hotel')">
-      <span class="quick-nav-item-icon">🏨</span> 住宿資訊
+    <a href="#section-itinerary" class="matcha-dock-item" onclick="scrollToSection(event, 'section-itinerary')">
+      <span class="matcha-dock-icon">📍</span>
+      <span>行程</span>
     </a>
-    <a class="quick-nav-item" href="#section-food" onclick="scrollToSection(event, 'section-food')">
-      <span class="quick-nav-item-icon">🍽️</span> 美食推薦
-    </a>
-    <a class="quick-nav-item" href="#section-spots" onclick="scrollToSection(event, 'section-spots')">
-      <span class="quick-nav-item-icon">🎯</span> 景點推薦
-    </a>
-    <a class="quick-nav-item" href="#section-souvenir" onclick="scrollToSection(event, 'section-souvenir')">
-      <span class="quick-nav-item-icon">🎁</span> 伴手禮
-    </a>
-    <a class="quick-nav-item" href="#section-budget" onclick="scrollToSection(event, 'section-budget')">
-      <span class="quick-nav-item-icon">💰</span> 預算摘要
-    </a>
-    <a class="quick-nav-item" href="#section-calculator" onclick="scrollToSection(event, 'section-calculator')">
-      <span class="quick-nav-item-icon">🧮</span> 分帳計算
-    </a>
-    <a class="quick-nav-item" href="#section-hiking" onclick="scrollToSection(event, 'section-hiking')">
-      <span class="quick-nav-item-icon">🥾</span> 登山速查
-    </a>
-    <a class="quick-nav-item" href="#section-plants" onclick="scrollToSection(event, 'section-plants')">
-      <span class="quick-nav-item-icon">🌿</span> 植物指南
-    </a>
-    <a class="quick-nav-item" href="#section-checklist" onclick="scrollToSection(event, 'section-checklist')">
-      <span class="quick-nav-item-icon">✅</span> 行前檢核
-    </a>
-    <a class="quick-nav-item" href="#section-emergency" onclick="scrollToSection(event, 'section-emergency')">
-      <span class="quick-nav-item-icon">🆘</span> 緊急聯絡
-    </a>
+    <div class="matcha-dock-item" onclick="toggleMenu()">
+      <span class="matcha-dock-icon">🍱</span>
+      <span>選單</span>
+    </div>
   </nav>
-  <button class="quick-nav-fab" onclick="toggleQuickNav()" title="快速導覽">
-    ☰
-  </button>
 
   <!-- Footer -->
   <footer class="footer">
@@ -2343,20 +2452,22 @@
   <script src="firebase-config.js"></script>
 
   <script>
-    // Quick Navigation
-    function toggleQuickNav() {
-      const fab = document.querySelector('.quick-nav-fab');
-      const menu = document.querySelector('.quick-nav-menu');
-      const overlay = document.querySelector('.quick-nav-overlay');
+    // Matcha Dock & Grid Menu Logic
+    function toggleMenu() {
+      const container = document.querySelector('.menu-grid-container');
+      const overlay = document.querySelector('.menu-overlay');
 
-      fab.classList.toggle('active');
-      menu.classList.toggle('show');
+      container.classList.toggle('show');
       overlay.classList.toggle('show');
     }
 
     function scrollToSection(event, sectionId) {
       event.preventDefault();
-      toggleQuickNav();
+      // Close menu if open
+      const container = document.querySelector('.menu-grid-container');
+      if (container.classList.contains('show')) {
+        toggleMenu();
+      }
 
       const section = document.getElementById(sectionId);
       if (section) {
