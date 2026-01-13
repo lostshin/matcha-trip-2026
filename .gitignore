@@ -1,7 +1,59 @@
 # OS files
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+*~
 
 # IDE
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Cache
+.cache/
+.parcel-cache/
+.turbo/
+
+# Testing
+coverage/
+
+# Misc
+*.bak
+*.tmp
+*.temp
+
+# AI Development Tools
+.agent/
+.shared/
+.claude/
+.cursor/
+.gemini/
+.copilot/
+.aider*
+.continue/
