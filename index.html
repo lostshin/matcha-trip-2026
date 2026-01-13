@@ -1,0 +1,2429 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抹茶山生日旅遊 2026</title>
+
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#4a7c43">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="抹茶山旅遊">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-512.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --matcha-dark: #2d5a27;
+      --matcha: #4a7c43;
+      --matcha-light: #7da876;
+      --matcha-pale: #c8e6c9;
+      --cream: #faf8f3;
+      --cream-dark: #f0ebe0;
+      --warm: #d4a574;
+      --warm-light: #e8cdb0;
+      --text: #2c3e2c;
+      --text-light: #5a6b5a;
+      --danger: #c75050;
+      --shadow: rgba(45, 90, 39, 0.12);
+      --blue: #4a90a4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Zen Maru Gothic', 'Noto Serif TC', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* === Hero Section === */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+      background: linear-gradient(165deg, var(--matcha-dark) 0%, var(--matcha) 40%, var(--matcha-light) 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23faf8f3' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,181.3C960,203,1056,213,1152,197.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+      background-size: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--matcha-pale);
+      margin-bottom: 2rem;
+      letter-spacing: 0.3em;
+    }
+
+    .hero-date {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      color: white;
+      font-size: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-info {
+      color: var(--matcha-pale);
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    /* === Main Content === */
+    .main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* === Section Styles === */
+    .section {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: white;
+      border-radius: 16px 16px 0 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 15px var(--shadow);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .section-header:hover {
+      background: var(--cream);
+    }
+
+    .section-header.collapsed {
+      border-radius: 16px;
+    }
+
+    .section-icon {
+      font-size: 1.5rem;
+    }
+
+    .section-title {
+      flex: 1;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--matcha-dark);
+    }
+
+    .section-toggle {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--matcha);
+      transition: transform 0.3s ease;
+    }
+
+    .section-header.collapsed .section-toggle {
+      transform: rotate(-90deg);
+    }
+
+    .section-content {
+      background: white;
+      border-radius: 0 0 16px 16px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 20px var(--shadow);
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .section-content.hidden {
+      max-height: 0;
+      padding: 0 1.25rem;
+      opacity: 0;
+    }
+
+    /* === Day Cards === */
+    .day-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .day-tab {
+      flex: 1;
+      padding: 0.75rem 0.5rem;
+      border: none;
+      background: var(--cream);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .day-tab.active {
+      background: var(--matcha);
+      color: white;
+      box-shadow: 0 4px 15px rgba(74, 124, 67, 0.3);
+    }
+
+    .day-tab-label {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    .day-tab-date {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .day-content {
+      display: none;
+    }
+
+    .day-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .schedule-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px dashed var(--cream-dark);
+    }
+
+    .schedule-item:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-time {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-weight: 700;
+      color: var(--matcha);
+      min-width: 55px;
+      font-size: 0.9rem;
+    }
+
+    .schedule-event {
+      flex: 1;
+    }
+
+    .schedule-title {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .schedule-note {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* === Info Cards === */
+    .info-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-card-title {
+      font-weight: 600;
+      color: var(--matcha-dark);
+      flex: 1;
+    }
+
+    .info-card-badge {
+      font-size: 0.7rem;
+      background: var(--matcha);
+      color: white;
+      padding: 0.15rem 0.5rem;
+      border-radius: 20px;
+    }
+
+    .info-card-content {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .info-card-content a {
+      color: var(--matcha);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* === Navigation Button === */
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.4rem 0.75rem;
+      background: linear-gradient(135deg, var(--blue) 0%, #3a7a8a 100%);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin-top: 0.5rem;
+    }
+
+    .nav-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(74, 144, 164, 0.4);
+    }
+
+    .nav-btn-small {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.7rem;
+      margin-top: 0;
+      margin-left: 0.5rem;
+    }
+
+    /* === Checkpoint Table === */
+    .checkpoint-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .checkpoint-table th {
+      text-align: left;
+      padding: 0.5rem;
+      background: var(--matcha);
+      color: white;
+      font-weight: 500;
+    }
+
+    .checkpoint-table th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+
+    .checkpoint-table th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .checkpoint-table td {
+      padding: 0.6rem 0.5rem;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .checkpoint-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .retreat-warning {
+      color: var(--danger);
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    /* === Equipment Checklist === */
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: var(--cream);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .checklist-item:hover {
+      background: var(--matcha-pale);
+    }
+
+    .checklist-item.checked {
+      background: var(--matcha-pale);
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    .checklist-item input {
+      display: none;
+    }
+
+    .checklist-box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--matcha);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: transparent;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .checklist-item.checked .checklist-box {
+      background: var(--matcha);
+      color: white;
+    }
+
+    /* === Emergency Section === */
+    .emergency-card {
+      background: linear-gradient(135deg, var(--danger) 0%, #a03030 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .emergency-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .emergency-content {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .emergency-content a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0.75rem;
+      background: var(--cream);
+      border-radius: 8px;
+    }
+
+    .contact-name {
+      font-weight: 500;
+    }
+
+    .contact-role {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .contact-phone {
+      color: var(--matcha);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* === Warning Box === */
+    .warning-box {
+      background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+      border-left: 4px solid var(--warm);
+      border-radius: 0 12px 12px 0;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .warning-box-title {
+      font-weight: 600;
+      color: #856404;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .warning-box-content {
+      font-size: 0.85rem;
+      color: #856404;
+    }
+
+    /* === Restaurant/Place List === */
+    .place-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: var(--cream);
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .place-item:hover {
+      background: var(--cream-dark);
+    }
+
+    .place-rank {
+      width: 28px;
+      height: 28px;
+      background: var(--matcha);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .place-rank.gift {
+      background: var(--warm);
+    }
+
+    .place-rank.spot {
+      background: var(--blue);
+    }
+
+    .place-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .place-name {
+      font-weight: 600;
+      color: var(--matcha-dark);
+    }
+
+    .place-tag {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .place-rating {
+      color: var(--warm);
+      font-weight: 600;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .place-nav {
+      flex-shrink: 0;
+    }
+
+    .place-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--blue);
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .place-nav a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(74, 144, 164, 0.4);
+    }
+
+    /* === Footer === */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    .footer-wish {
+      font-family: 'Noto Serif TC', serif;
+      color: var(--matcha);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* === Subsection Title === */
+    .subsection-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--matcha-dark);
+      margin: 1rem 0 0.5rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid var(--matcha-pale);
+    }
+
+    /* === Timeline === */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.6rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--matcha), var(--matcha-light));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.25rem;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -1.65rem;
+      top: 0;
+      font-size: 1.1rem;
+      background: var(--cream);
+      padding: 0.1rem;
+    }
+
+    .timeline-content {
+      background: white;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      color: var(--matcha-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    /* === Pickup Info === */
+    .highlight-card {
+      background: linear-gradient(135deg, var(--matcha-pale) 0%, white 100%);
+      border: 2px solid var(--matcha-light);
+    }
+
+    .pickup-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .pickup-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pickup-label {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .pickup-value {
+      font-weight: 600;
+      color: var(--matcha-dark);
+    }
+
+    .pickup-value a {
+      color: var(--matcha);
+    }
+
+    .pickup-note {
+      margin-top: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--warm-light);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    /* === Budget === */
+    .budget-section {
+      margin-bottom: 1rem;
+    }
+
+    .budget-title {
+      font-weight: 600;
+      color: var(--matcha-dark);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px dashed var(--matcha-light);
+    }
+
+    .budget-items {
+      background: white;
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .budget-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+      font-size: 0.9rem;
+    }
+
+    .budget-row:last-child {
+      border-bottom: none;
+    }
+
+    .budget-amount {
+      font-weight: 600;
+      color: var(--matcha-dark);
+    }
+
+    .budget-total {
+      background: linear-gradient(135deg, var(--matcha) 0%, var(--matcha-dark) 100%);
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 0.5rem;
+    }
+
+    .budget-total-title {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    .budget-total-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .budget-total-item {
+      text-align: center;
+      background: rgba(255,255,255,0.15);
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
+
+    .budget-total-label {
+      display: block;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .budget-total-value {
+      display: block;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-top: 0.25rem;
+    }
+
+    /* === Expense Calculator === */
+    .expense-form {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 0.75rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--matcha-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--cream-dark);
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--matcha);
+      box-shadow: 0 0 0 2px var(--matcha-pale);
+    }
+
+    .split-checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .split-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.9rem;
+      padding: 0.3rem 0.5rem;
+      background: var(--cream-dark);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .split-checkbox:has(input:checked) {
+      background: var(--matcha-pale);
+      color: var(--matcha-dark);
+    }
+
+    .add-expense-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--matcha);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .add-expense-btn:active {
+      background: var(--matcha-dark);
+    }
+
+    .expense-list {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .expense-list-title {
+      font-weight: 600;
+      color: var(--matcha-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .expense-empty {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .expense-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+      font-size: 0.9rem;
+    }
+
+    .expense-item:last-child {
+      border-bottom: none;
+    }
+
+    .expense-item-info {
+      flex: 1;
+    }
+
+    .expense-item-name {
+      font-weight: 500;
+    }
+
+    .expense-item-detail {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .expense-item-amount {
+      font-weight: 600;
+      color: var(--matcha-dark);
+    }
+
+    .expense-item-delete {
+      margin-left: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      background: none;
+      border: none;
+      color: var(--danger);
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .settlement {
+      background: linear-gradient(135deg, var(--warm-light) 0%, white 100%);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      border: 2px solid var(--warm);
+    }
+
+    .settlement-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .settlement-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+    }
+
+    .settlement-item.positive {
+      color: var(--matcha-dark);
+    }
+
+    .settlement-item.negative {
+      color: var(--danger);
+    }
+
+    .clear-btn {
+      width: 100%;
+      padding: 0.6rem;
+      background: var(--cream-dark);
+      color: var(--text-light);
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>抹茶山</h1>
+      <p class="hero-subtitle">生日旅遊小手冊</p>
+      <div class="hero-date">
+        <span>2026 / 1 / 24 - 26</span>
+      </div>
+      <p class="hero-info">
+        三天兩夜 ・ 宜蘭礁溪<br>
+        🥾 登山 ・ ♨️ 溫泉 ・ 🎂 慶生
+      </p>
+    </div>
+    <div class="scroll-hint">↓ 往下滑動</div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- 行程總覽 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">📅</span>
+        <span class="section-title">三天行程總覽</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="day-tabs">
+          <button class="day-tab active" onclick="showDay(1)">
+            <div class="day-tab-label">Day 1</div>
+            <div class="day-tab-date">1/24 六</div>
+          </button>
+          <button class="day-tab" onclick="showDay(2)">
+            <div class="day-tab-label">Day 2</div>
+            <div class="day-tab-date">1/25 日</div>
+          </button>
+          <button class="day-tab" onclick="showDay(3)">
+            <div class="day-tab-label">Day 3</div>
+            <div class="day-tab-date">1/26 一</div>
+          </button>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="day-content active" id="day1">
+          <div class="schedule-item">
+            <span class="schedule-time">05:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🚗 高雄出發</div>
+              <div class="schedule-note">均林開車，全程約 5.5 小時</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">10:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">抵達礁溪</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">11:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🍜 黑海時光粥</div>
+              <div class="schedule-note">Google 4.8★ 暖胃午餐 <a href="https://www.google.com/maps/search/?api=1&query=黑海時光粥+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">12:15</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🚶 龍潭湖環湖步道</div>
+              <div class="schedule-note">輕鬆散步約 40 分鐘 <a href="https://www.google.com/maps/search/?api=1&query=龍潭湖+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">14:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🧶 春記百貨</div>
+              <div class="schedule-note">毛線/手工藝老店 <a href="https://www.google.com/maps/search/?api=1&query=春記百貨+宜蘭市康樂街" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">15:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🍃 宜蘭文學館</div>
+              <div class="schedule-note">日式老屋、設治紀念館 <a href="https://www.google.com/maps/search/?api=1&query=宜蘭文學館" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">17:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🏨 Check-in</div>
+              <div class="schedule-note">福岡6號溫泉飯店 <a href="https://www.google.com/maps/search/?api=1&query=福岡6號溫泉飯店+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">18:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🍽️ 里海咖啡</div>
+              <div class="schedule-note">已訂位！鮮魚定食 <a href="https://www.google.com/maps/search/?api=1&query=里海咖啡+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-content" id="day2">
+          <div class="info-card" style="margin-bottom: 1rem; background: linear-gradient(135deg, var(--matcha-pale) 0%, white 100%);">
+            <div class="info-card-content" style="text-align: center; font-size: 0.9rem;">
+              🥾 <strong>登山隊</strong>：均怡、均林、怡君（3人）<br>
+              🎨 <strong>青花瓷隊</strong>：莉亞、莉亞姊（2人）→ 三星 DIY
+            </div>
+          </div>
+
+          <div class="subsection-title">🥾 登山隊行程</div>
+          <div class="schedule-item">
+            <span class="schedule-time">05:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🌅 早餐</div>
+              <div class="schedule-note">前晚準備好</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">06:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🥾 開始登山</div>
+              <div class="schedule-note">五峰旗停車場出發 <a href="https://www.google.com/maps/search/?api=1&query=五峰旗停車場" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">10:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">⛰️ 登頂抹茶山！</div>
+              <div class="schedule-note">拍照、休息、午餐</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">14:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">回到停車場</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">14:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">💆 悠宅 SPA 按摩</div>
+              <div class="schedule-note">紓緩登山疲勞 <a href="https://www.google.com/maps/search/?api=1&query=悠宅SPA養生會館+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+
+          <div class="subsection-title">🎨 青花瓷隊行程</div>
+          <div class="schedule-item">
+            <span class="schedule-time">09:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🛵 礁溪租機車</div>
+              <div class="schedule-note">建議前晚預約</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">10:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🎨 三星四季青花瓷 DIY</div>
+              <div class="schedule-note">✅ 已預約 10:30 場次 <a href="https://www.google.com/maps/search/?api=1&query=三星四季青花瓷+宜蘭" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">12:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🍽️ 雀榕咖啡午餐</div>
+              <div class="schedule-note">同園區內</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">13:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🍂 三星周邊散步</div>
+              <div class="schedule-note">落羽松、慢活時光</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">16:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🛵 返回礁溪會合</div>
+              <div class="schedule-note">還機車後與登山隊會合</div>
+            </div>
+          </div>
+
+          <div class="subsection-title">👥 會合後（全員 5 人）</div>
+          <div class="schedule-item">
+            <span class="schedule-time">16:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🏨 Check-in</div>
+              <div class="schedule-note">悠宅SPA養生會館</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">16:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">♨️ 飯店湯屋泡溫泉</div>
+              <div class="schedule-note">爬完山泡湯超舒服！</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">18:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🎂 慶生晚餐</div>
+              <div class="schedule-note">芭樂狗（已訂位！）東歐烏克蘭料理 <a href="https://www.google.com/maps/search/?api=1&query=芭樂狗+宜蘭市復興路" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">20:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🍻 小酌慶祝</div>
+              <div class="schedule-note">跨力 Co-Link <a href="https://www.google.com/maps/search/?api=1&query=跨力+Co-Link+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+
+          <div class="info-card" style="margin-top: 1rem;">
+            <div class="info-card-header">
+              <span class="info-card-title">🎨 三星四季青花瓷</span>
+              <span class="info-card-badge">已預約</span>
+            </div>
+            <div class="info-card-content" style="font-size: 0.85rem;">
+              📍 宜蘭縣三星鄉行健村行健二路二段 275 號<br>
+              📞 <a href="tel:03-989-2789">03-989-2789</a><br>
+              🕐 假日場次：10:30 / 13:00 / 15:30<br>
+              💰 600-1,200 元/件（依器皿，含燒製費）<br>
+              ⚠️ 陪同未手作者低消 150 元<br>
+              🔗 <a href="https://inline.app/booking/-MVVm2JnstapOXZfTiF9:inline-live-2/-MVVm2RU7G1DWt-4MMwL?language=zh-tw" target="_blank">預約連結</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-content" id="day3">
+          <div class="schedule-item">
+            <span class="schedule-time">08:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">☕ 飯店早餐</div>
+              <div class="schedule-note">悠宅早餐（含住宿）</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">10:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🏘️ 頭城老街</div>
+              <div class="schedule-note">彩繪巷、土地公扭蛋 <a href="https://www.google.com/maps/search/?api=1&query=頭城老街" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">11:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🏛️ 蘭陽博物館</div>
+              <div class="schedule-note">門票 100 元 <a href="https://www.google.com/maps/search/?api=1&query=蘭陽博物館" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">12:00</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🦐 烏石港海鮮</div>
+              <div class="schedule-note">返程前午餐 <a href="https://www.google.com/maps/search/?api=1&query=烏石港+海鮮餐廳" target="_blank" class="nav-btn nav-btn-small">📍 導航</a></div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">13:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🚗 返程高雄</div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="schedule-time">18:30</span>
+            <div class="schedule-event">
+              <div class="schedule-title">🏠 抵達高雄</div>
+              <div class="schedule-note">平安回家！</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="warning-box">
+          <div class="warning-box-title">⚠️ 重要提醒</div>
+          <div class="warning-box-content">
+            🌅 日落 17:33 ｜ 🌡️ 山頂體感 0-5°C ｜ 📵 通天橋後無訊號
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 住宿資訊 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🏨</span>
+        <span class="section-title">住宿資訊</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="info-card">
+          <div class="info-card-header">
+            <span class="info-card-title">福岡6號溫泉飯店</span>
+            <span class="info-card-badge">第一晚 1/24</span>
+          </div>
+          <div class="info-card-content">
+            📞 <a href="tel:03-987-5777">03-987-5777</a><br>
+            🕐 Check-in 17:00 / Check-out 11:00<br>
+            🛏️ 家庭間（6人房）32㎡<br>
+            💰 <strong>TWD 5,737.61</strong>（含稅，5人分攤）<br>
+            📋 訂單編號：1680174478<br>
+            ✅ 含早餐、免費停車、WiFi<br>
+            ⚠️ <span style="color: var(--danger);">1/20 23:59 前可免費取消</span>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=福岡6號溫泉飯店+礁溪" target="_blank" class="nav-btn">📍 開啟 Google Maps 導航</a>
+        </div>
+        <div class="info-card">
+          <div class="info-card-header">
+            <span class="info-card-title">悠宅SPA養生會館</span>
+            <span class="info-card-badge">第二晚 1/25</span>
+          </div>
+          <div class="info-card-content">
+            📞 <a href="tel:03-988-8933">03-988-8933</a><br>
+            🕐 Check-in 16:00 / Check-out 11:00<br>
+            💰 <strong>TWD 6,375.46</strong>（含稅）<br>
+            📋 訂單編號：1680991277、1680991658<br>
+            💆 專業養生按摩、含早餐<br>
+            ⭐ Google 4.9★（2500+ 則評論）
+          </div>
+          <div class="info-card" style="margin-top: 0.75rem; background: var(--cream-dark);">
+            <div class="info-card-content" style="font-size: 0.85rem;">
+              <strong>房型分配</strong><br>
+              🛏️ 雙人房：均林、怡君（TWD 2,705.30）<br>
+              🛏️ 家庭房：均怡、莉亞、莉亞姊（TWD 3,670.16）
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=悠宅SPA養生會館+礁溪" target="_blank" class="nav-btn">📍 開啟 Google Maps 導航</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 美食推薦 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🍽️</span>
+        <span class="section-title">美食推薦</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="info-card" style="background: linear-gradient(135deg, var(--matcha-pale) 0%, white 100%);">
+          <div class="info-card-header">
+            <span class="info-card-title">📝 已訂位餐廳</span>
+          </div>
+          <div class="info-card-content">
+            <div style="margin-bottom: 0.5rem;">
+              <strong>Day1 里海咖啡</strong> 1/24（六）18:30 5人
+              <a href="https://www.google.com/maps/search/?api=1&query=里海咖啡+礁溪" target="_blank" class="nav-btn nav-btn-small">📍 導航</a>
+            </div>
+            <div>
+              <strong>Day2 芭樂狗</strong> 🎂 1/25（日）18:00 5人
+              <a href="https://www.google.com/maps/search/?api=1&query=芭樂狗+宜蘭市復興路" target="_blank" class="nav-btn nav-btn-small">📍 導航</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection-title">🍽️ Day1-2 主要餐廳</div>
+        <div class="place-item">
+          <span class="place-rank">1</span>
+          <div class="place-info">
+            <div class="place-name">黑海時光粥</div>
+            <div class="place-tag">粥品 ・ Day1 午餐</div>
+          </div>
+          <span class="place-rating">⭐ 4.8</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=黑海時光粥+礁溪" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">2</span>
+          <div class="place-info">
+            <div class="place-name">里海咖啡</div>
+            <div class="place-tag">鮮魚定食 ・ Day1 晚餐 ・ <strong>已訂位</strong></div>
+          </div>
+          <span class="place-rating">⭐ 4.6</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=里海咖啡+礁溪" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">3</span>
+          <div class="place-info">
+            <div class="place-name">芭樂狗 Mr. Balagov</div>
+            <div class="place-tag">東歐烏克蘭料理 ・ Day2 慶生 🎂 ・ <strong>已訂位</strong></div>
+          </div>
+          <span class="place-rating">⭐ 4.5</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=芭樂狗+宜蘭市復興路" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+
+        <div class="subsection-title">🍺 小酌/點心</div>
+        <div class="place-item">
+          <span class="place-rank">1</span>
+          <div class="place-info">
+            <div class="place-name">跨力 Co-Link</div>
+            <div class="place-tag">居酒屋 ・ Day2 晚間小酌 🍻</div>
+          </div>
+          <span class="place-rating">⭐ 4.7</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=跨力+Co-Link+礁溪" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">2</span>
+          <div class="place-info">
+            <div class="place-name">柯氏蔥油餅</div>
+            <div class="place-tag">排隊名店 ・ 點心</div>
+          </div>
+          <span class="place-rating">⭐ 4.2</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=柯氏蔥油餅+礁溪" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+
+        <div class="subsection-title">🦐 Day3 返程午餐</div>
+        <div class="place-item">
+          <span class="place-rank">1</span>
+          <div class="place-info">
+            <div class="place-name">烏石港海鮮</div>
+            <div class="place-tag">海鮮 ・ Day3 午餐</div>
+          </div>
+          <span class="place-rating">⭐ 4.0</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=烏石港+海鮮餐廳" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 景點推薦 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">📸</span>
+        <span class="section-title">景點推薦</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="subsection-title">✨ 額外推薦（可彈性加入）</div>
+
+        <div class="place-item">
+          <span class="place-rank spot">1</span>
+          <div class="place-info">
+            <div class="place-name">五峰旗瀑布</div>
+            <div class="place-tag">自然景觀 ・ 免費 ・ 1-2hr</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=五峰旗瀑布+礁溪" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank spot">2</span>
+          <div class="place-info">
+            <div class="place-name">湯圍溝溫泉公園</div>
+            <div class="place-tag">免費泡腳 ・ 30-60min ・ Day1 傍晚</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=湯圍溝溫泉公園" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank spot">3</span>
+          <div class="place-info">
+            <div class="place-name">幾米公園</div>
+            <div class="place-tag">裝置藝術 ・ 免費 ・ 30min</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=幾米公園+宜蘭" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank spot">4</span>
+          <div class="place-info">
+            <div class="place-name">礁溪溫泉公園</div>
+            <div class="place-tag">日式足湯 ・ 免費 ・ 休閒</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=礁溪溫泉公園" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank spot">5</span>
+          <div class="place-info">
+            <div class="place-name">宜蘭酒廠</div>
+            <div class="place-tag">觀光工廠 ・ 免費 ・ Day3 返程</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=宜蘭酒廠" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+
+        <div class="subsection-title">🌧️ 雨天備案</div>
+
+        <div class="place-item">
+          <span class="place-rank spot">A</span>
+          <div class="place-info">
+            <div class="place-name">猴洞坑瀑布</div>
+            <div class="place-tag">輕鬆步道 ・ 30-40min</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=猴洞坑瀑布" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank spot">B</span>
+          <div class="place-info">
+            <div class="place-name">草湳湖步道</div>
+            <div class="place-tag">湖畔散步 ・ 約1hr</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=草湳湖+礁溪" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 伴手禮推薦 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🎁</span>
+        <span class="section-title">伴手禮推薦</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="subsection-title">🏆 必買 Top 3</div>
+
+        <div class="place-item">
+          <span class="place-rank gift">1</span>
+          <div class="place-info">
+            <div class="place-name">鴨賞（鴨喜露）</div>
+            <div class="place-tag">$150-250 ・ 冷藏7-14天</div>
+          </div>
+          <span class="place-rating">經典</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=鴨喜露+礁溪" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank gift">2</span>
+          <div class="place-info">
+            <div class="place-name">金棗糕（橘之鄉）</div>
+            <div class="place-tag">$100-300 ・ 1月產季！</div>
+          </div>
+          <span class="place-rating">當季</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=橘之鄉蜜餞形象館" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank gift">3</span>
+          <div class="place-info">
+            <div class="place-name">牛舌餅（宜蘭餅）</div>
+            <div class="place-tag">$80-200 ・ 超薄脆</div>
+          </div>
+          <span class="place-rating">送禮</span>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=宜蘭餅發明館" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+
+        <div class="subsection-title">🛒 購買地點</div>
+
+        <div class="place-item">
+          <span class="place-rank gift">📍</span>
+          <div class="place-info">
+            <div class="place-name">柯氏蔥油餅</div>
+            <div class="place-tag">冷凍蔥油餅 $100-150/包</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=柯氏蔥油餅+礁溪" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank gift">📍</span>
+          <div class="place-info">
+            <div class="place-name">春記百貨</div>
+            <div class="place-tag">毛線/手工藝材料 🧶</div>
+          </div>
+          <div class="place-nav">
+            <a href="https://www.google.com/maps/search/?api=1&query=春記百貨+宜蘭市康樂街" target="_blank" title="導航">📍</a>
+          </div>
+        </div>
+
+        <div class="warning-box" style="margin-top: 0.75rem;">
+          <div class="warning-box-title">💡 攜帶提醒</div>
+          <div class="warning-box-content">
+            鴨賞需<strong>冷藏</strong>，建議準備保冷袋！<br>
+            冷凍蔥油餅回家後立即放冷凍庫
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 預算摘要 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">💰</span>
+        <span class="section-title">預算摘要</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="info-card" style="background: linear-gradient(135deg, var(--matcha-pale) 0%, white 100%); margin-bottom: 1rem;">
+          <div class="info-card-content" style="font-size: 0.85rem; text-align: center;">
+            ⛽ 油價：<strong>28.1 元/L</strong>（中油 95無鉛，2026/1/5 生效）
+          </div>
+        </div>
+
+        <div class="budget-section">
+          <div class="budget-title">👥 全員（5人）分攤</div>
+          <div class="budget-items">
+            <div class="budget-row">
+              <span>🚗 油錢（800km ÷ 12km/L × 28.1）</span>
+              <span class="budget-amount">375 元</span>
+            </div>
+            <div class="budget-row">
+              <span>🛣️ 過路費（230×2 ÷ 5）</span>
+              <span class="budget-amount">92 元</span>
+            </div>
+            <div class="budget-row">
+              <span>🏨 住宿第一晚</span>
+              <span class="budget-amount">1,148 元</span>
+            </div>
+            <div class="budget-row">
+              <span>🍜 餐飲</span>
+              <span class="budget-amount">2,160 元</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="budget-section">
+          <div class="budget-title">🏨 住宿第二晚（依房型）</div>
+          <div class="budget-items">
+            <div class="budget-row">
+              <span>雙人房（均林、怡君）</span>
+              <span class="budget-amount">1,353 元/人</span>
+            </div>
+            <div class="budget-row">
+              <span>家庭房（均怡、莉亞、莉亞姊）</span>
+              <span class="budget-amount">1,223 元/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="budget-section">
+          <div class="budget-title">⛰️ 登山隊（3人）加收</div>
+          <div class="budget-items">
+            <div class="budget-row">
+              <span>🅿️ 停車費（50÷3）</span>
+              <span class="budget-amount">17 元</span>
+            </div>
+            <div class="budget-row">
+              <span>🍫 行動糧</span>
+              <span class="budget-amount">150 元</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="budget-total">
+          <div class="budget-total-title">📊 人均總計</div>
+          <div class="budget-total-grid">
+            <div class="budget-total-item">
+              <span class="budget-total-label">登山隊</span>
+              <span class="budget-total-value">約 5,200-5,300 元</span>
+            </div>
+            <div class="budget-total-item">
+              <span class="budget-total-label">非登山</span>
+              <span class="budget-total-value">約 5,000 元</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="warning-box" style="margin-top: 0.75rem;">
+          <div class="warning-box-title">💡 分帳說明</div>
+          <div class="warning-box-content">
+            • 交通、住宿第一晚、餐飲：5 人均分<br>
+            • 住宿第二晚：依房型分攤<br>
+            • 登山專屬（停車+行動糧）：登山隊 3 人分
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 分帳計算器 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🧮</span>
+        <span class="section-title">分帳計算器</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="expense-form">
+          <div class="form-group">
+            <label>項目名稱</label>
+            <input type="text" id="expenseName" placeholder="例如：午餐">
+          </div>
+          <div class="form-group">
+            <label>金額</label>
+            <input type="number" id="expenseAmount" placeholder="500">
+          </div>
+          <div class="form-group">
+            <label>誰付的</label>
+            <select id="expensePayer">
+              <option value="盧均林">盧均林</option>
+              <option value="劉怡君">劉怡君</option>
+              <option value="盧均怡">盧均怡</option>
+              <option value="莉亞">莉亞</option>
+              <option value="莉亞姊">莉亞姊</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>分攤人員</label>
+            <div class="split-checkboxes">
+              <label class="split-checkbox"><input type="checkbox" value="盧均林" checked> 盧均林</label>
+              <label class="split-checkbox"><input type="checkbox" value="劉怡君" checked> 劉怡君</label>
+              <label class="split-checkbox"><input type="checkbox" value="盧均怡" checked> 盧均怡</label>
+              <label class="split-checkbox"><input type="checkbox" value="莉亞" checked> 莉亞</label>
+              <label class="split-checkbox"><input type="checkbox" value="莉亞姊" checked> 莉亞姊</label>
+            </div>
+          </div>
+          <button class="add-expense-btn" onclick="addExpense()">＋ 新增支出</button>
+        </div>
+
+        <div class="expense-list" id="expenseList">
+          <div class="expense-list-title">📋 支出紀錄</div>
+          <div class="expense-items" id="expenseItems">
+            <div class="expense-empty">尚未新增任何支出</div>
+          </div>
+        </div>
+
+        <div class="settlement" id="settlement" style="display: none;">
+          <div class="settlement-title">💵 結算結果</div>
+          <div class="settlement-items" id="settlementItems"></div>
+        </div>
+
+        <button class="clear-btn" onclick="clearExpenses()">🗑️ 清除所有紀錄</button>
+      </div>
+    </div>
+
+    <!-- 登山速查 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🥾</span>
+        <span class="section-title">登山日速查</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="info-card">
+          <div class="info-card-content" style="text-align: center;">
+            📍 五峰旗 → 聖母朝聖地 → 通天橋 → 山頂<br>
+            <strong>10.8km</strong> ・ 爬升 <strong>900m</strong> ・ <strong>6-7 小時</strong>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=五峰旗停車場" target="_blank" class="nav-btn" style="display: block; text-align: center;">📍 導航至登山口</a>
+        </div>
+
+        <table class="checkpoint-table">
+          <thead>
+            <tr>
+              <th>時間</th>
+              <th>地點</th>
+              <th>撤退時間</th>
+              <th>💧</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>06:30</td>
+              <td>五峰旗停車場</td>
+              <td>--</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td>07:00</td>
+              <td>聖母朝聖地</td>
+              <td>--</td>
+              <td>💧</td>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>通天橋</td>
+              <td class="retreat-warning">09:30 未到→評估</td>
+              <td>💧</td>
+            </tr>
+            <tr>
+              <td>10:30</td>
+              <td>山頂 ⛰️</td>
+              <td class="retreat-warning">13:00 未到→下撤</td>
+              <td>⚠️</td>
+            </tr>
+            <tr>
+              <td>14:00</td>
+              <td>返回停車場</td>
+              <td class="retreat-warning">16:30 必須離開</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="margin: 1rem 0 0.75rem; color: var(--matcha-dark);">✅ 必備裝備</h4>
+        <div class="checklist">
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>登山鞋</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>登山杖</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>雨衣雨褲</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>頭燈</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>水 2L+</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>行動糧</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>保暖中層</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>防滑鞋套</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>行動電源</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>離線地圖</span>
+          </label>
+        </div>
+
+        <div class="warning-box">
+          <div class="warning-box-title">⚠️ 路況提醒</div>
+          <div class="warning-box-content">
+            後段 1.6km 常年濕滑，<strong>防滑鞋套必備</strong>！<br>
+            📵 通天橋後無訊號，請先下載離線地圖
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 植物生態觀察指南 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🌿</span>
+        <span class="section-title">植物生態觀察指南</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="info-card">
+          <div class="info-card-content" style="font-size: 0.9rem; line-height: 1.6;">
+            抹茶山的翠綠景觀來自<strong>包籜矢竹</strong>形成的草原地毯，這種台灣特有種竹類在東北季風吹拂下終年常綠。這條海拔跨度 550 公尺的步道，從溪谷闊葉林一路攀升至風衝矮林，沿途可觀察到樟科、殼斗科喬木、豐富的蕨類與苔蘚。
+          </div>
+        </div>
+
+        <div class="subsection-title">🌳 低海拔喬木（400-600m）</div>
+        <div class="place-item">
+          <span class="place-rank">1</span>
+          <div class="place-info">
+            <div class="place-name">九芎</div>
+            <div class="place-tag">落葉喬木・樹皮光滑「猴不爬」・<strong>一月落葉易見</strong></div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">2</span>
+          <div class="place-info">
+            <div class="place-name">大葉楠</div>
+            <div class="place-tag">葉大型革質・葉背灰白</div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">3</span>
+          <div class="place-info">
+            <div class="place-name">山龍眼</div>
+            <div class="place-tag">葉長橢圓形・鋸齒緣</div>
+          </div>
+        </div>
+
+        <div class="subsection-title">🍃 中海拔指標植物（600-850m）</div>
+        <div class="place-item">
+          <span class="place-rank">1</span>
+          <div class="place-info">
+            <div class="place-name">墨點櫻桃</div>
+            <div class="place-tag">葉背有黑色腺點・揉碎有杏仁味</div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">2</span>
+          <div class="place-info">
+            <div class="place-name">長葉木薑子</div>
+            <div class="place-tag">葉披針形・葉背灰白</div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">3</span>
+          <div class="place-info">
+            <div class="place-name">三斗石櫟</div>
+            <div class="place-tag">殼斗三淺裂・葉革質</div>
+          </div>
+        </div>
+
+        <div class="subsection-title">🔴 山頂風衝矮林（850m+）</div>
+        <div class="place-item">
+          <span class="place-rank">⭐</span>
+          <div class="place-info">
+            <div class="place-name">紅楠（豬腳楠）</div>
+            <div class="place-tag"><strong>鮮紅色嫩芽與芽苞</strong> ← 一月最醒目！</div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">1</span>
+          <div class="place-info">
+            <div class="place-name">金平氏冬青</div>
+            <div class="place-tag">常綠小喬木・<strong>冬季鮮紅色果實</strong></div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">2</span>
+          <div class="place-info">
+            <div class="place-name">毽子櫟</div>
+            <div class="place-tag">葉緣反捲・殼斗具環狀鱗片</div>
+          </div>
+        </div>
+
+        <div class="subsection-title">🌿 蕨類（著生與地生）</div>
+        <div class="place-item">
+          <span class="place-rank">1</span>
+          <div class="place-info">
+            <div class="place-name">伏石蕨</div>
+            <div class="place-tag"><strong>二型葉</strong>：圓形肉質小葉 + 線形細長葉</div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">2</span>
+          <div class="place-info">
+            <div class="place-name">巢蕨（山蘇）</div>
+            <div class="place-tag">叢生如鳥巢・孢子囊群線形</div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">3</span>
+          <div class="place-info">
+            <div class="place-name">過溝菜蕨（過貓）</div>
+            <div class="place-tag">嫩葉可食・常見於溪谷</div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">4</span>
+          <div class="place-info">
+            <div class="place-name">筆筒樹</div>
+            <div class="place-tag">樹蕨・葉痕如蛇紋排列</div>
+          </div>
+        </div>
+
+        <div class="subsection-title">🌱 果實與物候（一月觀察重點）</div>
+        <div class="place-item">
+          <span class="place-rank">🔴</span>
+          <div class="place-info">
+            <div class="place-name">月桃</div>
+            <div class="place-tag"><strong>鮮紅色蒴果</strong>・揉葉有香氣</div>
+          </div>
+        </div>
+        <div class="place-item">
+          <span class="place-rank">🔴</span>
+          <div class="place-info">
+            <div class="place-name">金平氏冬青</div>
+            <div class="place-tag"><strong>紅色果實</strong>點綴枝頭</div>
+          </div>
+        </div>
+
+        <div class="subsection-title">💚 抹茶綠的秘密</div>
+        <div class="info-card">
+          <div class="info-card-header">
+            <span class="info-card-title">包籜矢竹</span>
+            <span class="info-card-badge">台灣特有種</span>
+          </div>
+          <div class="info-card-content" style="font-size: 0.85rem;">
+            • <strong>常綠</strong>密集生長：利用地下走莖快速蔓延<br>
+            • <strong>風衝矮化</strong>：山頂受強風抑制，形成一致高度<br>
+            • <strong>充沛水分</strong>：東北季風迎風面，終年潮濕<br>
+            • <strong>向陽照射</strong>：陽光下呈現明亮翠綠色
+          </div>
+        </div>
+
+        <div class="subsection-title">📸 帶著這個指南上山</div>
+        <div class="info-card">
+          <div class="info-card-content" style="font-size: 0.9rem;">
+            ✅ 建議攜帶 <strong>10倍放大鏡</strong>觀察苔蘚與地衣<br>
+            ✅ <strong>手機或相機搭配微距</strong>記錄蕨類孢子囊群<br>
+            ✅ <strong>防水筆記本</strong>隨時記錄發現<br>
+            🌡️ 山頂體感 0-5°C，帶著這份指南享受生態教室！
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 行前檢核清單 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">✅</span>
+        <span class="section-title">行前檢核清單</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="info-card" style="background: linear-gradient(135deg, var(--warm-light) 0%, white 100%);">
+          <div class="info-card-content" style="text-align: center; font-size: 1rem; font-weight: 600;">
+            ⏱️ 距出發還有：<strong>11 天</strong><br>
+            <span style="font-size: 0.85rem; font-weight: 400;">今日 2026/1/13 → 出發 2026/1/24</span>
+          </div>
+        </div>
+
+        <div class="subsection-title">✅ 已完成</div>
+        <div class="checklist">
+          <label class="checklist-item checked">
+            <input type="checkbox" checked>
+            <span class="checklist-box">✓</span>
+            <span>住宿第一晚</span>
+          </label>
+          <label class="checklist-item checked">
+            <input type="checkbox" checked>
+            <span class="checklist-box">✓</span>
+            <span>住宿第二晚</span>
+          </label>
+          <label class="checklist-item checked">
+            <input type="checkbox" checked>
+            <span class="checklist-box">✓</span>
+            <span>Day1 里海咖啡訂位</span>
+          </label>
+          <label class="checklist-item checked">
+            <input type="checkbox" checked>
+            <span class="checklist-box">✓</span>
+            <span>Day2 芭樂狗訂位</span>
+          </label>
+          <label class="checklist-item checked">
+            <input type="checkbox" checked>
+            <span class="checklist-box">✓</span>
+            <span>青花瓷 DIY 預約</span>
+          </label>
+        </div>
+
+        <div class="subsection-title">📋 待完成</div>
+        <div class="checklist">
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>GPX 離線地圖</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>天氣確認（3天前）</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>通知留守人行程</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>登山保險</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>裝備檢查</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>春記百貨確認</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>油價查詢</span>
+          </label>
+          <label class="checklist-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <span class="checklist-box">✓</span>
+            <span>分帳方案確認</span>
+          </label>
+        </div>
+
+        <div class="warning-box" style="margin-top: 1rem;">
+          <div class="warning-box-title">❄️ 冬季登山提醒</div>
+          <div class="warning-box-content">
+            🌡️ 山頂體感 0-5°C<br>
+            🌧️ 東北季風強勁，務必帶雨具<br>
+            🌅 日落 17:33，<strong>16:30 前離開山頂</strong><br>
+            📵 通天橋後無訊號，<strong>必須下載離線地圖</strong>
+          </div>
+        </div>
+
+        <div class="info-card" style="margin-top: 0.75rem;">
+          <div class="info-card-header">
+            <span class="info-card-title">🌧️ 雨天備案啟動條件</span>
+          </div>
+          <div class="info-card-content" style="font-size: 0.85rem;">
+            若出發前 3 天預報顯示：<br>
+            • 降雨機率 > 60%<br>
+            • 或發布<strong>豪雨特報</strong><br>
+            • 或風速 > 5 級<br><br>
+            ✅ 替代方案 A：猴洞坑瀑布 + 草湳湖步道<br>
+            ✅ 替代方案 B：延期至隔天登山<br>
+            ✅ 替代方案 C：溫泉休閒行程
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 緊急聯絡 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🆘</span>
+        <span class="section-title">緊急聯絡</span>
+        <span class="section-toggle">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="emergency-card">
+          <div class="emergency-title">👤 留守人</div>
+          <div class="emergency-content">
+            盧均芳 <a href="tel:0912-014-186">📞 0912-014-186</a>
+          </div>
+        </div>
+
+        <h4 style="margin: 0.75rem 0; color: var(--matcha-dark);">👥 隊員聯絡</h4>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div>
+              <div class="contact-name">盧均怡</div>
+              <div class="contact-role">領隊 🥾</div>
+            </div>
+            <a href="tel:0911-194-755" class="contact-phone">0911-194-755</a>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-name">盧均林</div>
+              <div class="contact-role">壽星 🎂 司機</div>
+            </div>
+            <a href="tel:0963-145-843" class="contact-phone">0963-145-843</a>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-name">劉怡君</div>
+              <div class="contact-role">隊員 🥾</div>
+            </div>
+            <a href="tel:0938-670-327" class="contact-phone">0938-670-327</a>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-name">莉亞（薩莉亞）</div>
+              <div class="contact-role">🎨 當地留守</div>
+            </div>
+            <a href="tel:0911-703-633" class="contact-phone">0911-703-633</a>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-name">莉亞姊（敷衍王）</div>
+              <div class="contact-role">🎨 當地留守</div>
+            </div>
+            <a href="tel:0930-532-211" class="contact-phone">0930-532-211</a>
+          </div>
+        </div>
+
+        <h4 style="margin: 1rem 0 0.75rem; color: var(--matcha-dark);">📞 緊急電話</h4>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="contact-name">報案</span>
+            <a href="tel:110" class="contact-phone" style="color: var(--danger); font-size: 1.1rem;">110</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-name">救護車</span>
+            <a href="tel:119" class="contact-phone" style="color: var(--danger); font-size: 1.1rem;">119</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-name">宜蘭縣消防局</span>
+            <a href="tel:03-925-4119" class="contact-phone">03-925-4119</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-name">礁溪消防分隊</span>
+            <a href="tel:03-988-1442" class="contact-phone">03-988-1442</a>
+          </div>
+        </div>
+
+        <div class="info-card" style="margin-top: 1rem;">
+          <div class="info-card-header">
+            <span class="info-card-title">📍 安全回報時間</span>
+          </div>
+          <div class="info-card-content">
+            06:30 出發 → 10:30 登頂 → 14:30 下山
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-wish">🌿 願旅途平安，生日快樂！</p>
+    <p>抹茶山生日旅遊 2026</p>
+  </footer>
+
+  <script>
+    // Toggle section expand/collapse
+    function toggleSection(header) {
+      header.classList.toggle('collapsed');
+      const content = header.nextElementSibling;
+      content.classList.toggle('hidden');
+    }
+
+    // Day tabs
+    function showDay(day) {
+      // Update tabs
+      document.querySelectorAll('.day-tab').forEach((tab, index) => {
+        tab.classList.toggle('active', index === day - 1);
+      });
+      // Update content
+      document.querySelectorAll('.day-content').forEach((content, index) => {
+        content.classList.toggle('active', index === day - 1);
+      });
+    }
+
+    // Checklist toggle
+    function toggleCheck(item) {
+      item.classList.toggle('checked');
+      const checkbox = item.querySelector('input');
+      checkbox.checked = !checkbox.checked;
+    }
+
+    // === 分帳計算器（Firebase 版本）===
+    let expenses = [];
+    let isOnline = navigator.onLine;
+
+    // Firebase 即時監聽
+    const expensesRef = db.ref('matcha-trip-2026/expenses');
+
+    expensesRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      expenses = data ? Object.entries(data).map(([key, val]) => ({ ...val, firebaseKey: key })) : [];
+      renderExpenses();
+      calculateSettlement();
+      console.log('[Firebase] Loaded', expenses.length, 'expenses');
+    });
+
+    // 離線偵測
+    function updateOnlineStatus() {
+      isOnline = navigator.onLine;
+      const offlineWarning = document.getElementById('offlineWarning');
+
+      if (!offlineWarning) {
+        // 如果警告元素不存在，建立它
+        const warning = document.createElement('div');
+        warning.id = 'offlineWarning';
+        warning.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#f44336;color:white;padding:12px 24px;border-radius:8px;z-index:9999;display:none;';
+        warning.textContent = '⚠️ 離線模式：資料暫存本地，恢復網路後會同步';
+        document.body.appendChild(warning);
+      }
+
+      document.getElementById('offlineWarning').style.display = isOnline ? 'none' : 'block';
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
+    function addExpense() {
+      const name = document.getElementById('expenseName').value.trim();
+      const amount = parseFloat(document.getElementById('expenseAmount').value);
+      const payer = document.getElementById('expensePayer').value;
+      const splitCheckboxes = document.querySelectorAll('.split-checkboxes input:checked');
+      const splitWith = Array.from(splitCheckboxes).map(cb => cb.value);
+
+      if (!name) {
+        alert('請輸入項目名稱');
+        return;
+      }
+      if (!amount || amount <= 0) {
+        alert('請輸入有效金額');
+        return;
+      }
+      if (splitWith.length === 0) {
+        alert('請選擇至少一位分攤人員');
+        return;
+      }
+
+      const newExpense = {
+        id: Date.now(),
+        name,
+        amount,
+        payer,
+        splitWith,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
+      };
+
+      // 寫入 Firebase
+      expensesRef.push(newExpense)
+        .then(() => {
+          console.log('[Firebase] Expense added');
+          // 清空表單
+          document.getElementById('expenseName').value = '';
+          document.getElementById('expenseAmount').value = '';
+        })
+        .catch(error => {
+          console.error('[Firebase] Error adding expense:', error);
+          alert('新增失敗，請檢查網路連線');
+        });
+    }
+
+    function deleteExpense(firebaseKey) {
+      if (confirm('確定要刪除這筆紀錄嗎？')) {
+        expensesRef.child(firebaseKey).remove()
+          .then(() => {
+            console.log('[Firebase] Expense deleted');
+          })
+          .catch(error => {
+            console.error('[Firebase] Error deleting expense:', error);
+            alert('刪除失敗，請檢查網路連線');
+          });
+      }
+    }
+
+    function renderExpenses() {
+      const container = document.getElementById('expenseItems');
+
+      if (expenses.length === 0) {
+        container.innerHTML = '<div class="expense-empty">尚未新增任何支出</div>';
+        return;
+      }
+
+      container.innerHTML = expenses.map(e => `
+        <div class="expense-item">
+          <div class="expense-item-info">
+            <div class="expense-item-name">${e.name}</div>
+            <div class="expense-item-detail">${e.payer} 付 / ${e.splitWith.length}人分</div>
+          </div>
+          <span class="expense-item-amount">${e.amount.toLocaleString()} 元</span>
+          <button class="expense-item-delete" onclick="deleteExpense('${e.firebaseKey}')">✕</button>
+        </div>
+      `).join('');
+    }
+
+    function calculateSettlement() {
+      const settlement = document.getElementById('settlement');
+      const settlementItems = document.getElementById('settlementItems');
+
+      if (expenses.length === 0) {
+        settlement.style.display = 'none';
+        return;
+      }
+
+      // 計算每人應付和已付金額
+      const members = ['盧均林', '劉怡君', '盧均怡', '莉亞', '莉亞姊'];
+      const balance = {};
+      members.forEach(m => balance[m] = 0);
+
+      expenses.forEach(e => {
+        const perPerson = e.amount / e.splitWith.length;
+        // 付款人得到錢
+        balance[e.payer] += e.amount;
+        // 每個分攤人扣錢
+        e.splitWith.forEach(person => {
+          balance[person] -= perPerson;
+        });
+      });
+
+      // 顯示結果
+      settlement.style.display = 'block';
+      settlementItems.innerHTML = members.map(m => {
+        const amount = Math.round(balance[m]);
+        if (amount > 0) {
+          return `<div class="settlement-item positive"><span>${m}</span><span>💵 多付 ${amount.toLocaleString()} 元</span></div>`;
+        } else if (amount < 0) {
+          return `<div class="settlement-item negative"><span>${m}</span><span>💸 應付 ${Math.abs(amount).toLocaleString()} 元</span></div>`;
+        } else {
+          return `<div class="settlement-item"><span>${m}</span><span>✓ 剛好</span></div>`;
+        }
+      }).join('');
+    }
+
+    function clearExpenses() {
+      if (confirm('確定要清除所有紀錄嗎？')) {
+        expensesRef.remove()
+          .then(() => {
+            console.log('[Firebase] All expenses cleared');
+          })
+          .catch(error => {
+            console.error('[Firebase] Error clearing expenses:', error);
+            alert('清除失敗，請檢查網路連線');
+          });
+      }
+    }
+
+    // 初始化（Firebase 已透過 .on('value') 自動監聽，不需要手動初始化）
+    console.log('[Firebase] Expense calculator initialized');
+  </script>
+
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+
+  <!-- Service Worker 註冊 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('[PWA] Service Worker registered:', registration.scope);
+          })
+          .catch(error => {
+            console.log('[PWA] Service Worker registration failed:', error);
+          });
+      });
+    }
+
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      console.log('[PWA] Installation prompt ready');
+    });
+  </script>
+</body>
+</html>
