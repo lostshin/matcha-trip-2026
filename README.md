@@ -107,8 +107,9 @@ pwa/
 3. 專案名稱：`matcha-trip-2026`
 4. 停用 Google Analytics（不需要）
 5. 點選「Realtime Database」→「建立資料庫」
-6. 選擇「測試模式」→「啟用」
-7. 複製專案設定：
+6. 選擇「鎖定模式」→「啟用」（⚠️ 請勿選擇測試模式）
+7. 啟用「Authentication」→「匿名登入」
+8. 複製專案設定：
    - 點選專案設定（齒輪圖示）
    - 向下捲動到「你的應用程式」
    - 選擇「網頁」（`</>`圖示）
@@ -122,6 +123,8 @@ pwa/
 
 ### 步驟 4：設定 Firebase 安全規則
 
+> ⚠️ **安全提醒**：請勿使用 `.read: true` 或 `.write: true`，這會讓任何人都能讀寫你的資料庫！
+
 在 Firebase Console 的 Realtime Database → 規則，貼上：
 
 ```json
@@ -129,11 +132,15 @@ pwa/
   "rules": {
     "matcha-trip-2026": {
       "expenses": {
-        ".read": true,
-        ".write": true,
+        ".read": "auth != null",
+        ".write": "auth != null",
         "$expenseId": {
           ".validate": "newData.hasChildren(['id', 'name', 'amount', 'payer', 'splitWith', 'timestamp'])"
         }
+      },
+      "contacts": {
+        ".read": "auth != null",
+        ".write": false
       }
     }
   }
@@ -141,6 +148,8 @@ pwa/
 ```
 
 點選「發布」。
+
+> 💡 這個規則確保只有登入的使用者才能存取資料，而聯絡人資訊只能讀取、不能修改。
 
 ### 步驟 5：建立 GitHub Repository
 
