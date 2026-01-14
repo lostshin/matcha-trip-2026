@@ -3149,6 +3149,17 @@
       }
     }
 
+    // Expand section if collapsed (shared helper)
+    function expandSection(section) {
+      if (!section) return;
+      const header = section.querySelector('.section-header');
+      const content = section.querySelector('.section-content');
+      if (content && content.classList.contains('hidden')) {
+        header.classList.remove('collapsed');
+        content.classList.remove('hidden');
+      }
+    }
+
     function scrollToSection(event, sectionId) {
       event.preventDefault();
       closeMenuIfOpen();
@@ -3156,13 +3167,7 @@
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Expand section if collapsed
-        const header = section.querySelector('.section-header');
-        const content = section.querySelector('.section-content');
-        if (content && content.classList.contains('hidden')) {
-          header.classList.remove('collapsed');
-          content.classList.remove('hidden');
-        }
+        expandSection(section);
       }
     }
 
@@ -3173,16 +3178,9 @@
       content.classList.toggle('hidden');
     }
 
-    // Day tabs
+    // Day tabs (uses generic showSectionTab)
     function showDay(day) {
-      // Update tabs
-      document.querySelectorAll('.day-tab').forEach((tab, index) => {
-        tab.classList.toggle('active', index === day - 1);
-      });
-      // Update content
-      document.querySelectorAll('.day-content').forEach((content, index) => {
-        content.classList.toggle('active', index === day - 1);
-      });
+      showSectionTab('section-itinerary', day);
     }
 
     // Generic section tab switcher
@@ -3207,15 +3205,7 @@
 
       const section = document.getElementById(sectionId);
       if (section) {
-        // Expand section if collapsed
-        const header = section.querySelector('.section-header');
-        const content = section.querySelector('.section-content');
-        if (content && content.classList.contains('hidden')) {
-          header.classList.remove('collapsed');
-          content.classList.remove('hidden');
-        }
-
-        // Scroll to section
+        expandSection(section);
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         // Switch Tab
