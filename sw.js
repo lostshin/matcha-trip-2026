@@ -1,4 +1,4 @@
-const CACHE_NAME = 'matcha-trip-v4';
+const CACHE_NAME = 'matcha-trip-v5';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -40,9 +40,10 @@ self.addEventListener('activate', (event) => {
 
 // 請求攔截：網路優先，失敗才用快取（Network First）
 self.addEventListener('fetch', (event) => {
-  // 跳過 Chrome extension 和 Firebase 請求
+  // 跳過 Chrome extension 和 Firebase 請求（避免快取敏感資料）
   if (event.request.url.startsWith('chrome-extension://') ||
       event.request.url.includes('firebaseio.com') ||
+      event.request.url.includes('firebasedatabase.app') ||
       event.request.url.includes('googleapis.com')) {
     return;
   }

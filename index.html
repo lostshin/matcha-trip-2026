@@ -1189,9 +1189,101 @@
     .badge-purple { background: #9333ea; }
     .badge-green { background: #059669; }
     .badge-danger { background: #dc2626; }
+
+    /* === Invite Code Gate === */
+    .invite-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: linear-gradient(165deg, var(--matcha-dark) 0%, var(--matcha) 40%, var(--matcha-light) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .invite-gate.hidden { display: none; }
+    .invite-gate-box {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .invite-gate-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.5rem;
+      color: var(--matcha-dark);
+      margin-bottom: 0.5rem;
+    }
+    .invite-gate-subtitle {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .invite-gate-input {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border: 2px solid var(--cream-dark);
+      border-radius: 12px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+    }
+    .invite-gate-input:focus {
+      outline: none;
+      border-color: var(--matcha);
+    }
+    .invite-gate-input.error {
+      border-color: var(--danger);
+      animation: shake 0.4s;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-8px); }
+      75% { transform: translateX(8px); }
+    }
+    .invite-gate-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background: var(--matcha);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .invite-gate-btn:hover { background: var(--matcha-dark); }
+    .invite-gate-btn:disabled {
+      background: var(--text-light);
+      cursor: not-allowed;
+    }
+    .invite-gate-error {
+      color: var(--danger);
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      min-height: 1.2em;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Invite Code Gate (驗證通過前遮蔽全站) -->
+  <div id="inviteGate" class="invite-gate">
+    <div class="invite-gate-box">
+      <div class="invite-gate-title">🍵 抹茶山生日旅遊</div>
+      <div class="invite-gate-subtitle">請輸入邀請碼進入</div>
+      <input type="text" id="inviteCodeInput" class="invite-gate-input" placeholder="邀請碼" autocomplete="off">
+      <button id="inviteCodeBtn" class="invite-gate-btn">進入</button>
+      <div id="inviteCodeError" class="invite-gate-error"></div>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -3130,6 +3222,69 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="firebase-config.js"></script>
+
+  <!-- Invite Code Verification -->
+  <script>
+    (function() {
+      const STORAGE_KEY = 'matcha-trip-verified';
+      const inviteGate = document.getElementById('inviteGate');
+      const inviteInput = document.getElementById('inviteCodeInput');
+      const inviteBtn = document.getElementById('inviteCodeBtn');
+      const inviteError = document.getElementById('inviteCodeError');
+      const inviteCodeRef = db.ref('matcha-trip-2026/config/inviteCode');
+
+      // 檢查是否已驗證
+      if (localStorage.getItem(STORAGE_KEY) === 'true') {
+        inviteGate.classList.add('hidden');
+      }
+
+      // 驗證邀請碼
+      async function verifyInviteCode() {
+        const inputCode = inviteInput.value.trim().toLowerCase();
+        if (!inputCode) {
+          showError('請輸入邀請碼');
+          return;
+        }
+
+        inviteBtn.disabled = true;
+        inviteBtn.textContent = '驗證中...';
+        inviteError.textContent = '';
+
+        try {
+          const snapshot = await inviteCodeRef.once('value');
+          const correctCode = snapshot.val();
+
+          if (inputCode === String(correctCode).toLowerCase()) {
+            // 驗證成功
+            localStorage.setItem(STORAGE_KEY, 'true');
+            inviteGate.style.transition = 'opacity 0.5s';
+            inviteGate.style.opacity = '0';
+            setTimeout(() => inviteGate.classList.add('hidden'), 500);
+          } else {
+            showError('邀請碼錯誤，請重新輸入');
+            inviteInput.classList.add('error');
+            setTimeout(() => inviteInput.classList.remove('error'), 400);
+          }
+        } catch (err) {
+          console.error('[Invite] Verification error:', err);
+          showError('驗證失敗，請檢查網路連線');
+        }
+
+        inviteBtn.disabled = false;
+        inviteBtn.textContent = '進入';
+      }
+
+      function showError(msg) {
+        inviteError.textContent = msg;
+      }
+
+      // 事件綁定
+      inviteBtn.addEventListener('click', verifyInviteCode);
+      inviteInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') verifyInviteCode();
+      });
+    })();
+  </script>
 
   <script>
     // Matcha Dock & Grid Menu Logic

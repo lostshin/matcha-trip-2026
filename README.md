@@ -131,11 +131,15 @@ pwa/
 {
   "rules": {
     "matcha-trip-2026": {
+      "config": {
+        ".read": "auth != null",
+        ".write": false
+      },
       "expenses": {
         ".read": "auth != null",
         ".write": "auth != null",
         "$expenseId": {
-          ".validate": "newData.hasChildren(['id', 'name', 'amount', 'payer', 'splitWith', 'timestamp'])"
+          ".validate": "newData.hasChildren(['id', 'name', 'amount', 'payer', 'splitWith', 'timestamp']) && newData.child('amount').isNumber() && newData.child('amount').val() > 0 && newData.child('amount').val() < 1000000 && newData.child('name').isString() && newData.child('name').val().length < 100"
         }
       },
       "contacts": {
@@ -149,9 +153,19 @@ pwa/
 
 點選「發布」。
 
-> 💡 這個規則確保只有登入的使用者才能存取資料，而聯絡人資訊只能讀取、不能修改。
+### 步驟 5：設定邀請碼
 
-### 步驟 5：建立 GitHub Repository
+在 Firebase Console 的 Realtime Database，新增以下資料：
+
+```
+matcha-trip-2026/
+└── config/
+    └── inviteCode: "matcha2026"  ← 自訂你的邀請碼
+```
+
+> 💡 邀請碼保護：只有知道邀請碼的人才能進入 App，防止公開 repo 被陌生人存取。
+
+### 步驟 6：建立 GitHub Repository
 
 ```bash
 cd pwa
@@ -163,7 +177,7 @@ git remote add origin https://github.com/你的使用者名稱/matcha-trip-2026.
 git push -u origin main
 ```
 
-### 步驟 6：啟用 GitHub Pages
+### 步驟 7：啟用 GitHub Pages
 
 1. 前往 GitHub repo 的 Settings
 2. 左側選單點選「Pages」
@@ -172,7 +186,7 @@ git push -u origin main
 5. 點選「Save」
 6. 等待 1-2 分鐘，網址會顯示在上方
 
-### 步驟 7：分享給隊員
+### 步驟 8：分享給隊員
 
 **網址**：`https://你的使用者名稱.github.io/matcha-trip-2026/`
 
