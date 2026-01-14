@@ -2,21 +2,95 @@
 
 三天兩夜登山溫泉之旅的離線應用程式。
 
+## ✨ 功能特色
+
+### 📲 PWA 體驗
+- 可安裝到主畫面，擁有 App 圖示
+- 全螢幕顯示（無瀏覽器網址列）
+- 抹茶綠主題色，日系手帳風設計
+- 離線優先，山區無訊號也能查看
+
+### 📅 行程總覽
+- **三天行程分頁切換**：Day 1~3 一目瞭然
+- **登山隊 vs 青花瓷隊**：Day2 分開行程清楚標示
+- **一鍵導航**：所有地點可直接開啟 Google Maps
+
+### 🗺️ 宜蘭旅遊推薦
+- 分頁式設計：美食 / 景點 / 伴手禮
+- 已訂位餐廳標示
+- Google 評分參考
+- 雨天備案建議
+
+### ⛰️ 抹茶山登山攻略
+- 分頁式設計：路線 / 安全 / 生態
+- 時間點檢查表（附撤退時間）
+- **登山安全知識**：新手防傷指南、下坡技巧
+- **生態介紹**：抹茶山植物辨識（按海拔分層）
+
+### 🏨 住宿資訊
+- 兩晚飯店完整資訊
+- 訂單編號、取消期限
+- 房型分配說明
+
+### 💰 預算摘要
+- 分攤計算明細
+- 登山隊 vs 非登山隊費用
+
+### 🧮 分帳計算器（Firebase 即時同步）
+- 5 人分帳記錄
+- 誰付的 / 分攤誰
+- 即時計算結算金額
+- 有網路時同步，離線時本地暫存
+
+### 🎒 裝備清單
+- 可勾選的 Checklist
+- 必備裝備分類
+
+### ☎️ 緊急聯絡
+- 隊員聯絡資訊
+- 緊急電話
+
+### 🚀 快速導覽
+- 浮動漢堡選單
+- 一鍵跳轉任意區塊
+- 自動展開摺疊區塊
+
 ## 📁 專案檔案
 
 ```
 pwa/
-├── index.html              # 主要 HTML 檔案
+├── index.html              # 主要 HTML 檔案（單檔 PWA）
 ├── manifest.json           # PWA 設定
-├── sw.js                  # Service Worker（離線快取）
-├── firebase-config.js      # Firebase 設定（需要填入）
-├── icons/                 # App 圖示
+├── sw.js                   # Service Worker（離線快取）
+├── firebase-config.js      # Firebase 設定
+├── icons/                  # App 圖示
 │   ├── generate-icons.html # 圖示產生工具
-│   ├── icon.svg           # SVG 原始檔
-│   ├── icon-192.png       # 小圖示（需產生）
-│   └── icon-512.png       # 大圖示（需產生）
-└── README.md              # 本檔案
+│   ├── icon.svg            # SVG 原始檔
+│   ├── icon-192.png        # 小圖示
+│   └── icon-512.png        # 大圖示
+└── README.md               # 本檔案
 ```
+
+## 🛠️ 程式碼架構
+
+### 共用函式
+- `expandSection(section)` - 展開摺疊的區塊
+- `showSectionTab(sectionId, tabIndex)` - 通用分頁切換器
+- `scrollToSection(event, sectionId)` - 平滑滾動至指定區塊
+- `toggleSection(header)` - 手風琴式區塊展開/收合
+- `showDay(day)` / `showGuideTab(tab)` / `showHikeTab(tab)` - 各區塊分頁切換
+
+### 效能優化
+- 使用 `loading="lazy"` 延遲載入圖片
+- CSS 變數統一管理主題色彩（`--matcha-*`, `--cream-*`）
+- 模組化 JavaScript 減少重複程式碼
+- 單一 HTML 檔案架構，無需建置工具
+
+### UI/UX 設計
+- 可摺疊區塊（accordion）節省空間
+- 分頁式內容組織（tabs）
+- Google Maps 導航按鈕整合
+- 響應式設計，手機優先
 
 ## 🚀 部署步驟
 
@@ -101,14 +175,12 @@ git push -u origin main
 
 ## 🔧 開發測試
 
-### 本地測試（需要本地伺服器）
+### 本地測試
 
 ```bash
-# 使用 Python 內建伺服器
 cd pwa
 python3 -m http.server 8000
-
-# 或使用 Node.js 的 http-server
+# 或
 npx http-server -p 8000
 ```
 
@@ -121,23 +193,6 @@ npx http-server -p 8000
 3. Application → Service Workers（檢查註冊狀態）
 4. Application → Cache Storage（檢查快取檔案）
 5. Network → 勾選 Offline（測試離線功能）
-
-## 📱 功能說明
-
-### ✅ 離線功能
-- 行程、景點、美食、住宿資訊：100% 離線可用
-- 登山路線、裝備清單、生態指南：完全快取
-- 分帳計算器：離線可查看，需網路同步
-
-### 🔥 即時同步
-- 5 人共用一份分帳記錄
-- 有網路時即時同步
-- 離線時本地暫存，恢復網路後自動上傳
-
-### 📲 PWA 體驗
-- 加入主畫面後有 App 圖示
-- 全螢幕顯示（無瀏覽器網址列）
-- 抹茶綠主題色
 
 ## ⚠️ 注意事項
 
@@ -169,4 +224,4 @@ npx http-server -p 8000
 
 ---
 
-**最後更新**：2026-01-13
+**最後更新**：2026-01-15
