@@ -2441,49 +2441,19 @@
         <span class="section-toggle">▼</span>
       </div>
       <div class="section-content">
+        <!-- 留守人（從 Firebase 載入）-->
         <div class="emergency-card">
           <div class="emergency-title">👤 留守人</div>
-          <div class="emergency-content">
-            盧均芳 <a href="tel:0912-014-186">📞 0912-014-186</a>
+          <div class="emergency-content" id="guardian-contact">
+            <span style="color: #888;">🔐 登入後顯示...</span>
           </div>
         </div>
 
         <h4 style="margin: 0.75rem 0; color: var(--matcha-dark);">👥 隊員聯絡</h4>
-        <div class="contact-grid">
-          <div class="contact-item">
-            <div>
-              <div class="contact-name">盧均怡</div>
-              <div class="contact-role">領隊 🥾</div>
-            </div>
-            <a href="tel:0911-194-755" class="contact-phone">0911-194-755</a>
-          </div>
-          <div class="contact-item">
-            <div>
-              <div class="contact-name">盧均林</div>
-              <div class="contact-role">壽星 🎂 司機</div>
-            </div>
-            <a href="tel:0963-145-843" class="contact-phone">0963-145-843</a>
-          </div>
-          <div class="contact-item">
-            <div>
-              <div class="contact-name">劉怡君</div>
-              <div class="contact-role">隊員 🥾</div>
-            </div>
-            <a href="tel:0938-670-327" class="contact-phone">0938-670-327</a>
-          </div>
-          <div class="contact-item">
-            <div>
-              <div class="contact-name">莉亞（薩莉亞）</div>
-              <div class="contact-role">🎨 當地留守</div>
-            </div>
-            <a href="tel:0911-703-633" class="contact-phone">0911-703-633</a>
-          </div>
-          <div class="contact-item">
-            <div>
-              <div class="contact-name">莉亞姊（敷衍王）</div>
-              <div class="contact-role">🎨 當地留守</div>
-            </div>
-            <a href="tel:0930-532-211" class="contact-phone">0930-532-211</a>
+        <!-- 隊員聯絡（從 Firebase 載入）-->
+        <div class="contact-grid" id="team-contacts">
+          <div style="grid-column: 1/-1; text-align: center; color: #888; padding: 1rem;">
+            🔐 登入後顯示聯絡資訊...
           </div>
         </div>
 
@@ -2605,6 +2575,7 @@
   <!-- Firebase SDK (必須在使用前載入) -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="firebase-config.js"></script>
 
   <script>
@@ -2746,23 +2717,115 @@
     let expenses = [];
     let isOnline = navigator.onLine;
 
-    // XSS 防護：跳脫 HTML 特殊字元
+    // XSS 防護：跳脫 HTML 特殊字元（含引號）
     function escapeHtml(str) {
-      const div = document.createElement('div');
-      div.textContent = str;
-      return div.innerHTML;
+      if (str == null) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;');
     }
 
-    // Firebase 即時監聽
+    // Firebase 即時監聽（等待登入後才啟動）
     const expensesRef = db.ref('matcha-trip-2026/expenses');
+    let expensesListener = null;
 
-    expensesRef.on('value', (snapshot) => {
-      const data = snapshot.val();
-      expenses = data ? Object.entries(data).map(([key, val]) => ({ ...val, firebaseKey: key })) : [];
-      renderExpenses();
-      calculateSettlement();
-      console.log('[Firebase] Loaded', expenses.length, 'expenses');
+    function startExpensesListener() {
+      if (expensesListener) return; // 避免重複監聽
+
+      expensesListener = expensesRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        expenses = data ? Object.entries(data).map(([key, val]) => ({ ...val, firebaseKey: key })) : [];
+        renderExpenses();
+        calculateSettlement();
+        console.log('[Firebase] Loaded', expenses.length, 'expenses');
+      });
+    }
+
+    // 等待 Firebase Auth 準備好
+    window.addEventListener('firebase-auth-ready', () => {
+      console.log('[App] Auth ready, starting listeners');
+      startExpensesListener();
+      loadContacts();
     });
+
+    // === 聯絡人管理（從 Firebase 載入）===
+    const contactsRef = db.ref('matcha-trip-2026/contacts');
+
+    // 預設聯絡人資料（首次使用時初始化到 Firebase）
+    const defaultContacts = {
+      guardian: { name: '盧均芳', phone: '0912-014-186' },
+      team: [
+        { name: '盧均怡', role: '領隊 🥾', phone: '0911-194-755' },
+        { name: '盧均林', role: '壽星 🎂 司機', phone: '0963-145-843' },
+        { name: '劉怡君', role: '隊員 🥾', phone: '0938-670-327' },
+        { name: '莉亞（薩莉亞）', role: '🎨 當地留守', phone: '0911-703-633' },
+        { name: '莉亞姊（敷衍王）', role: '🎨 當地留守', phone: '0930-532-211' }
+      ]
+    };
+
+    function loadContacts() {
+      contactsRef.once('value').then((snapshot) => {
+        let contacts = snapshot.val();
+
+        // 如果 Firebase 沒有資料，初始化預設值
+        if (!contacts) {
+          console.log('[Contacts] Initializing default contacts to Firebase');
+          contactsRef.set(defaultContacts);
+          contacts = defaultContacts;
+        }
+
+        renderContacts(contacts);
+        console.log('[Contacts] Loaded successfully');
+      }).catch((error) => {
+        console.error('[Contacts] Load error:', error);
+      });
+    }
+
+    function renderContacts(contacts) {
+      // 渲染留守人
+      const guardianEl = document.getElementById('guardian-contact');
+      if (guardianEl && contacts.guardian) {
+        guardianEl.innerHTML = '';
+        const text = document.createTextNode(contacts.guardian.name + ' ');
+        const link = document.createElement('a');
+        link.href = 'tel:' + contacts.guardian.phone.replace(/-/g, '');
+        link.textContent = '📞 ' + contacts.guardian.phone;
+        guardianEl.appendChild(text);
+        guardianEl.appendChild(link);
+      }
+
+      // 渲染隊員聯絡
+      const teamEl = document.getElementById('team-contacts');
+      if (teamEl && contacts.team) {
+        teamEl.innerHTML = '';
+        contacts.team.forEach(member => {
+          const item = document.createElement('div');
+          item.className = 'contact-item';
+
+          const info = document.createElement('div');
+          const nameEl = document.createElement('div');
+          nameEl.className = 'contact-name';
+          nameEl.textContent = member.name;
+          const roleEl = document.createElement('div');
+          roleEl.className = 'contact-role';
+          roleEl.textContent = member.role;
+          info.appendChild(nameEl);
+          info.appendChild(roleEl);
+
+          const phoneLink = document.createElement('a');
+          phoneLink.href = 'tel:' + member.phone.replace(/-/g, '');
+          phoneLink.className = 'contact-phone';
+          phoneLink.textContent = member.phone;
+
+          item.appendChild(info);
+          item.appendChild(phoneLink);
+          teamEl.appendChild(item);
+        });
+      }
+    }
 
     // 離線偵測
     function updateOnlineStatus() {
@@ -2843,22 +2906,58 @@
 
     function renderExpenses() {
       const container = document.getElementById('expenseItems');
+      container.innerHTML = '';
 
       if (expenses.length === 0) {
-        container.innerHTML = '<div class="expense-empty">尚未新增任何支出</div>';
+        const empty = document.createElement('div');
+        empty.className = 'expense-empty';
+        empty.textContent = '尚未新增任何支出';
+        container.appendChild(empty);
         return;
       }
 
-      container.innerHTML = expenses.map(e => `
-        <div class="expense-item">
-          <div class="expense-item-info">
-            <div class="expense-item-name">${escapeHtml(e.name)}</div>
-            <div class="expense-item-detail">${escapeHtml(e.payer)} 付 / ${e.splitWith.length}人分</div>
-          </div>
-          <span class="expense-item-amount">${e.amount.toLocaleString()} 元</span>
-          <button class="expense-item-delete" onclick="deleteExpense('${escapeHtml(e.firebaseKey)}')">✕</button>
-        </div>
-      `).join('');
+      expenses.forEach(e => {
+        // 強制 amount 為數字
+        const safeAmount = Number(e.amount) || 0;
+        const safeSplitCount = Array.isArray(e.splitWith) ? e.splitWith.length : 0;
+
+        const item = document.createElement('div');
+        item.className = 'expense-item';
+
+        const info = document.createElement('div');
+        info.className = 'expense-item-info';
+
+        const nameEl = document.createElement('div');
+        nameEl.className = 'expense-item-name';
+        nameEl.textContent = e.name || '';
+
+        const detail = document.createElement('div');
+        detail.className = 'expense-item-detail';
+        detail.textContent = `${e.payer || ''} 付 / ${safeSplitCount}人分`;
+
+        info.appendChild(nameEl);
+        info.appendChild(detail);
+
+        const amount = document.createElement('span');
+        amount.className = 'expense-item-amount';
+        amount.textContent = `${safeAmount.toLocaleString()} 元`;
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'expense-item-delete';
+        deleteBtn.textContent = '✕';
+        deleteBtn.type = 'button';
+        // 使用 closure 綁定 firebaseKey，避免 inline handler
+        deleteBtn.addEventListener('click', () => {
+          if (e.firebaseKey) {
+            deleteExpense(e.firebaseKey);
+          }
+        });
+
+        item.appendChild(info);
+        item.appendChild(amount);
+        item.appendChild(deleteBtn);
+        container.appendChild(item);
+      });
     }
 
     function calculateSettlement() {

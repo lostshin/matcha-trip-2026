@@ -12,5 +12,37 @@ const firebaseConfig = {
 // 初始化 Firebase（使用 compat 版本）
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
+const auth = firebase.auth();
+
+// 當前使用者
+let currentUser = null;
+
+// 匿名登入
+function signInAnonymously() {
+  return auth.signInAnonymously()
+    .then((userCredential) => {
+      currentUser = userCredential.user;
+      console.log('[Firebase Auth] Signed in anonymously:', currentUser.uid);
+      return currentUser;
+    })
+    .catch((error) => {
+      console.error('[Firebase Auth] Sign in error:', error);
+      throw error;
+    });
+}
+
+// 監聽登入狀態變化
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    currentUser = user;
+    console.log('[Firebase Auth] User:', user.uid);
+    // 觸發自訂事件，通知應用程式已登入
+    window.dispatchEvent(new CustomEvent('firebase-auth-ready', { detail: { user } }));
+  } else {
+    currentUser = null;
+    // 自動匿名登入
+    signInAnonymously();
+  }
+});
 
 console.log('[Firebase] Initialized successfully');
