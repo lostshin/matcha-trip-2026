@@ -1,9 +1,10 @@
-const CACHE_NAME = 'matcha-trip-v5';
+const CACHE_NAME = 'matcha-trip-v6';
 const STATIC_ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './firebase-config.js',
+  './weather-api.js',
   './icons/icon-192.png',
   './icons/icon-512.png'
 ];

@@ -1280,6 +1280,224 @@
       margin-top: 0.75rem;
       min-height: 1.2em;
     }
+
+    /* === Weather Card === */
+    .weather-section {
+      max-width: 600px;
+      margin: -2rem auto 0;
+      padding: 0 1rem 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .weather-container {
+      background: white;
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .weather-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .weather-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--matcha-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .weather-update {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .weather-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .weather-tab {
+      flex: 1;
+      padding: 0.6rem;
+      border: none;
+      background: var(--cream);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .weather-tab.active {
+      background: var(--matcha);
+      color: white;
+      box-shadow: 0 4px 12px rgba(74, 124, 67, 0.25);
+    }
+
+    .weather-tab-icon {
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .weather-forecast {
+      display: none;
+    }
+
+    .weather-forecast.active {
+      display: block;
+    }
+
+    .weather-scroll {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.25rem 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .weather-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .weather-day {
+      flex: 0 0 85px;
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      scroll-snap-align: start;
+      transition: all 0.2s ease;
+    }
+
+    .weather-day:hover {
+      background: var(--cream-dark);
+    }
+
+    .weather-day.trip-day {
+      background: linear-gradient(135deg, var(--matcha-pale) 0%, #e8f5e9 100%);
+      border: 2px solid var(--matcha);
+      position: relative;
+    }
+
+    .weather-day.trip-day::before {
+      content: '旅遊日';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--matcha);
+      color: white;
+      font-size: 0.6rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .weather-day.hiking-day {
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      border: 2px solid var(--warm);
+      position: relative;
+    }
+
+    .weather-day.hiking-day::before {
+      content: '登山日';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--warm);
+      color: white;
+      font-size: 0.6rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .weather-day-date {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .weather-day-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .weather-day-temp {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--matcha-dark);
+    }
+
+    .weather-day-temp-min {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .weather-day-rain {
+      font-size: 0.7rem;
+      color: var(--blue);
+      margin-top: 0.3rem;
+    }
+
+    .weather-loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-light);
+    }
+
+    .weather-loading-spinner {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border: 3px solid var(--cream-dark);
+      border-top-color: var(--matcha);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .weather-error {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--danger);
+      font-size: 0.9rem;
+    }
+
+    .weather-offline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: #fff3cd;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: #856404;
+      margin-top: 0.75rem;
+    }
   </style>
 </head>
 <body>
@@ -1309,6 +1527,44 @@
       </p>
     </div>
     <div class="scroll-hint">↓ 往下滑動</div>
+  </section>
+
+  <!-- Weather Section -->
+  <section class="weather-section" id="weather-section">
+    <div class="weather-container">
+      <div class="weather-header">
+        <div class="weather-title">
+          <span>🌤️</span>
+          <span>一週天氣預報</span>
+        </div>
+        <div class="weather-update" id="weather-update"></div>
+      </div>
+
+      <div class="weather-tabs">
+        <button class="weather-tab active" onclick="showWeatherTab('jiaoxi')">
+          <span class="weather-tab-icon">🏘️</span>
+          <span>礁溪鄉</span>
+        </button>
+        <button class="weather-tab" onclick="showWeatherTab('mountain')">
+          <span class="weather-tab-icon">🏔️</span>
+          <span>三角崙山</span>
+        </button>
+      </div>
+
+      <div id="weather-jiaoxi" class="weather-forecast active">
+        <div class="weather-loading">
+          <div class="weather-loading-spinner"></div>
+          <div>載入天氣資料中...</div>
+        </div>
+      </div>
+
+      <div id="weather-mountain" class="weather-forecast">
+        <div class="weather-loading">
+          <div class="weather-loading-spinner"></div>
+          <div>載入天氣資料中...</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Main Content -->
@@ -3696,6 +3952,95 @@
 
     // 初始化（Firebase 已透過 .on('value') 自動監聽，不需要手動初始化）
     console.log('[Firebase] Expense calculator initialized');
+  </script>
+
+  <!-- Weather API -->
+  <script src="weather-api.js"></script>
+  <script>
+    // 天氣 Tab 切換
+    function showWeatherTab(tab) {
+      // 更新 tab 按鈕
+      document.querySelectorAll('.weather-tab').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.currentTarget.classList.add('active');
+
+      // 切換內容
+      document.querySelectorAll('.weather-forecast').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.getElementById('weather-' + tab).classList.add('active');
+    }
+
+    // 渲染天氣預報
+    function renderWeatherForecast(containerId, days) {
+      const container = document.getElementById(containerId);
+      if (!days || days.length === 0) {
+        container.innerHTML = '<div class="weather-error">⚠️ 無法取得天氣資料</div>';
+        return;
+      }
+
+      // 三角崙山（抹茶山）使用 hiking-day，礁溪使用 trip-day
+      const isMountain = containerId === 'weather-mountain';
+
+      const html = `
+        <div class="weather-scroll">
+          ${days.map(day => {
+            let dayClass = 'weather-day';
+            if (isMountain && day.isHikingDay) {
+              dayClass += ' hiking-day';
+            } else if (!isMountain && day.isTripDay) {
+              dayClass += ' trip-day';
+            }
+            return `
+            <div class="${dayClass}">
+              <div class="weather-day-date">${day.dateDisplay}</div>
+              <div class="weather-day-icon">${day.icon}</div>
+              <div class="weather-day-temp">
+                ${day.maxTemp}°
+                <span class="weather-day-temp-min">/ ${day.minTemp}°</span>
+              </div>
+              ${day.rainProb !== undefined ? `<div class="weather-day-rain">💧 ${day.rainProb}%</div>` : ''}
+            </div>
+          `}).join('')}
+        </div>
+      `;
+      container.innerHTML = html;
+    }
+
+    // 顯示錯誤
+    function showWeatherError(message) {
+      document.querySelectorAll('.weather-forecast').forEach(el => {
+        el.innerHTML = `<div class="weather-error">⚠️ ${message}</div>`;
+      });
+    }
+
+    // 載入天氣資料
+    async function loadWeather() {
+      try {
+        const result = await getAllWeather();
+
+        if (result.success) {
+          renderWeatherForecast('weather-jiaoxi', result.jiaoxi);
+          renderWeatherForecast('weather-mountain', result.mountain);
+          document.getElementById('weather-update').textContent = `更新：${result.lastUpdate}`;
+        } else {
+          showWeatherError(result.error || '無法取得天氣資料');
+        }
+      } catch (error) {
+        console.error('Weather load error:', error);
+        showWeatherError('網路錯誤，請稍後再試');
+      }
+    }
+
+    // 頁面載入後取得天氣
+    document.addEventListener('DOMContentLoaded', () => {
+      // 延遲載入天氣，避免影響首屏渲染
+      setTimeout(loadWeather, 500);
+
+      // 每 30 分鐘更新一次
+      setInterval(loadWeather, 30 * 60 * 1000);
+    });
   </script>
 
   <!-- Service Worker 註冊 -->
