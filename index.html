@@ -4600,15 +4600,15 @@
 
       // 登山面板邏輯
       if (isMountain) {
-        // 判斷今天是否是登山日
-        const today = new Date().toISOString().split('T')[0];
-        const isHikingToday = WEATHER_CONFIG.HIKING_DATES.includes(today);
+        // 只要有登山日的每小時預報資料就顯示詳細卡片（最早可提前 3 天）
+        const hikingDay = days.find(d => d.isHikingDay);
+        const hasHourlyData = hikingDay && hikingDay.hourlyForecast && hikingDay.hourlyForecast.length > 0;
 
-        if (isHikingToday && hikingDetailHtml) {
-          // 登山當天：顯示詳細資訊卡片（含每小時預報）
+        if (hasHourlyData && hikingDetailHtml) {
+          // 有每小時資料：顯示詳細資訊卡片
           container.innerHTML = hikingDetailHtml;
         } else {
-          // 還沒到登山當天：顯示一週預報卡片列表
+          // 還沒有每小時資料：顯示一週預報卡片列表
           container.innerHTML = cardsHtml + riskAlertHtml;
         }
         return;
