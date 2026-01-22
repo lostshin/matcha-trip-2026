@@ -1498,6 +1498,424 @@
       color: #856404;
       margin-top: 0.75rem;
     }
+
+    /* 風險指示器 */
+    .weather-day-risk {
+      font-size: 0.65rem;
+      margin-top: 0.25rem;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .weather-day-risk.risk-high {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .weather-day-risk.risk-medium {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .weather-day-risk.risk-low {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    /* 風險警告區塊 */
+    .weather-risk-alert {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      border-radius: 10px;
+      font-size: 0.8rem;
+    }
+
+    .weather-risk-alert.risk-high {
+      background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+      border-left: 3px solid #dc2626;
+    }
+
+    .weather-risk-alert.risk-medium {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-left: 3px solid #d97706;
+    }
+
+    .weather-risk-alert.risk-low {
+      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+      border-left: 3px solid #16a34a;
+    }
+
+    .weather-risk-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .weather-risk-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .weather-risk-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* 智慧模式提示 */
+    .weather-smart-mode {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.6rem;
+      background: linear-gradient(135deg, var(--matcha-pale) 0%, #e8f5e9 100%);
+      border-radius: 8px;
+      font-size: 0.7rem;
+      color: var(--matcha-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .weather-smart-mode-icon {
+      font-size: 0.9rem;
+    }
+
+    /* ===== 登山詳細天氣面板 ===== */
+
+    /* 登山日重點資訊卡片 */
+    .hiking-detail-card {
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      border: 2px solid var(--warm);
+      border-radius: 16px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hiking-detail-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .hiking-detail-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--warm-dark);
+    }
+
+    .hiking-detail-title-icon {
+      font-size: 1.3rem;
+    }
+
+    .hiking-detail-date {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .hiking-detail-main {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed rgba(0,0,0,0.1);
+    }
+
+    .hiking-detail-weather {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+
+    .hiking-detail-weather-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    .hiking-detail-weather-text {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+      text-align: center;
+    }
+
+    .hiking-detail-temps {
+      flex: 1;
+    }
+
+    .hiking-detail-temp-main {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+
+    .hiking-detail-temp-high {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--warm-dark);
+    }
+
+    .hiking-detail-temp-low {
+      font-size: 1.2rem;
+      color: var(--text-light);
+    }
+
+    .hiking-detail-temp-label {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      margin-top: 0.2rem;
+    }
+
+    /* 詳細資訊網格 */
+    .hiking-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .hiking-detail-item {
+      background: rgba(255,255,255,0.6);
+      border-radius: 10px;
+      padding: 0.6rem;
+      text-align: center;
+    }
+
+    .hiking-detail-item-icon {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .hiking-detail-item-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--matcha-dark);
+    }
+
+    .hiking-detail-item-label {
+      font-size: 0.65rem;
+      color: var(--text-light);
+    }
+
+    /* 登山提醒區塊 */
+    .hiking-tips-section {
+      background: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      padding: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .hiking-tips-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--warm-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hiking-tips-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .hiking-tips-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* 風險等級標籤 */
+    .hiking-risk-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .hiking-risk-badge.risk-high {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .hiking-risk-badge.risk-medium {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .hiking-risk-badge.risk-low {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    /* 山區天氣詳細資訊列 */
+    .weather-day-details {
+      display: flex;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-top: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .weather-day-detail-item {
+      font-size: 0.6rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+    }
+
+    /* ===== 每小時溫度曲線圖表 ===== */
+    .hourly-chart-section {
+      margin-top: 1rem;
+      background: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      padding: 0.75rem;
+    }
+
+    .hourly-chart-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--warm-dark);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hourly-chart-container {
+      position: relative;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .hourly-chart {
+      display: flex;
+      gap: 0;
+      min-width: max-content;
+      padding: 0.5rem 0;
+    }
+
+    .hourly-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 50px;
+      padding: 0 0.25rem;
+    }
+
+    .hourly-time {
+      font-size: 0.65rem;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+
+    .hourly-icon {
+      font-size: 1rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .hourly-temp {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--matcha-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    /* 溫度曲線 */
+    .hourly-temp-bar {
+      position: relative;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .hourly-temp-point {
+      width: 8px;
+      height: 8px;
+      background: var(--warm);
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hourly-temp-line {
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--warm-light), var(--warm));
+    }
+
+    /* 降雨機率條 */
+    .hourly-rain {
+      width: 100%;
+      height: 20px;
+      background: #e3f2fd;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hourly-rain-fill {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, #2196f3, #64b5f6);
+      border-radius: 4px;
+      transition: height 0.3s;
+    }
+
+    .hourly-rain-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.55rem;
+      font-weight: 600;
+      color: #1565c0;
+      text-shadow: 0 0 2px rgba(255,255,255,0.8);
+    }
+
+    /* 重要時段標記 */
+    .hourly-item.highlight {
+      background: rgba(255, 152, 0, 0.15);
+      border-radius: 8px;
+      margin: 0 -0.25rem;
+      padding: 0.25rem;
+    }
+
+    .hourly-item.highlight .hourly-time {
+      color: var(--warm-dark);
+      font-weight: 600;
+    }
+
+    /* 滾動提示 */
+    .hourly-scroll-hint {
+      text-align: center;
+      font-size: 0.65rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -3972,6 +4390,26 @@
       document.getElementById('weather-' + tab).classList.add('active');
     }
 
+    // 取得風險等級對應的圖示
+    function getRiskIcon(level) {
+      switch (level) {
+        case 'high': return '⚠️';
+        case 'medium': return '⚡';
+        case 'low': return '✅';
+        default: return '';
+      }
+    }
+
+    // 取得風險等級對應的標籤文字
+    function getRiskLabel(level) {
+      switch (level) {
+        case 'high': return '高風險';
+        case 'medium': return '注意';
+        case 'low': return '良好';
+        default: return '';
+      }
+    }
+
     // 渲染天氣預報
     function renderWeatherForecast(containerId, days) {
       const container = document.getElementById(containerId);
@@ -3983,7 +4421,116 @@
       // 三角崙山（抹茶山）使用 hiking-day，礁溪使用 trip-day
       const isMountain = containerId === 'weather-mountain';
 
-      const html = `
+      // 收集旅遊日的風險警告
+      const tripDays = days.filter(day => day.isTripDay || day.isHikingDay);
+      const highRiskMessages = [];
+      const mediumRiskMessages = [];
+
+      tripDays.forEach(day => {
+        if (day.riskMessages && day.riskMessages.length > 0) {
+          if (day.riskLevel === 'high') {
+            highRiskMessages.push(...day.riskMessages.map(msg => `${day.dateDisplay}: ${msg}`));
+          } else if (day.riskLevel === 'medium') {
+            mediumRiskMessages.push(...day.riskMessages.map(msg => `${day.dateDisplay}: ${msg}`));
+          }
+        }
+      });
+
+      // ===== 登山面板：顯示詳細登山日資訊卡片 =====
+      let hikingDetailHtml = '';
+      if (isMountain) {
+        const hikingDay = days.find(day => day.isHikingDay);
+        if (hikingDay) {
+          // 產生登山提醒
+          const hikingTips = generateHikingTips(hikingDay);
+
+          hikingDetailHtml = `
+            <div class="hiking-detail-card">
+              <div class="hiking-detail-header">
+                <div class="hiking-detail-title">
+                  <span class="hiking-detail-title-icon">⛰️</span>
+                  <span>登山日天氣</span>
+                </div>
+                <span class="hiking-risk-badge risk-${hikingDay.riskLevel}">
+                  ${getRiskIcon(hikingDay.riskLevel)} ${getRiskLabel(hikingDay.riskLevel)}
+                </span>
+              </div>
+
+              <div class="hiking-detail-main">
+                <div class="hiking-detail-weather">
+                  <div class="hiking-detail-weather-icon">${hikingDay.icon}</div>
+                  <div class="hiking-detail-weather-text">${hikingDay.weather || '多雲'}</div>
+                </div>
+                <div class="hiking-detail-temps">
+                  <div class="hiking-detail-temp-main">
+                    <span class="hiking-detail-temp-high">${hikingDay.maxTemp !== undefined ? hikingDay.maxTemp : '-'}°</span>
+                    <span class="hiking-detail-temp-low">/ ${hikingDay.minTemp !== undefined ? hikingDay.minTemp : '-'}°</span>
+                  </div>
+                  <div class="hiking-detail-temp-label">
+                    ${hikingDay.dateDisplay} ・ 山頂體感約 ${(hikingDay.minTemp || 10) - 5}°C
+                  </div>
+                </div>
+              </div>
+
+              <div class="hiking-detail-grid">
+                <div class="hiking-detail-item">
+                  <div class="hiking-detail-item-icon">💧</div>
+                  <div class="hiking-detail-item-value">${hikingDay.rainProb !== undefined ? hikingDay.rainProb + '%' : '-'}</div>
+                  <div class="hiking-detail-item-label">降雨機率</div>
+                </div>
+                <div class="hiking-detail-item">
+                  <div class="hiking-detail-item-icon">💨</div>
+                  <div class="hiking-detail-item-value">${hikingDay.humidity !== undefined ? hikingDay.humidity + '%' : '-'}</div>
+                  <div class="hiking-detail-item-label">相對濕度</div>
+                </div>
+                <div class="hiking-detail-item">
+                  <div class="hiking-detail-item-icon">🌬️</div>
+                  <div class="hiking-detail-item-value">${hikingDay.windSpeed || '-'}</div>
+                  <div class="hiking-detail-item-label">風速${hikingDay.windDirection ? ' ' + hikingDay.windDirection : ''}</div>
+                </div>
+              </div>
+
+              ${hikingTips.length > 0 ? `
+              <div class="hiking-tips-section">
+                <div class="hiking-tips-title">📋 登山提醒</div>
+                <ul class="hiking-tips-list">
+                  ${hikingTips.map(tip => `<li>${tip}</li>`).join('')}
+                </ul>
+              </div>
+              ` : ''}
+
+              ${hikingDay.hourlyForecast && hikingDay.hourlyForecast.length > 0 ? `
+              <div class="hourly-chart-section">
+                <div class="hourly-chart-title">📈 登山日逐時預報</div>
+                <div class="hourly-chart-container">
+                  <div class="hourly-chart">
+                    ${hikingDay.hourlyForecast.map(h => {
+                      // 登頂時段 10-11 點標記
+                      const isHighlight = h.hour >= 10 && h.hour <= 11;
+                      return `
+                      <div class="hourly-item ${isHighlight ? 'highlight' : ''}">
+                        <div class="hourly-time">${h.time}</div>
+                        <div class="hourly-icon">${h.icon || '🌡️'}</div>
+                        <div class="hourly-temp">${h.temp}°</div>
+                        <div class="hourly-rain">
+                          <div class="hourly-rain-fill" style="height: ${h.rainProb || 0}%;"></div>
+                          <div class="hourly-rain-text">${h.rainProb !== undefined ? h.rainProb + '%' : '-'}</div>
+                        </div>
+                      </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+                <div class="hourly-scroll-hint">← 左右滑動查看更多 →</div>
+              </div>
+              ` : ''}
+            </div>
+          `;
+        }
+      }
+
+      // 生成天氣卡片 HTML（山區天氣顯示更多細節）
+      const cardsHtml = `
         <div class="weather-scroll">
           ${days.map(day => {
             let dayClass = 'weather-day';
@@ -3992,20 +4539,162 @@
             } else if (!isMountain && day.isTripDay) {
               dayClass += ' trip-day';
             }
+
+            // 只在旅遊日顯示風險指示器
+            const showRisk = day.isTripDay || day.isHikingDay;
+            const riskHtml = showRisk && day.riskLevel
+              ? `<div class="weather-day-risk risk-${day.riskLevel}">${getRiskIcon(day.riskLevel)}</div>`
+              : '';
+
+            // 山區天氣：顯示額外的濕度資訊
+            const detailsHtml = isMountain && day.humidity !== undefined
+              ? `<div class="weather-day-details">
+                  <span class="weather-day-detail-item">💨${day.humidity}%</span>
+                </div>`
+              : '';
+
             return `
             <div class="${dayClass}">
               <div class="weather-day-date">${day.dateDisplay}</div>
               <div class="weather-day-icon">${day.icon}</div>
               <div class="weather-day-temp">
-                ${day.maxTemp}°
-                <span class="weather-day-temp-min">/ ${day.minTemp}°</span>
+                ${day.maxTemp !== undefined ? day.maxTemp : '-'}°
+                <span class="weather-day-temp-min">/ ${day.minTemp !== undefined ? day.minTemp : '-'}°</span>
               </div>
               ${day.rainProb !== undefined ? `<div class="weather-day-rain">💧 ${day.rainProb}%</div>` : ''}
+              ${detailsHtml}
+              ${riskHtml}
             </div>
           `}).join('')}
         </div>
       `;
-      container.innerHTML = html;
+
+      // 生成風險警告區塊 HTML
+      let riskAlertHtml = '';
+
+      if (highRiskMessages.length > 0) {
+        riskAlertHtml = `
+          <div class="weather-risk-alert risk-high">
+            <div class="weather-risk-title">⚠️ 旅遊日高風險警告</div>
+            <ul class="weather-risk-list">
+              ${[...new Set(highRiskMessages)].map(msg => `<li>${msg}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+      } else if (mediumRiskMessages.length > 0) {
+        riskAlertHtml = `
+          <div class="weather-risk-alert risk-medium">
+            <div class="weather-risk-title">⚡ 旅遊日注意事項</div>
+            <ul class="weather-risk-list">
+              ${[...new Set(mediumRiskMessages)].map(msg => `<li>${msg}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+      } else if (tripDays.length > 0) {
+        riskAlertHtml = `
+          <div class="weather-risk-alert risk-low">
+            <div class="weather-risk-title">✅ 旅遊日天氣狀況良好</div>
+          </div>
+        `;
+      }
+
+      // 登山面板邏輯
+      if (isMountain) {
+        // 判斷今天是否是登山日
+        const today = new Date().toISOString().split('T')[0];
+        const isHikingToday = WEATHER_CONFIG.HIKING_DATES.includes(today);
+
+        if (isHikingToday && hikingDetailHtml) {
+          // 登山當天：顯示詳細資訊卡片（含每小時預報）
+          container.innerHTML = hikingDetailHtml;
+        } else {
+          // 還沒到登山當天：顯示一週預報卡片列表
+          container.innerHTML = cardsHtml + riskAlertHtml;
+        }
+        return;
+      }
+
+      container.innerHTML = cardsHtml + riskAlertHtml;
+    }
+
+    // 根據天氣狀況產生登山提醒
+    function generateHikingTips(day) {
+      const tips = [];
+
+      // 降雨相關提醒
+      if (day.rainProb !== undefined) {
+        if (day.rainProb >= 70) {
+          tips.push('降雨機率高，建議攜帶防水背包套和雨衣');
+          tips.push('步道濕滑，需格外小心');
+        } else if (day.rainProb >= 40) {
+          tips.push('可能有雨，建議攜帶輕便雨具');
+        }
+      }
+
+      // 氣溫相關提醒
+      if (day.minTemp !== undefined) {
+        if (day.minTemp <= 5) {
+          tips.push('山頂低溫，務必攜帶保暖外套和手套');
+        } else if (day.minTemp <= 10) {
+          tips.push('山頂較涼，建議洋蔥式穿搭');
+        }
+      }
+
+      // 濕度相關提醒
+      if (day.humidity !== undefined && day.humidity >= 85) {
+        tips.push('濕度高，衣物可能不易乾燥');
+      }
+
+      // 風速相關提醒
+      if (day.windSpeed) {
+        const windNum = parseInt(day.windSpeed);
+        if (!isNaN(windNum) && windNum >= 6) {
+          tips.push('風勢較大，稜線段請注意安全');
+        }
+      }
+
+      // 天氣現象相關提醒
+      if (day.weather) {
+        if (day.weather.includes('霧')) {
+          tips.push('可能起霧，能見度受限需注意路徑');
+        }
+        if (day.weather.includes('雷')) {
+          tips.push('⚠️ 有雷雨預報，強烈建議改期');
+        }
+      }
+
+      // 基本提醒（如果沒有特殊狀況）
+      if (tips.length === 0) {
+        tips.push('天氣條件適宜登山');
+        tips.push('建議攜帶足夠飲水和行動糧');
+      }
+
+      // 固定提醒
+      tips.push('日落 17:33，請預留下山時間');
+
+      return tips;
+    }
+
+    // 渲染智慧模式提示
+    function renderSmartModeHint(smartMode) {
+      const existingHint = document.querySelector('.weather-smart-mode');
+      if (existingHint) {
+        existingHint.remove();
+      }
+
+      if (smartMode && smartMode.enabled) {
+        const hintHtml = `
+          <div class="weather-smart-mode">
+            <span class="weather-smart-mode-icon">${smartMode.using3Day ? '🎯' : '📅'}</span>
+            <span>${smartMode.message}</span>
+          </div>
+        `;
+
+        const tabs = document.querySelector('.weather-tabs');
+        if (tabs) {
+          tabs.insertAdjacentHTML('beforebegin', hintHtml);
+        }
+      }
     }
 
     // 顯示錯誤
@@ -4024,6 +4713,11 @@
           renderWeatherForecast('weather-jiaoxi', result.jiaoxi);
           renderWeatherForecast('weather-mountain', result.mountain);
           document.getElementById('weather-update').textContent = `更新：${result.lastUpdate}`;
+
+          // 顯示智慧模式提示
+          if (result.smartMode) {
+            renderSmartModeHint(result.smartMode);
+          }
         } else {
           showWeatherError(result.error || '無法取得天氣資料');
         }
