@@ -41,6 +41,62 @@ const WEATHER_CONFIG = {
   CACHE_DURATION: 30 * 60 * 1000
 };
 
+let weatherConfigApplied = false;
+
+function applyTripWeatherConfig(force = false) {
+  if (weatherConfigApplied && !force) return true;
+
+  const weatherData = window.TRIP_DATA && window.TRIP_DATA.weather;
+  if (!weatherData) return false;
+
+  if (weatherData.apiKey) {
+    WEATHER_CONFIG.API_KEY = weatherData.apiKey;
+  }
+
+  const datasets = weatherData.datasets || {};
+  if (datasets.jiaoxi || datasets.JIAOXI) {
+    WEATHER_CONFIG.DATASETS.JIAOXI = datasets.jiaoxi || datasets.JIAOXI;
+  }
+  if (datasets.mountain || datasets.MOUNTAIN) {
+    WEATHER_CONFIG.DATASETS.MOUNTAIN = datasets.mountain || datasets.MOUNTAIN;
+  }
+
+  const datasets3Day = weatherData.datasets3Day || weatherData.datasets_3day || {};
+  if (datasets3Day.jiaoxi || datasets3Day.JIAOXI) {
+    WEATHER_CONFIG.DATASETS_3DAY.JIAOXI = datasets3Day.jiaoxi || datasets3Day.JIAOXI;
+  }
+  if (datasets3Day.recreation || datasets3Day.RECREATION) {
+    WEATHER_CONFIG.DATASETS_3DAY.RECREATION = datasets3Day.recreation || datasets3Day.RECREATION;
+  }
+
+  const locations = weatherData.locations || {};
+  if (locations.jiaoxi || locations.JIAOXI) {
+    WEATHER_CONFIG.LOCATIONS.JIAOXI = locations.jiaoxi || locations.JIAOXI;
+  }
+  if (locations.mountain || locations.MOUNTAIN) {
+    WEATHER_CONFIG.LOCATIONS.MOUNTAIN = locations.mountain || locations.MOUNTAIN;
+  }
+
+  if (Array.isArray(weatherData.tripDates) && weatherData.tripDates.length) {
+    WEATHER_CONFIG.TRIP_DATES = weatherData.tripDates.slice();
+  }
+  if (Array.isArray(weatherData.hikingDates) && weatherData.hikingDates.length) {
+    WEATHER_CONFIG.HIKING_DATES = weatherData.hikingDates.slice();
+  }
+  if (weatherData.cacheDuration) {
+    WEATHER_CONFIG.CACHE_DURATION = Number(weatherData.cacheDuration) || WEATHER_CONFIG.CACHE_DURATION;
+  }
+
+  weatherConfigApplied = true;
+  return true;
+}
+
+window.addEventListener('trip-data-loaded', () => {
+  weatherConfigApplied = false;
+  applyTripWeatherConfig(true);
+});
+applyTripWeatherConfig();
+
 // 天氣代碼對應圖示
 const WEATHER_ICONS = {
   '01': '☀️', // 晴天
@@ -159,6 +215,8 @@ function assessWeatherRisk(day, isMountain = false) {
  * 如果最早的旅遊日期在 3 天內，使用精準預報
  */
 function shouldUse3DayForecast() {
+  applyTripWeatherConfig();
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -176,6 +234,8 @@ function shouldUse3DayForecast() {
  * 取得距離行程還有幾天
  */
 function getDaysUntilTrip() {
+  applyTripWeatherConfig();
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -550,6 +610,8 @@ async function getMountainWeather() {
  */
 async function getAllWeather() {
   try {
+    applyTripWeatherConfig();
+
     const [jiaoxiResult, mountainResult] = await Promise.all([
       getJiaoxiWeather(),
       getMountainWeather()

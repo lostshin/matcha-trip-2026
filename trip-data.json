@@ -1,0 +1,910 @@
+{
+  "tripId": "matcha-trip-2026",
+  "tripType": "hiking",
+  "hero": {
+    "title": "抹茶山",
+    "subtitle": "生日旅遊小手冊",
+    "dateDisplay": "2026 / 1 / 24 - 26",
+    "infoHtml": "三天兩夜 ・ 宜蘭礁溪<br>🥾 登山 ・ ♨️ 溫泉 ・ 🎂 慶生"
+  },
+  "footer": {
+    "wish": "🌿 願旅途平安，生日快樂！",
+    "copyright": "抹茶山生日旅遊 2026"
+  },
+  "weather": {
+    "tabs": [
+      {
+        "id": "jiaoxi",
+        "label": "礁溪鄉",
+        "icon": "🏘️"
+      },
+      {
+        "id": "mountain",
+        "label": "抹茶山(三角崙山)",
+        "icon": "🏔️"
+      }
+    ],
+    "apiKey": "CWA-2113E8B4-1388-4373-8F45-7A13D2D5A545",
+    "datasets": {
+      "jiaoxi": "F-D0047-003",
+      "mountain": "F-B0053-031"
+    },
+    "datasets3Day": {
+      "jiaoxi": "F-D0047-001",
+      "recreation": "F-B0053-035"
+    },
+    "locations": {
+      "jiaoxi": "礁溪鄉",
+      "mountain": "三角崙山"
+    },
+    "tripDates": [
+      "2026-01-24",
+      "2026-01-25",
+      "2026-01-26"
+    ],
+    "hikingDates": [
+      "2026-01-25"
+    ],
+    "cacheDuration": 1800000
+  },
+  "sections": [
+    {
+      "id": "section-itinerary",
+      "icon": "📅",
+      "title": "三天行程總覽"
+    },
+    {
+      "id": "section-hotel",
+      "icon": "🏨",
+      "title": "住宿資訊"
+    },
+    {
+      "id": "section-guide",
+      "icon": "🗺️",
+      "title": "宜蘭旅遊推薦"
+    },
+    {
+      "id": "section-budget",
+      "icon": "💰",
+      "title": "預算摘要"
+    },
+    {
+      "id": "section-calculator",
+      "icon": "🧮",
+      "title": "分帳計算器"
+    },
+    {
+      "id": "section-hike-guide",
+      "icon": "⛰️",
+      "title": "抹茶山登山攻略"
+    },
+    {
+      "id": "section-checklist",
+      "icon": "✅",
+      "title": "行前檢核清單"
+    },
+    {
+      "id": "section-emergency",
+      "icon": "🆘",
+      "title": "緊急聯絡"
+    }
+  ],
+  "itinerary": {
+    "days": [
+      {
+        "day": 1,
+        "label": "Day 1",
+        "displayDate": "1/24 六",
+        "alert": {
+          "cssClass": "bg-matcha-gradient",
+          "html": "⛈️ <strong>因應宜蘭雨天</strong>：改走西部景點，下午再前往礁溪"
+        },
+        "hasTeams": false,
+        "schedule": [
+          {
+            "time": "05:00",
+            "titleHtml": "🚗 高雄出發",
+            "noteHtml": "均林開車（全程）"
+          },
+          {
+            "time": "07:00",
+            "titleHtml": "☕ 清水服務區",
+            "noteHtml": "第一次休息、上廁所"
+          },
+          {
+            "time": "08:00",
+            "titleHtml": "⛩️ 松柏嶺受天宮",
+            "noteHtml": "拜拜、觀景台、商店街早餐（停留約 1 hr）<a href=\"https://www.google.com/maps/search/?api=1&query=松柏嶺受天宮+南投\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+          },
+          {
+            "time": "11:00",
+            "titleHtml": "☕ 關西服務區",
+            "noteHtml": "第二次休息、加油"
+          },
+          {
+            "time": "11:30",
+            "titleHtml": "🏮 大溪老街",
+            "noteHtml": "午餐、逛老街、買豆干（停留約 2 hr）<a href=\"https://www.google.com/maps/search/?api=1&query=大溪老街\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+          },
+          {
+            "time": "13:30",
+            "titleHtml": "🚗 出發往礁溪",
+            "noteHtml": "國道3號 → 國道5號雪隧（約 1.5-2 hr）"
+          },
+          {
+            "time": "15:30",
+            "titleHtml": "抵達礁溪",
+            "noteHtml": "週六雪隧可能稍塞"
+          },
+          {
+            "time": "17:00",
+            "titleHtml": "🏨 Check-in",
+            "noteHtml": "福岡6號溫泉飯店 <a href=\"https://www.google.com/maps/search/?api=1&query=福岡6號溫泉飯店+礁溪\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+          },
+          {
+            "time": "18:30",
+            "titleHtml": "🍽️ 里海咖啡",
+            "noteHtml": "✅ 已訂位！鮮魚定食 <a href=\"https://www.google.com/maps/search/?api=1&query=里海咖啡+礁溪\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+          },
+          {
+            "time": "20:30",
+            "titleHtml": "♨️ 泡溫泉 / 逛礁溪老街",
+            "noteHtml": "視體力彈性安排"
+          },
+          {
+            "time": "21:00",
+            "titleHtml": "💤 早點休息",
+            "noteHtml": "隔天要早起爬山！"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "label": "Day 2",
+        "displayDate": "1/25 日",
+        "alert": {
+          "cssClass": "bg-matcha-gradient",
+          "html": "🥾 <strong>登山隊</strong>：均怡、均林、怡君（3人）<br>🎨 <strong>青花瓷隊</strong>：莉亞、莉亞姊（2人）→ 三星 DIY"
+        },
+        "hasTeams": true,
+        "teams": [
+          {
+            "name": "登山隊",
+            "icon": "🥾",
+            "schedule": [
+              {
+                "time": "05:30",
+                "titleHtml": "🌅 早餐",
+                "noteHtml": "前晚準備好"
+              },
+              {
+                "time": "06:30",
+                "titleHtml": "🥾 開始登山",
+                "noteHtml": "五峰旗停車場出發 <a href=\"https://www.google.com/maps/search/?api=1&query=五峰旗停車場\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+              },
+              {
+                "time": "10:30",
+                "titleHtml": "⛰️ 登頂抹茶山！",
+                "noteHtml": "拍照、休息、午餐"
+              },
+              {
+                "time": "14:00",
+                "titleHtml": "回到停車場",
+                "noteHtml": ""
+              },
+              {
+                "time": "14:30",
+                "titleHtml": "💆 悠宅 SPA 按摩",
+                "noteHtml": "紓緩登山疲勞 <a href=\"https://www.google.com/maps/search/?api=1&query=悠宅SPA養生會館+礁溪\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+              }
+            ]
+          },
+          {
+            "name": "青花瓷隊",
+            "icon": "🎨",
+            "schedule": [
+              {
+                "time": "09:00",
+                "titleHtml": "🛵 礁溪租機車",
+                "noteHtml": "建議前晚預約"
+              },
+              {
+                "time": "10:30",
+                "titleHtml": "🎨 三星四季青花瓷 DIY",
+                "noteHtml": "✅ 已預約 10:30 場次 <a href=\"https://www.google.com/maps/search/?api=1&query=三星四季青花瓷+宜蘭\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+              },
+              {
+                "time": "12:30",
+                "titleHtml": "🍽️ 雀榕咖啡午餐",
+                "noteHtml": "同園區內"
+              },
+              {
+                "time": "13:30",
+                "titleHtml": "🍂 三星周邊散步",
+                "noteHtml": "落羽松、慢活時光"
+              },
+              {
+                "time": "16:00",
+                "titleHtml": "🛵 返回礁溪會合",
+                "noteHtml": "還機車後與登山隊會合"
+              }
+            ]
+          }
+        ],
+        "combined": {
+          "titleHtml": "👥 會合後（全員 5 人）",
+          "schedule": [
+            {
+              "time": "16:00",
+              "titleHtml": "🏨 Check-in",
+              "noteHtml": "悠宅SPA養生會館"
+            },
+            {
+              "time": "16:30",
+              "titleHtml": "♨️ 飯店湯屋泡溫泉",
+              "noteHtml": "爬完山泡湯超舒服！"
+            },
+            {
+              "time": "18:00",
+              "titleHtml": "🎂 慶生晚餐",
+              "noteHtml": "芭樂狗（已訂位！）東歐烏克蘭料理 <a href=\"https://www.google.com/maps/search/?api=1&query=芭樂狗+宜蘭市復興路\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+            },
+            {
+              "time": "20:30",
+              "titleHtml": "🍻 小酌慶祝",
+              "noteHtml": "跨力 Co-Link <a href=\"https://www.google.com/maps/search/?api=1&query=跨力+Co-Link+礁溪\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+            }
+          ]
+        },
+        "infoCards": [
+          {
+            "titleHtml": "🎨 三星四季青花瓷",
+            "badge": "已預約",
+            "contentHtml": "📍 宜蘭縣三星鄉行健村行健二路二段 275 號<br>📞 <a href=\"tel:03-989-2789\">03-989-2789</a><br>🕐 假日場次：10:30 / 13:00 / 15:30<br>💰 600-1,200 元/件（依器皿，含燒製費）<br>⚠️ 陪同未手作者低消 150 元<br>🔗 <a href=\"https://inline.app/booking/-MVVm2JnstapOXZfTiF9:inline-live-2/-MVVm2RU7G1DWt-4MMwL?language=zh-tw\" target=\"_blank\" rel=\"noopener noreferrer\">預約連結</a>"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "label": "Day 3",
+        "displayDate": "1/26 一",
+        "alert": null,
+        "hasTeams": false,
+        "schedule": [
+          {
+            "time": "08:00",
+            "titleHtml": "☕ 飯店早餐",
+            "noteHtml": "悠宅早餐（含住宿）"
+          },
+          {
+            "time": "10:00",
+            "titleHtml": "🏘️ 頭城老街",
+            "noteHtml": "彩繪巷、土地公扭蛋 <a href=\"https://www.google.com/maps/search/?api=1&query=頭城老街\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+          },
+          {
+            "time": "11:00",
+            "titleHtml": "🏛️ 蘭陽博物館",
+            "noteHtml": "門票 100 元 <a href=\"https://www.google.com/maps/search/?api=1&query=蘭陽博物館\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+          },
+          {
+            "time": "12:00",
+            "titleHtml": "🦐 烏石港海鮮",
+            "noteHtml": "返程前午餐 <a href=\"https://www.google.com/maps/search/?api=1&query=烏石港+海鮮餐廳\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-btn nav-btn-small\">📍 導航</a>"
+          },
+          {
+            "time": "13:30",
+            "titleHtml": "🚗 返程高雄",
+            "noteHtml": ""
+          },
+          {
+            "time": "18:30",
+            "titleHtml": "🏠 抵達高雄",
+            "noteHtml": "平安回家！"
+          }
+        ]
+      }
+    ],
+    "warningHtml": "🌅 日落 17:33 ｜ 🌡️ 山頂體感 0-5°C ｜ 📵 通天橋後無訊號"
+  },
+  "hotels": [
+    {
+      "nightLabel": "第一晚 1/24",
+      "name": "福岡6號溫泉飯店",
+      "phone": "03-987-5777",
+      "checkIn": "17:00",
+      "checkOut": "11:00",
+      "roomType": "家庭間（6人房）32㎡",
+      "price": "TWD 5,737.61",
+      "priceNote": "含稅，5人分攤",
+      "bookingId": "1680174478",
+      "features": [
+        "含早餐",
+        "免費停車",
+        "WiFi"
+      ],
+      "cancelPolicy": "1/20 23:59 前可免費取消",
+      "mapQuery": "福岡6號溫泉飯店+礁溪",
+      "roomAllocation": null,
+      "extraInfo": null
+    },
+    {
+      "nightLabel": "第二晚 1/25",
+      "name": "悠宅SPA養生會館",
+      "phone": "03-988-8933",
+      "checkIn": "16:00",
+      "checkOut": "11:00",
+      "roomType": null,
+      "price": "TWD 6,375.46",
+      "priceNote": "含稅",
+      "bookingId": "1680991277、1680991658",
+      "features": [
+        "專業養生按摩",
+        "含早餐"
+      ],
+      "cancelPolicy": null,
+      "mapQuery": "悠宅SPA養生會館+礁溪",
+      "roomAllocation": [
+        {
+          "type": "雙人房",
+          "guests": [
+            "均林",
+            "怡君"
+          ],
+          "price": "TWD 2,705.30"
+        },
+        {
+          "type": "家庭房",
+          "guests": [
+            "均怡",
+            "莉亞",
+            "莉亞姊"
+          ],
+          "price": "TWD 3,670.16"
+        }
+      ],
+      "extraInfo": {
+        "rating": 4.9,
+        "reviewCount": "2500+"
+      }
+    }
+  ],
+  "guide": {
+    "tabs": [
+      {
+        "label": "🍽️ 美食",
+        "tabLabel": "Travel"
+      },
+      {
+        "label": "📸 景點",
+        "tabLabel": "Travel"
+      },
+      {
+        "label": "🎁 伴手禮",
+        "tabLabel": "Travel"
+      }
+    ],
+    "food": {
+      "reservations": [
+        {
+          "name": "里海咖啡",
+          "dayLabel": "Day1",
+          "date": "1/24（六）",
+          "time": "18:30",
+          "people": 5,
+          "mapQuery": "里海咖啡+礁溪"
+        },
+        {
+          "name": "芭樂狗",
+          "dayLabel": "Day2",
+          "date": "1/25（日）",
+          "time": "18:00",
+          "people": 5,
+          "isBirthday": true,
+          "mapQuery": "芭樂狗+宜蘭市復興路"
+        }
+      ],
+      "restaurantGroups": [
+        {
+          "title": "🍽️ Day1-2 主要餐廳",
+          "items": [
+            {
+              "rank": 1,
+              "name": "黑海時光粥",
+              "category": "粥品 ・ Day1 午餐",
+              "rating": "⭐ 4.8",
+              "mapQuery": "黑海時光粥+礁溪"
+            },
+            {
+              "rank": 2,
+              "name": "里海咖啡",
+              "category": "鮮魚定食 ・ Day1 晚餐 ・ <strong>已訂位</strong>",
+              "rating": "⭐ 4.6",
+              "mapQuery": "里海咖啡+礁溪"
+            },
+            {
+              "rank": 3,
+              "name": "芭樂狗 Mr. Balagov",
+              "category": "東歐烏克蘭料理 ・ Day2 慶生 🎂 ・ <strong>已訂位</strong>",
+              "rating": "⭐ 4.5",
+              "mapQuery": "芭樂狗+宜蘭市復興路"
+            }
+          ]
+        },
+        {
+          "title": "🍺 小酌/點心",
+          "items": [
+            {
+              "rank": 1,
+              "name": "跨力 Co-Link",
+              "category": "居酒屋 ・ Day2 晚間小酌 🍻",
+              "rating": "⭐ 4.7",
+              "mapQuery": "跨力+Co-Link+礁溪"
+            },
+            {
+              "rank": 2,
+              "name": "柯氏蔥油餅",
+              "category": "排隊名店 ・ 點心",
+              "rating": "⭐ 4.2",
+              "mapQuery": "柯氏蔥油餅+礁溪"
+            }
+          ]
+        },
+        {
+          "title": "🦐 Day3 返程午餐",
+          "items": [
+            {
+              "rank": 1,
+              "name": "烏石港海鮮",
+              "category": "海鮮 ・ Day3 午餐",
+              "rating": "⭐ 4.0",
+              "mapQuery": "烏石港+海鮮餐廳"
+            }
+          ]
+        }
+      ]
+    },
+    "spots": {
+      "recommended": [
+        {
+          "rank": 1,
+          "rankType": "spot",
+          "name": "五峰旗瀑布",
+          "category": "自然景觀 ・ 免費 ・ 1-2hr",
+          "mapQuery": "五峰旗瀑布+礁溪"
+        },
+        {
+          "rank": 2,
+          "rankType": "spot",
+          "name": "湯圍溝溫泉公園",
+          "category": "免費泡腳 ・ 30-60min ・ Day1 傍晚",
+          "mapQuery": "湯圍溝溫泉公園"
+        },
+        {
+          "rank": 3,
+          "rankType": "spot",
+          "name": "幾米公園",
+          "category": "裝置藝術 ・ 免費 ・ 30min",
+          "mapQuery": "幾米公園+宜蘭"
+        },
+        {
+          "rank": 4,
+          "rankType": "spot",
+          "name": "礁溪溫泉公園",
+          "category": "日式足湯 ・ 免費 ・ 休閒",
+          "mapQuery": "礁溪溫泉公園"
+        },
+        {
+          "rank": 5,
+          "rankType": "spot",
+          "name": "宜蘭酒廠",
+          "category": "觀光工廠 ・ 免費 ・ Day3 返程",
+          "mapQuery": "宜蘭酒廠"
+        }
+      ],
+      "rainyDay": [
+        {
+          "rank": "A",
+          "rankType": "spot",
+          "name": "猴洞坑瀑布",
+          "category": "輕鬆步道 ・ 30-40min",
+          "mapQuery": "猴洞坑瀑布"
+        },
+        {
+          "rank": "B",
+          "rankType": "spot",
+          "name": "草湳湖步道",
+          "category": "湖畔散步 ・ 約1hr",
+          "mapQuery": "草湳湖+礁溪"
+        }
+      ]
+    },
+    "gifts": {
+      "topPicks": [
+        {
+          "rank": 1,
+          "rankType": "gift",
+          "name": "鴨賞（鴨喜露）",
+          "category": "$150-250 ・ 冷藏7-14天",
+          "badge": "經典",
+          "mapQuery": "鴨喜露+礁溪"
+        },
+        {
+          "rank": 2,
+          "rankType": "gift",
+          "name": "金棗糕（橘之鄉）",
+          "category": "$100-300 ・ 1月產季！",
+          "badge": "當季",
+          "mapQuery": "橘之鄉蜜餞形象館"
+        },
+        {
+          "rank": 3,
+          "rankType": "gift",
+          "name": "牛舌餅（宜蘭餅）",
+          "category": "$80-200 ・ 超薄脆",
+          "badge": "送禮",
+          "mapQuery": "宜蘭餅發明館"
+        }
+      ],
+      "buyLocations": [
+        {
+          "rank": "📍",
+          "rankType": "gift",
+          "name": "柯氏蔥油餅",
+          "category": "冷凍蔥油餅 $100-150/包",
+          "mapQuery": "柯氏蔥油餅+礁溪"
+        },
+        {
+          "rank": "📍",
+          "rankType": "gift",
+          "name": "春記百貨",
+          "category": "毛線/手工藝材料 🧶",
+          "mapQuery": "春記百貨+宜蘭市康樂街"
+        }
+      ],
+      "warningsHtml": "鴨賞需<strong>冷藏</strong>，建議準備保冷袋！<br>冷凍蔥油餅回家後立即放冷凍庫"
+    }
+  },
+  "budget": {
+    "noteHtml": "⛽ 油價：<strong>28.1 元/L</strong>（中油 95無鉛，2026/1/5 生效）",
+    "groups": [
+      {
+        "title": "👥 全員（5人）分攤",
+        "items": [
+          {
+            "item": "🚗 油錢（800km ÷ 12km/L × 28.1）",
+            "amount": "375 元"
+          },
+          {
+            "item": "🛣️ 過路費（230×2 ÷ 5）",
+            "amount": "92 元"
+          },
+          {
+            "item": "🏨 住宿第一晚",
+            "amount": "1,148 元"
+          },
+          {
+            "item": "🍜 餐飲",
+            "amount": "2,160 元"
+          }
+        ]
+      },
+      {
+        "title": "🏨 住宿第二晚（依房型）",
+        "items": [
+          {
+            "type": "雙人房（均林、怡君）",
+            "amount": "1,353 元/人"
+          },
+          {
+            "type": "家庭房（均怡、莉亞、莉亞姊）",
+            "amount": "1,223 元/人"
+          }
+        ]
+      },
+      {
+        "title": "⛰️ 登山隊（3人）加收",
+        "items": [
+          {
+            "item": "🅿️ 停車費（50÷3）",
+            "amount": "17 元"
+          },
+          {
+            "item": "🍫 行動糧",
+            "amount": "150 元"
+          }
+        ]
+      }
+    ],
+    "total": {
+      "⛰️ 登山隊成員": "約 5,200-5,300 元",
+      "🎨 非登山隊成員": "約 5,000 元"
+    },
+    "noteWarningHtml": "• 交通、住宿第一晚、餐飲：5 人均分<br>• 住宿第二晚：依房型分攤<br>• 登山專屬（停車+行動糧）：登山隊 3 人分"
+  },
+  "calculator": {
+    "members": [
+      "盧均林",
+      "劉怡君",
+      "盧均怡",
+      "莉亞",
+      "莉亞姊"
+    ]
+  },
+  "hiking": {
+    "tabs": [
+      {
+        "label": "🥾 路線",
+        "tabLabel": "Hiking"
+      },
+      {
+        "label": "🛡️ 安全",
+        "tabLabel": "Hiking"
+      },
+      {
+        "label": "🌿 生態",
+        "tabLabel": "Hiking"
+      }
+    ],
+    "route": {
+      "summary": "📍 五峰旗 → 聖母朝聖地 → 通天橋 → 山頂<br><strong>10.8km</strong> ・ 爬升 <strong>900m</strong> ・ <strong>6-7 小時</strong>",
+      "mapQuery": "五峰旗停車場",
+      "checkpoints": [
+        {
+          "time": "06:30",
+          "location": "五峰旗停車場",
+          "retreatTime": "--",
+          "hasWater": false
+        },
+        {
+          "time": "07:00",
+          "location": "聖母朝聖地",
+          "retreatTime": "--",
+          "hasWater": true
+        },
+        {
+          "time": "08:30",
+          "location": "通天橋",
+          "retreatTime": "09:30 未到→評估",
+          "hasWater": true
+        },
+        {
+          "time": "10:30",
+          "location": "山頂 ⛰️",
+          "retreatTime": "13:00 未到→下撤",
+          "hasWater": false
+        },
+        {
+          "time": "14:00",
+          "location": "返回停車場",
+          "retreatTime": "16:30 必須離開",
+          "hasWater": false
+        }
+      ],
+      "essentialGear": [
+        "登山鞋",
+        "登山杖",
+        "雨衣雨褲",
+        "頭燈",
+        "水 2L+",
+        "行動糧",
+        "保暖中層",
+        "防滑鞋套",
+        "行動電源",
+        "離線地圖"
+      ],
+      "trailWarningHtml": "後段 1.6km 常年濕滑，<strong>防滑鞋套必備</strong>！<br>📵 通天橋後無訊號，請先下載離線地圖"
+    },
+    "safetyHtml": "<div class=\"info-card bg-matcha-gradient\">\n            <div class=\"info-card-content\" style=\"text-align: center; font-size: 0.9rem;\">\n              📚 整理自《登山新手預防受傷完整指南》與《登山下坡安全技巧建議》\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🦵 下坡膝蓋保護（超重要！）</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>為什麼下坡更傷膝蓋？</strong><br>\n              下坡時股四頭肌進行「離心收縮」，承受的衝擊力是上坡的 <strong>3-4 倍</strong>。抹茶山後段 1.6km 陡下坡是膝蓋最大考驗！<br><br>\n\n              <strong>✅ 正確下坡姿勢：</strong><br>\n              • 膝蓋保持<strong>微彎 15-20°</strong>，絕不完全打直<br>\n              • 縮小步幅，寧可多走幾步<br>\n              • 重心稍微壓低，臀部微蹲<br>\n              • 身體保持正面朝向下坡方向<br><br>\n\n              <strong>❌ 常見錯誤：</strong><br>\n              • 鎖死膝蓋（衝擊力直接穿透關節）<br>\n              • 步伐過大（落差越大衝擊越大）<br>\n              • 重心後仰（容易滑倒且無法控制）\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🥾 登山杖使用技巧</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              正確使用登山杖可<strong>降低 25% 膝蓋壓力</strong>！<br><br>\n\n              <strong>📏 長度調整：</strong><br>\n              • 平地：手肘呈 90°<br>\n              • <strong>下坡加長 5-10 cm</strong>（很多人忽略這點！）<br>\n              • 上坡縮短 5-10 cm<br><br>\n\n              <strong>🤚 腕帶穿法：</strong><br>\n              手由<strong>下往上</strong>穿過腕帶圈 → 手掌下壓握住<br>\n              重點是讓腕帶承重，而非緊握握把<br><br>\n\n              <strong>⚡ 下坡技巧：</strong><br>\n              登山杖先落地 → 確認穩固 → 再踏出腳步<br>\n              陡坡時可雙杖同時前撐，製造穩定三角\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">👟 防止腳趾撞傷</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              下坡時腳會往前滑，若未固定好，腳趾反覆撞擊鞋頭會造成<strong>黑指甲</strong>！<br><br>\n\n              <strong>🎯 腳跟鎖定結（Heel Lock）：</strong><br>\n              1. 正常穿鞋帶到最上方兩孔<br>\n              2. 鞋帶直接穿入同側上方孔（形成小圈）<br>\n              3. 左右交叉穿過對側的小圈<br>\n              4. 向外拉緊並打結<br><br>\n\n              <strong>💡 其他預防：</strong><br>\n              • 登山前修剪腳趾甲（與指緣齊平）<br>\n              • 鞋子前端保留一指幅空間<br>\n              • 穿厚登山襪減少摩擦\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🌧️ 濕滑地面行走</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              抹茶山後段常年潮濕，<strong>濕滑是最大風險</strong>！<br><br>\n\n              <strong>🚶 全腳掌平踩：</strong><br>\n              放棄腳跟先著地，改用<strong>全腳掌垂直落下</strong><br>\n              最大化接觸面積 = 最大抓地力<br><br>\n\n              <strong>🌳 樹根策略：</strong><br>\n              • 濕樹根比濕岩石更滑！<br>\n              • <strong>踩樹根之間的空隙</strong>，不踩樹根上<br>\n              • 若必須踩，腳掌與樹根走向垂直<br><br>\n\n              <strong>⚠️ 防滑鞋套必備！</strong><br>\n              後段 1.6km 建議穿戴，大幅提升安全性\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🩹 常見傷害與預防</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>🔴 延遲性肌肉痠痛（鐵腿）：</strong><br>\n              • 好發於下坡後 24-72 小時<br>\n              • 預防：行前 2-3 個月練習離心訓練（如逆向登階）<br>\n              • 處理：當日冰敷 15 分鐘，隔日輕度活動<br><br>\n\n              <strong>🔴 膝蓋疼痛：</strong><br>\n              • 若膝蓋前方痛 → 可使用<strong>髕骨帶</strong>輔助<br>\n              • 鬆緊度：能放入兩根手指<br>\n              • 疼痛時縮短步幅、增加休息<br><br>\n\n              <strong>🔴 腳踝扭傷：</strong><br>\n              • 預防：穿高筒登山鞋、專注看路<br>\n              • 處理：RICE 原則（休息、冰敷、加壓、抬高）<br><br>\n\n              <strong>🔴 抽筋：</strong><br>\n              • 通常因電解質流失<br>\n              • 預防：每 60-90 分鐘補充電解質<br>\n              • 處理：輕輕拉伸、補充鹽分\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">💧 補水與補給</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>⏰ 補水原則：</strong><br>\n              • 每 15-20 分鐘喝 150-250ml（不要等渴才喝）<br>\n              • 尿液顏色是最佳指標：<strong>透明淡黃色</strong> = 正常<br><br>\n\n              <strong>⚡ 電解質補充：</strong><br>\n              • 運動超過 60 分鐘需補充<br>\n              • 純水會稀釋電解質，可能導致<strong>低血鈉症</strong><br>\n              • 搭配運動飲料或鹹味零食<br><br>\n\n              <strong>🍫 行動糧頻率：</strong><br>\n              每 60-90 分鐘補充 200-300 大卡<br>\n              <strong>不要等餓才吃！</strong>\n            </div>\n          </div>\n\n          <div class=\"warning-box\">\n            <div class=\"warning-box-title\">⚠️ 迷路時最重要原則</div>\n            <div class=\"warning-box-content\">\n              <strong>絕對不要下切溪谷！</strong>這是導致傷亡的主因。<br>\n              遵循 <strong>STOP 原則</strong>：停下來 → 思考 → 觀察 → 計畫<br>\n              留在原地等待救援，善用離線地圖定位\n            </div>\n          </div>",
+    "ecologyHtml": "<div class=\"info-card\">\n            <div class=\"info-card-content\" style=\"font-size: 0.9rem; line-height: 1.6;\">\n              抹茶山的翠綠景觀來自<strong>包籜矢竹</strong>形成的草原地毯，這種台灣特有種竹類在東北季風吹拂下終年常綠。這條海拔跨度 550 公尺的步道，從溪谷闊葉林一路攀升至風衝矮林，沿途可觀察到樟科、殼斗科喬木、豐富的蕨類與苔蘚。<br><br>\n              🌳 <strong>點擊植物名稱</strong>可查看 Google 圖片！\n            </div>\n          </div>\n\n          <!-- 一月最容易識別 -->\n          <div class=\"warning-box bg-red-warning\">\n            <div class=\"warning-box-title\">✨ 一月最容易識別的植物</div>\n            <div class=\"warning-box-content\" style=\"font-size: 0.85rem;\">\n              🔴 <strong>紅楠</strong> - 鮮紅色嫩芽與芽苞最醒目<br>\n              🔴 <strong>金平氏冬青</strong> - 紅色果實點綴枝頭<br>\n              🔴 <strong>月桃</strong> - 鮮紅色蒴果<br>\n              🌳 <strong>九芎</strong> - 落葉後只剩光滑紅色樹幹\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🌳 低海拔喬木（400-600m）</div>\n\n          <!-- 九芎 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">1. 九芎 ⭐</span>\n              <span class=\"info-card-badge\">一月落葉易見</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 落葉喬木，樹皮光滑、易蛻皮，新皮白色漸變紅色<br>\n              • 樹皮如上蠟，光滑難爬（「猴不爬」、「猴滑樹」）<br>\n              • 葉：長橢圓形，葉緣全緣（無鋸齒），葉對生<br>\n              • 花：圓錐花序，白色花瓣，花瓣皺褶（千屈菜科特色）<br>\n              • 果實：長橢圓形蒴果，種子具翅，秋天開裂<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=九芎\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=九芎+樹皮+猴不爬\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 大葉楠 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">2. 大葉楠</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 樟科楨楠屬，低海拔（1000m以下）分布<br>\n              • 葉大型革質，長橢圓形到倒卵形<br>\n              • 葉背灰白色（與葉表對比明顯）<br>\n              • 常綠喬木，葉質厚實光滑<br>\n              • 春天抽新葉時嫩葉帶紅色<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=大葉楠\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=大葉楠+葉背灰白\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 山龍眼 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">3. 山龍眼</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 常綠喬木，低海拔山區常見<br>\n              • 葉長橢圓形，鋸齒緣（明顯特徵）<br>\n              • 葉革質，葉脈清晰<br>\n              • 花序顯眼，開花時容易辨認<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=山龍眼\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=山龍眼+鋸齒葉\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🍃 中海拔指標植物（600-850m）</div>\n\n          <!-- 墨點櫻桃 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">4. 墨點櫻桃</span>\n              <span class=\"info-card-badge\">中海拔指標</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 常綠灌木或小喬木，中海拔指標<br>\n              • 葉背有黑色腺點（重要辨識特徵）<br>\n              • 揉碎葉片有杏仁味（多數人聞不到）<br>\n              • 小白花，紅色或黑紫色果實<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=墨點櫻桃\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=墨點櫻桃+黑色腺點\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 長葉木薑子 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">5. 長葉木薑子</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 葉披針形（狹長型），是重要識別點<br>\n              • 葉背灰白色（粉狀被覆）<br>\n              • 樟科木薑子屬，常綠灌木<br>\n              • 葉片狹長，中脈明顯突出<br>\n              • 花黃色，果實球形<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=長葉木薑子\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=長葉木薑子+披針形葉背灰白\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 三斗石櫟 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">6. 三斗石櫟</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 殼斗科，常綠灌木至小喬木<br>\n              • 殼斗三淺裂（果實特色，呈三角形）<br>\n              • 葉革質，葉面深綠光亮<br>\n              • 葉小，邊緣常有細鋸齒<br>\n              • 中海拔地區常見<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=三斗石櫟\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=三斗石櫟+殼斗\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🔴 山頂風衝矮林（850m+）</div>\n\n          <!-- 紅楠 -->\n          <div class=\"info-card bg-red-gradient border-left-red\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">7. 紅楠（豬腳楠）⭐⭐</span>\n              <span class=\"info-card-badge\" style=\"background: #e53e3e;\">一月最醒目</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵（1月最醒目）：</strong><br>\n              • 常綠大喬木，樟科潤楠屬<br>\n              • <strong style=\"color: #e53e3e;\">嫩葉與芽苞鮮紅色（冬春時最易識別！）</strong><br>\n              • 葉倒卵形至倒披針形，葉近軸面深綠色富光澤，遠軸面蒼白<br>\n              • 樹皮粗糙灰褐色，有皮孔<br>\n              • 花黃綠色，苞片卵形呈紅色<br>\n              • 果實漿果，未熟綠色有光澤，熟果紫黑色<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=紅楠\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=紅楠+嫩葉紅色+豬腳楠\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">紅色嫩葉</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=紅楠+芽苞+紅色\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">紅色芽苞</a>\n            </div>\n          </div>\n\n          <!-- 金平氏冬青 -->\n          <div class=\"info-card bg-red-gradient border-left-red\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">8. 金平氏冬青</span>\n              <span class=\"info-card-badge\" style=\"background: #e53e3e;\">冬季紅果</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 常綠小喬木，冬青科<br>\n              • <strong style=\"color: #e53e3e;\">冬季鮮紅色果實（一月明顯）</strong><br>\n              • 葉小，革質，細鋸齒緣<br>\n              • 生長於高山風衝地<br>\n              • 果實點綴枝頭，極具觀賞價值<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=金平氏冬青\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=金平氏冬青+紅色果實\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">紅色果實</a>\n            </div>\n          </div>\n\n          <!-- 毽子櫟 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">9. 毽子櫟</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 殼斗科，常綠灌木至小喬木<br>\n              • 葉緣反捲（獨特特徵）<br>\n              • 殼斗具環狀鱗片（如毽子狀，此得名）<br>\n              • 葉小，銀綠色或灰綠色<br>\n              • 高山風衝地常見<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=毽子櫟\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=毽子櫟+反捲葉+環狀鱗片\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🌿 蕨類（著生與地生）</div>\n\n          <!-- 伏石蕨 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">10. 伏石蕨</span>\n              <span class=\"info-card-badge\">二型葉</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 二型葉：圓形肉質小葉（孢子葉） + 線形細長葉（營養葉）<br>\n              • 著生蕨，常生於樹上、岩石<br>\n              • 根狀體黑色，粗糙<br>\n              • 孢子囊群於線形葉背面<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=伏石蕨\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=伏石蕨+二型葉\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">二型葉</a>\n            </div>\n          </div>\n\n          <!-- 巢蕨 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">11. 巢蕨（山蘇）</span>\n              <span class=\"info-card-badge\">鳥巢狀</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 著生蕨，叢生呈鳥巢狀（得名原因）<br>\n              • 孢子囊群線形，排列在葉脈兩側<br>\n              • 葉片狹長披針形，排成漏斗形巢狀<br>\n              • 根系粗壯黑色，可貯水<br>\n              • 常見於樹上、牆角<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=巢蕨+山蘇\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=巢蕨+鳥巢狀\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">鳥巢狀</a>\n            </div>\n          </div>\n\n          <!-- 過溝菜蕨 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">12. 過溝菜蕨（過貓）</span>\n              <span class=\"info-card-badge\">可食用</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 地生蕨，嫩葉可食（野菜）<br>\n              • 常見於溪谷、潮濕地<br>\n              • 葉片三回羽狀複葉，翠綠色<br>\n              • 抽屜狀葉軸基部明顯<br>\n              • 春天新葉嫩綠色，俗稱「過貓」<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=過溝菜蕨\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=過溝菜蕨+過貓\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">過貓</a>\n            </div>\n          </div>\n\n          <!-- 筆筒樹 -->\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">13. 筆筒樹</span>\n              <span class=\"info-card-badge\">樹蕨</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 樹蕨（樹生蕨類），唯一一個樹型蕨<br>\n              • 葉痕如蛇紋排列在幹上（重要辨識特徵）<br>\n              • 高度可達10m以上，幹基部有氣根<br>\n              • 葉片大型，二回羽狀複葉<br>\n              • 常見於中低海拔潮濕林<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=筆筒樹\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=筆筒樹+樹蕨+葉痕\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">蛇紋葉痕</a>\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">🌱 果實與物候（一月觀察重點）</div>\n\n          <!-- 月桃 -->\n          <div class=\"info-card bg-red-gradient border-left-red\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">14. 月桃</span>\n              <span class=\"info-card-badge\" style=\"background: #e53e3e;\">紅色蒴果</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 薑科，常綠多年生草本至灌木<br>\n              • <strong style=\"color: #e53e3e;\">鮮紅色蒴果（蒴果外殼紅色，很醒目）</strong><br>\n              • 揉葉有香氣（清香甜美）<br>\n              • 葉片大型，長橢圓形<br>\n              • 花紫紅色，頂生圓錐花序<br>\n              • 果期冬春時紅色，很容易辨認<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=月桃\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?tbm=isch&q=月桃+紅色蒴果\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">紅色蒴果</a>\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">💚 抹茶綠的秘密</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">包籜矢竹</span>\n              <span class=\"info-card-badge\">台灣特有種</span>\n            </div>\n            <div class=\"info-card-content\" style=\"font-size: 0.85rem;\">\n              • <strong>常綠</strong>密集生長：利用地下走莖快速蔓延<br>\n              • <strong>風衝矮化</strong>：山頂受強風抑制，形成一致高度<br>\n              • <strong>充沛水分</strong>：東北季風迎風面，終年潮濕<br>\n              • <strong>向陽照射</strong>：陽光下呈現明亮翠綠色\n            </div>\n          </div>\n\n          <!-- 地衣與苔蘚 -->\n          <div class=\"subsection-title\">🪨 地衣與苔蘚（潮濕環境指標）</div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">15. 羊角苔</span>\n              <span class=\"info-card-badge\">苔蘚</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 苔蘚植物；綠色或褐綠色<br>\n              • 絲狀、分支繁複<br>\n              • 常貼附在樹幹或岩石上；喜好濕潤環境<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=羊角苔\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=羊角苔+苔蘚+濕潤\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">16. 白髮苔</span>\n              <span class=\"info-card-badge\">蘚類</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 苔蘚植物，蘚類；絲狀、纖細<br>\n              • 呈白色或淡綠色<br>\n              • 常懸掛於樹幹下方；需高濕度<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=白髮苔\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=白髮苔+蘚類+懸掛\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">17. 羽苔</span>\n              <span class=\"info-card-badge\">蘚類</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 苔蘚類；羽毛狀分支<br>\n              • 色澤綠色；附著於樹皮<br>\n              • 呈流蘇狀<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=羽苔\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=羽苔+蘚類+羽毛狀\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">18. 鞭蘚</span>\n              <span class=\"info-card-badge\">蘚類</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 苔蘚類；長鞭狀分支<br>\n              • 呈掛簾狀；色澤綠色<br>\n              • 常垂掛於樹枝下方<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=鞭蘚\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=鞭蘚+蘚類+鞭狀\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 更多喬木 -->\n          <div class=\"subsection-title\">🌲 其他常見喬木</div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">19. 台灣山香圓</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 樹皮灰褐色，粗糙；葉片長橢圓形，對生<br>\n              • 小白花，香氣濃郁<br>\n              • 果實球形，黑色或藍黑色；樹高8-12m<br>\n              • 常見於溪谷<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=台灣山香圓\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=台灣山香圓+白花+黑果\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">20. 江某</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 樹皮深褐色，縱裂<br>\n              • 葉片披針形或橢圓形；小花白色或淡黃色<br>\n              • 樹高8-15m；常綠喬木<br>\n              • 木材堅硬<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=江某\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=江某+樹皮+縱裂+白花\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">21. 紅淡比</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 樹皮紅褐色，剝落<br>\n              • 葉片長橢圓形，革質；新葉紅色<br>\n              • 白色小花；果實球形<br>\n              • 樹高6-10m<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=紅淡比\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=紅淡比+紅褐色樹皮+紅葉\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">22. 台灣肖楠</span>\n              <span class=\"info-card-badge\">柏科</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 柏科；樹皮呈紅褐色，縱裂<br>\n              • 葉片鱗片狀，細小，排列緊密<br>\n              • 常綠喬木；樹高10-25m<br>\n              • 材質香氣獨特<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=台灣肖楠\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=台灣肖楠+柏科+鱗狀葉\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">23. 烏心石</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 樹皮深褐色；葉片大型，長橢圓形<br>\n              • 新葉紅色；小白花叢生<br>\n              • 樹高15-25m；木材堅硬<br>\n              • 常綠喬木<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=烏心石\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=烏心石+紅葉+堅硬+白花\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 灌木與中層植物 -->\n          <div class=\"subsection-title\">🌿 灌木與中層植物</div>\n\n          <div class=\"info-card bg-purple-gradient border-left-purple\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">24. 野牡丹 ⭐</span>\n              <span class=\"info-card-badge\" style=\"background: #9333ea;\">夏秋花季</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 葉片橢圓形，被粗毛<br>\n              • <strong style=\"color: #9333ea;\">花瓣5片，紫紅色或粉紅色，花蕊黃色</strong><br>\n              • 花期長（6-10月）；灌木，樹高1-3m<br>\n              • 喜好陽光<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=野牡丹\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=野牡丹+紫紅花+5瓣\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">25. 角桐草</span>\n              <span class=\"info-card-badge\">四角莖</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 葉片線形至披針形<br>\n              • 小花淡紫或白色<br>\n              • <strong>莖呈四角形（重要特徵）</strong><br>\n              • 常見於中海拔山坡；草本灌木狀<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=角桐草\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=角桐草+四角莖\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">26. 雞屎樹</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 灌木；葉片長橢圓形，對生<br>\n              • 小黃白色花叢；果實球形，黑色<br>\n              • 樹高2-5m；有獨特氣味<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=雞屎樹\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=雞屎樹+黃白花+黑果\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card bg-yellow-gradient border-left-yellow\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">27. 七葉一枝花</span>\n              <span class=\"info-card-badge\" style=\"background: #dc2626;\">有毒</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 草本；葉片集中在莖頂<br>\n              • <strong>通常7片葉子（重要特徵）</strong><br>\n              • 綠色花；球形種子<br>\n              • 常見於林床；有毒性，請勿觸碰<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=七葉一枝花\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=七葉一枝花+7片葉+綠花\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">28. 鴨腳秋海棠</span>\n              <span class=\"info-card-badge\">秋海棠科</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 草本；葉片掌狀分裂，酷似鴨腳<br>\n              • 邊緣紅色；小粉紅花<br>\n              • 常見於林床濕潤處；多肉質莖<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=鴨腳秋海棠\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=鴨腳秋海棠+掌狀葉+秋海棠科\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 草本與地被植物 -->\n          <div class=\"subsection-title\">🌱 草本與地被植物</div>\n\n          <div class=\"info-card bg-green-gradient border-left-green\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">29. 箭竹 ⭐</span>\n              <span class=\"info-card-badge\" style=\"background: #059669;\">抹茶山主角</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 禾本科；竹桿直挺，高度0.5-4m<br>\n              • 竹稈細長堅韌；籜葉披針形，尖銳，不脫落<br>\n              • 叢生；覆蓋山坡形成「抹茶山」視覺效果<br>\n              • 海拔300-1200m分布<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=箭竹\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=箭竹+禾本科+竹稈+海拔\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">30. 芒草</span>\n              <span class=\"info-card-badge\">山頂常見</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 禾本科；莖高1-3m<br>\n              • 葉片線形，細長<br>\n              • 白色或淡紫色的羽毛狀花序（秋冬盛開）<br>\n              • 常見於山頂風衝林；叢生<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=芒草\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=芒草+禾本科+羽毛狀花序\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">31. 冷清草</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 禾本科；高度30-100cm<br>\n              • 葉片線形；小型花序<br>\n              • 常見於溪谷濕潤處<br>\n              • 喜好陰濕；細弱莖<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=冷清草\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=冷清草+禾本科+溪谷\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card bg-yellow-gradient border-left-yellow\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">32. 姑婆芋</span>\n              <span class=\"info-card-badge\" style=\"background: #dc2626;\">有毒</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 天南星科；葉片巨大，心形或箭形，長可達1m<br>\n              • 葉脈明顯<br>\n              • 常見於溪邊和濕地；根莖粗大<br>\n              • ⚠️ 有毒，請勿誤食<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=姑婆芋\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=姑婆芋+天南星科+大葉+溪邊\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 蕨類補充 -->\n          <div class=\"subsection-title\">🌿 蕨類補充</div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">33. 生根卷柏</span>\n              <span class=\"info-card-badge\">卷柏屬</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 蕨類植物，蕨類最下層<br>\n              • 葉片細小，覆瓦狀排列<br>\n              • 莖細長匍匐；喜好濕潤林床<br>\n              • 可懸掛或攀爬<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=生根卷柏\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=生根卷柏+蕨類+卷柏屬\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">34. 小葉樓梯草</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 蕨類，葉片較小<br>\n              • 葉序如樓梯般排列<br>\n              • 常見於林床；喜好濕潤陰暗環境<br>\n              • 葉片對生或近對生<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=小葉樓梯草\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=小葉樓梯草+蕨類+樓梯狀\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <div class=\"info-card\">\n            <div class=\"info-card-header\">\n              <span class=\"info-card-title\">35. 闊葉樓梯草</span>\n            </div>\n            <div class=\"info-card-content\" class=\"text-sm line-height-relaxed\">\n              <strong>識別特徵：</strong><br>\n              • 蕨類相關植物，葉片較大<br>\n              • 葉序成樓梯狀排列<br>\n              • 常見於溪邊濕潤處<br>\n              • 莖呈綠色肉質<br><br>\n              🔍 <a href=\"https://www.google.com/search?tbm=isch&q=闊葉樓梯草\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">圖片搜尋</a> ｜\n              <a href=\"https://www.google.com/search?q=闊葉樓梯草+蕨類+溪谷\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--matcha-dark);\">特徵搜尋</a>\n            </div>\n          </div>\n\n          <!-- 辨識要訣 -->\n          <div class=\"subsection-title\">💡 辨識要訣</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-content\" style=\"font-size: 0.85rem; line-height: 1.8;\">\n              <strong>✨ 需要仔細觀察葉片特徵：</strong><br>\n              • <strong>大葉楠</strong>：葉背灰白色<br>\n              • <strong>長葉木薑子</strong>：披針形葉 + 灰白葉背<br>\n              • <strong>墨點櫻桃</strong>：葉背黑色腺點<br>\n              • <strong>山龍眼</strong>：鋸齒緣<br><br>\n\n              <strong>✨ 蕨類辨識：</strong><br>\n              • <strong>巢蕨（山蘇）</strong>：樹上鳥巢狀<br>\n              • <strong>伏石蕨</strong>：二型葉（小圓葉 + 細長葉）<br>\n              • <strong>筆筒樹</strong>：巨大樹型蕨<br>\n              • <strong>過溝菜蕨</strong>：溪谷潮濕地\n            </div>\n          </div>\n\n          <div class=\"subsection-title\">📸 帶著這個指南上山</div>\n          <div class=\"info-card\">\n            <div class=\"info-card-content\" style=\"font-size: 0.9rem;\">\n              ✅ 建議攜帶 <strong>10倍放大鏡</strong>觀察苔蘚與地衣<br>\n              ✅ <strong>手機或相機搭配微距</strong>記錄蕨類孢子囊群<br>\n              ✅ <strong>防水筆記本</strong>隨時記錄發現<br>\n              🌡️ 山頂體感 0-5°C，帶著這份指南享受生態教室！<br><br>\n              🌿 <strong>所有連結都可以直接點擊查看高清圖片！</strong>\n            </div>\n          </div>"
+  },
+  "checklist": {
+    "departureDate": "2026-01-24",
+    "completed": [
+      {
+        "label": "住宿第一晚"
+      },
+      {
+        "label": "住宿第二晚"
+      },
+      {
+        "label": "Day1 里海咖啡訂位"
+      },
+      {
+        "label": "Day2 芭樂狗訂位"
+      },
+      {
+        "label": "青花瓷 DIY 預約"
+      }
+    ],
+    "pending": [
+      {
+        "label": "GPX 離線地圖"
+      },
+      {
+        "label": "天氣確認（3天前）"
+      },
+      {
+        "label": "通知留守人行程"
+      },
+      {
+        "label": "登山保險"
+      },
+      {
+        "label": "裝備檢查"
+      },
+      {
+        "label": "春記百貨確認"
+      },
+      {
+        "label": "油價查詢"
+      },
+      {
+        "label": "分帳方案確認"
+      }
+    ],
+    "warningsHtml": {
+      "title": "❄️ 冬季登山提醒",
+      "items": [
+        "🌡️ 山頂體感 0-5°C",
+        "🌧️ 東北季風強勁，務必帶雨具",
+        "🌅 日落 17:33，<strong>16:30 前離開山頂</strong>",
+        "📵 通天橋後無訊號，<strong>必須下載離線地圖</strong>"
+      ]
+    },
+    "rainyPlanHtml": {
+      "title": "🌧️ 雨天備案啟動條件",
+      "conditions": [
+        "降雨機率 > 60%",
+        "或發布<strong>豪雨特報</strong>",
+        "或風速 > 5 級"
+      ],
+      "alternatives": [
+        "✅ 替代方案 A：猴洞坑瀑布 + 草湳湖步道",
+        "✅ 替代方案 B：延期至隔天登山",
+        "✅ 替代方案 C：溫泉休閒行程"
+      ]
+    }
+  },
+  "emergency": {
+    "officialContacts": [
+      {
+        "name": "報案",
+        "phone": "110",
+        "isDanger": true
+      },
+      {
+        "name": "救護車",
+        "phone": "119",
+        "isDanger": true
+      },
+      {
+        "name": "宜蘭縣消防局",
+        "phone": "03-925-4119",
+        "isDanger": false
+      },
+      {
+        "name": "礁溪消防分隊",
+        "phone": "03-988-1442",
+        "isDanger": false
+      }
+    ],
+    "safetyReportHtml": "06:30 出發 → 10:30 登頂 → 14:30 下山",
+    "contactsFromFirebase": {
+      "guardianNote": "🔐 登入後顯示...",
+      "teamContactsNote": "🔐 登入後顯示聯絡資訊..."
+    }
+  },
+  "navigation": {
+    "dock": [
+      {
+        "icon": "🏠",
+        "label": "首頁",
+        "action": "scrollTop"
+      },
+      {
+        "icon": "📍",
+        "label": "行程",
+        "action": "scrollToSection",
+        "target": "section-itinerary"
+      },
+      {
+        "icon": "🍱",
+        "label": "選單",
+        "action": "toggleMenu"
+      }
+    ],
+    "menu": [
+      {
+        "icon": "📅",
+        "label": "行程總覽",
+        "action": "scrollToSection",
+        "target": "section-itinerary"
+      },
+      {
+        "icon": "🏨",
+        "label": "住宿資訊",
+        "action": "scrollToSection",
+        "target": "section-hotel"
+      },
+      {
+        "icon": "🍽️",
+        "label": "美食推薦",
+        "action": "navigateToTab",
+        "target": "section-guide",
+        "tabIndex": 1
+      },
+      {
+        "icon": "🎯",
+        "label": "景點推薦",
+        "action": "navigateToTab",
+        "target": "section-guide",
+        "tabIndex": 2
+      },
+      {
+        "icon": "🎁",
+        "label": "伴手禮",
+        "action": "navigateToTab",
+        "target": "section-guide",
+        "tabIndex": 3
+      },
+      {
+        "icon": "💰",
+        "label": "預算摘要",
+        "action": "scrollToSection",
+        "target": "section-budget"
+      },
+      {
+        "icon": "🧮",
+        "label": "分帳計算",
+        "action": "scrollToSection",
+        "target": "section-calculator"
+      },
+      {
+        "icon": "🥾",
+        "label": "登山速查",
+        "action": "navigateToTab",
+        "target": "section-hike-guide",
+        "tabIndex": 1
+      },
+      {
+        "icon": "🛡️",
+        "label": "登山安全",
+        "action": "navigateToTab",
+        "target": "section-hike-guide",
+        "tabIndex": 2
+      },
+      {
+        "icon": "🌿",
+        "label": "植物指南",
+        "action": "navigateToTab",
+        "target": "section-hike-guide",
+        "tabIndex": 3
+      },
+      {
+        "icon": "✅",
+        "label": "行前檢核",
+        "action": "scrollToSection",
+        "target": "section-checklist"
+      },
+      {
+        "icon": "🆘",
+        "label": "緊急聯絡",
+        "action": "scrollToSection",
+        "target": "section-emergency"
+      }
+    ]
+  },
+  "firebase": {
+    "apiKey": "AIzaSyDJ6BBh8h36WM45F4tGAZOzzv5r_7nwRic",
+    "authDomain": "matcha-trip-2026.firebaseapp.com",
+    "databaseURL": "https://matcha-trip-2026-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "projectId": "matcha-trip-2026",
+    "storageBucket": "matcha-trip-2026.firebasestorage.app",
+    "messagingSenderId": "529570143324",
+    "appId": "1:529570143324:web:a6d06f26207052b6635a99"
+  },
+  "inviteCode": {
+    "storageKey": "matcha-trip-verified",
+    "firebasePath": "matcha-trip-2026/config/inviteCode"
+  }
+}
